@@ -86,6 +86,7 @@
             this.tsbtnAdd.Name = "tsbtnAdd";
             this.tsbtnAdd.Size = new System.Drawing.Size(29, 24);
             this.tsbtnAdd.Text = "Thêm";
+            this.tsbtnAdd.Click += new System.EventHandler(this.tsbtnAdd_Click);
             // 
             // toolStripLabel1
             // 
@@ -205,12 +206,11 @@
             this.gvChucVu.RowTemplate.Height = 24;
             this.gvChucVu.Size = new System.Drawing.Size(800, 322);
             this.gvChucVu.TabIndex = 4;
-           
             // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(668, 89);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 28);
             this.btnBack.TabIndex = 5;

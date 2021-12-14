@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,9 +29,21 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            gvPhongBan.DataSource = GetAllPhongBan().Tables[0];
         }
-
+        DataSet GetAllPhongBan()
+        {
+            DataSet data = new DataSet();
+            string query = "select * from PHONG";
+            using (SqlConnection connect = new SqlConnection(ConnectSQL.connectString))
+            {
+                connect.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
+                adapter.Fill(data);
+                connect.Close();
+            }
+            return data;
+        }
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
 
@@ -64,6 +77,16 @@ namespace DoAn
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gvPhongBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
