@@ -70,5 +70,7 @@ namespace DoAn
         {
             this.Close();
         }
+
+       
     }
 }
