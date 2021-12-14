@@ -17,10 +17,7 @@ namespace DoAn
             InitializeComponent();
         }
 
-        private void tiềnLươngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -54,7 +51,10 @@ namespace DoAn
 
         private void bảngHệSốLươngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Còn thiếu layout
+            BangHeSoLuong f = new BangHeSoLuong();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void danhSáchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,12 +107,23 @@ namespace DoAn
 
         private void vịTríCôngTácToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Còn thiếu layout
+            ViTriCongTac f = new ViTriCongTac();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void bốTríCôngTácToolStripMenuItem_Click(object sender, EventArgs e)
         { 
             BoTriCongTac f = new BoTriCongTac();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhongBan f = new PhongBan();
             this.Hide();
             f.ShowDialog();
             this.Show();

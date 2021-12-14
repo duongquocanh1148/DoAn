@@ -1,6 +1,6 @@
 ﻿namespace DoAn
 {
-    partial class DanhSach
+    partial class BangHeSoLuong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhSach));
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDetails = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.textBoxIDRoom = new System.Windows.Forms.TextBox();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.lbIDRoom = new System.Windows.Forms.Label();
-            this.lbID = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tsbtnFix = new System.Windows.Forms.ToolStripButton();
@@ -54,114 +43,42 @@
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnBack = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbTitle
+            // toolStrip1
             // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lbTitle.Location = new System.Drawing.Point(253, 199);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(263, 29);
-            this.lbTitle.TabIndex = 2;
-            this.lbTitle.Text = "Danh Sách Nhân Viên";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnDetails);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.textBoxIDRoom);
-            this.groupBox1.Controls.Add(this.textBoxID);
-            this.groupBox1.Controls.Add(this.lbIDRoom);
-            this.groupBox1.Controls.Add(this.lbID);
-            this.groupBox1.Location = new System.Drawing.Point(0, 58);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(800, 139);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            // 
-            // btnDetails
-            // 
-            this.btnDetails.Location = new System.Drawing.Point(667, 80);
-            this.btnDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(104, 23);
-            this.btnDetails.TabIndex = 5;
-            this.btnDetails.Text = "Xem Chi Tiết";
-            this.btnDetails.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(683, 30);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "Tìm Kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // textBoxIDRoom
-            // 
-            this.textBoxIDRoom.Location = new System.Drawing.Point(107, 80);
-            this.textBoxIDRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxIDRoom.Name = "textBoxIDRoom";
-            this.textBoxIDRoom.Size = new System.Drawing.Size(483, 22);
-            this.textBoxIDRoom.TabIndex = 3;
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(107, 30);
-            this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(483, 22);
-            this.textBoxID.TabIndex = 2;
-            // 
-            // lbIDRoom
-            // 
-            this.lbIDRoom.AutoSize = true;
-            this.lbIDRoom.Location = new System.Drawing.Point(12, 80);
-            this.lbIDRoom.Name = "lbIDRoom";
-            this.lbIDRoom.Size = new System.Drawing.Size(68, 16);
-            this.lbIDRoom.TabIndex = 1;
-            this.lbIDRoom.Text = "Mã Phòng";
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(12, 30);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(46, 16);
-            this.lbID.TabIndex = 0;
-            this.lbID.Text = "Mã Số";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 236);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 217);
-            this.dataGridView1.TabIndex = 4;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnAdd,
+            this.toolStripLabel1,
+            this.tsbtnFix,
+            this.toolStripLabel2,
+            this.tsbtnDelete,
+            this.toolStripLabel3,
+            this.tsbtnSave,
+            this.toolStripLabel4,
+            this.toolStripButton5,
+            this.toolStripLabel5,
+            this.toolStripButton6,
+            this.toolStripLabel6,
+            this.toolStripButton7,
+            this.toolStripLabel7});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // tsbtnAdd
             // 
             this.tsbtnAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAdd.Image")));
+            this.tsbtnAdd.Image = global::DoAn.Properties.Resources.toolStripButton1_Image;
             this.tsbtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnAdd.Name = "tsbtnAdd";
             this.tsbtnAdd.Size = new System.Drawing.Size(29, 24);
             this.tsbtnAdd.Text = "Thêm";
-            this.tsbtnAdd.Click += new System.EventHandler(this.tsbtnAdd_Click);
             // 
             // toolStripLabel1
             // 
@@ -257,61 +174,28 @@
             // 
             this.toolStripLabel7.Name = "toolStripLabel7";
             this.toolStripLabel7.RightToLeftAutoMirrorImage = true;
-            this.toolStripLabel7.Size = new System.Drawing.Size(66, 24);
-            this.toolStripLabel7.Text = "Quay Lai";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbtnAdd,
-            this.toolStripLabel1,
-            this.tsbtnFix,
-            this.toolStripLabel2,
-            this.tsbtnDelete,
-            this.toolStripLabel3,
-            this.tsbtnSave,
-            this.toolStripLabel4,
-            this.toolStripButton5,
-            this.toolStripLabel5,
-            this.toolStripButton6,
-            this.toolStripLabel6,
-            this.toolStripButton7,
-            this.toolStripLabel7});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripLabel7.Size = new System.Drawing.Size(21, 24);
+            this.toolStripLabel7.Text = "In";
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(667, 201);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Location = new System.Drawing.Point(662, 63);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
-            this.btnBack.TabIndex = 5;
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // DanhSach
+            // BangHeSoLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "DanhSach";
-            this.Text = "Danh Sách Nhân Viên";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "BangHeSoLuong";
+            this.Text = "Bảng Hệ Số Lương";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -320,16 +204,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBoxIDRoom;
-        private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.Label lbIDRoom;
-        private System.Windows.Forms.Button btnDetails;
-        private System.Windows.Forms.DataGridView dataGridView1;
+
+        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbtnAdd;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton tsbtnFix;
@@ -344,7 +220,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Button btnBack;
     }
 }

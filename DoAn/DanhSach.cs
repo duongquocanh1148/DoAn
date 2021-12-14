@@ -63,5 +63,10 @@ namespace DoAn
         {
             this.Close();
         }
+
+        private void tsbtnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

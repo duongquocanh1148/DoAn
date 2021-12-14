@@ -84,6 +84,12 @@ namespace DoAn
             this.Close();
         }
 
-       
+        private void tsbtnAdd_Click(object sender, EventArgs e)
+        {
+            FormThemChucVu f = new FormThemChucVu();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }
