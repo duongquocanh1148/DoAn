@@ -5,6 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
+        // sửa lại code
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
