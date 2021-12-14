@@ -8,6 +8,6 @@ namespace DoAn
 {
     class ConnectSQL
     {
-        public static string connectString = @"Data Source=LAPTOP-71APS8EB\SQLEXPRESS;Initial Catalog=CNPM;Integrated Security=True";
+        public static string connectString = @"Data Source=LAPTOP-ICRUG9KG\SQLEXPRESS;Initial Catalog=CNPM;Integrated Security=True";
     }
 }
