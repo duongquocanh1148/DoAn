@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,9 +29,21 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            gvChucVu.DataSource = GetAllChucVu().Tables[0];
         }
-
+        DataSet GetAllChucVu()
+        {
+            DataSet data = new DataSet();
+            string query = "select * from CHUCVU";
+            using (SqlConnection connect = new SqlConnection(ConnectSQL.connectString))
+            {
+                connect.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
+                adapter.Fill(data);
+                connect.Close();
+            }
+            return data;
+        }
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
 
