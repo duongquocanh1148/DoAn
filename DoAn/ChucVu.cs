@@ -13,6 +13,10 @@ namespace DoAn
 {
     public partial class ChucVu : Form
     {
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlConnection connect;
+        SqlCommand cmd;
+        DataTable table = new DataTable();
         public ChucVu()
         {
             InitializeComponent();
@@ -29,22 +33,21 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gvChucVu.DataSource = GetAllChucVu().Tables[0];
+            connect = new SqlConnection(ConnectSQL.connectString);
+            connect.Open();
+            loadData();
         }
-        DataSet GetAllChucVu()
+       
+        void loadData()
         {
-            DataSet data = new DataSet();
-            string query = "select * from CHUCVU";
-            using (SqlConnection connect = new SqlConnection(ConnectSQL.connectString))
-            {
-                connect.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
-                adapter.Fill(data);
-                connect.Close();
-            }
-            return data;
+            cmd = connect.CreateCommand();
+            cmd.CommandText = "Select * from CHUCVU ";
+            adapter.SelectCommand = cmd;
+            table.Clear();
+            adapter.Fill(table);
+            gvChucVu.DataSource = table;
         }
-        
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {

@@ -32,10 +32,8 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbIDChucVu = new System.Windows.Forms.Label();
             this.lbNameChucVu = new System.Windows.Forms.Label();
-            this.lbHeSoPhuCap = new System.Windows.Forms.Label();
-            this.textBoxIDChucVu = new System.Windows.Forms.TextBox();
-            this.textBoxNameChucVu = new System.Windows.Forms.TextBox();
-            this.textBoxHeSoPhuCap = new System.Windows.Forms.TextBox();
+            this.tbxIDChucVu = new System.Windows.Forms.TextBox();
+            this.tbxNameChucVu = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -77,35 +75,19 @@
             this.lbNameChucVu.TabIndex = 3;
             this.lbNameChucVu.Text = "Tên Chức Vụ";
             // 
-            // lbHeSoPhuCap
+            // tbxIDChucVu
             // 
-            this.lbHeSoPhuCap.AutoSize = true;
-            this.lbHeSoPhuCap.Location = new System.Drawing.Point(43, 208);
-            this.lbHeSoPhuCap.Name = "lbHeSoPhuCap";
-            this.lbHeSoPhuCap.Size = new System.Drawing.Size(99, 16);
-            this.lbHeSoPhuCap.TabIndex = 4;
-            this.lbHeSoPhuCap.Text = "Hệ Số Phụ Cấp";
+            this.tbxIDChucVu.Location = new System.Drawing.Point(150, 111);
+            this.tbxIDChucVu.Name = "tbxIDChucVu";
+            this.tbxIDChucVu.Size = new System.Drawing.Size(252, 22);
+            this.tbxIDChucVu.TabIndex = 5;
             // 
-            // textBoxIDChucVu
+            // tbxNameChucVu
             // 
-            this.textBoxIDChucVu.Location = new System.Drawing.Point(150, 111);
-            this.textBoxIDChucVu.Name = "textBoxIDChucVu";
-            this.textBoxIDChucVu.Size = new System.Drawing.Size(252, 22);
-            this.textBoxIDChucVu.TabIndex = 5;
-            // 
-            // textBoxNameChucVu
-            // 
-            this.textBoxNameChucVu.Location = new System.Drawing.Point(150, 156);
-            this.textBoxNameChucVu.Name = "textBoxNameChucVu";
-            this.textBoxNameChucVu.Size = new System.Drawing.Size(252, 22);
-            this.textBoxNameChucVu.TabIndex = 6;
-            // 
-            // textBoxHeSoPhuCap
-            // 
-            this.textBoxHeSoPhuCap.Location = new System.Drawing.Point(150, 205);
-            this.textBoxHeSoPhuCap.Name = "textBoxHeSoPhuCap";
-            this.textBoxHeSoPhuCap.Size = new System.Drawing.Size(252, 22);
-            this.textBoxHeSoPhuCap.TabIndex = 7;
+            this.tbxNameChucVu.Location = new System.Drawing.Point(150, 156);
+            this.tbxNameChucVu.Name = "tbxNameChucVu";
+            this.tbxNameChucVu.Size = new System.Drawing.Size(252, 22);
+            this.tbxNameChucVu.TabIndex = 6;
             // 
             // btnSave
             // 
@@ -123,10 +105,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBoxHeSoPhuCap);
-            this.Controls.Add(this.textBoxNameChucVu);
-            this.Controls.Add(this.textBoxIDChucVu);
-            this.Controls.Add(this.lbHeSoPhuCap);
+            this.Controls.Add(this.tbxNameChucVu);
+            this.Controls.Add(this.tbxIDChucVu);
             this.Controls.Add(this.lbNameChucVu);
             this.Controls.Add(this.lbIDChucVu);
             this.Controls.Add(this.lbTitle);
@@ -144,10 +124,8 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lbIDChucVu;
         private System.Windows.Forms.Label lbNameChucVu;
-        private System.Windows.Forms.Label lbHeSoPhuCap;
-        private System.Windows.Forms.TextBox textBoxIDChucVu;
-        private System.Windows.Forms.TextBox textBoxNameChucVu;
-        private System.Windows.Forms.TextBox textBoxHeSoPhuCap;
+        private System.Windows.Forms.TextBox tbxIDChucVu;
+        private System.Windows.Forms.TextBox tbxNameChucVu;
         private System.Windows.Forms.Button btnSave;
     }
 }
