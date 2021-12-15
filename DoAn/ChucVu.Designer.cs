@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChucVu));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnAdd = new System.Windows.Forms.ToolStripButton();
@@ -38,17 +39,16 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnUpdate = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
+            this.tsbtnBack = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.gvChucVu = new System.Windows.Forms.DataGridView();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbxIDChucVu = new System.Windows.Forms.TextBox();
+            this.tbxNameChucVu = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvChucVu)).BeginInit();
             this.SuspendLayout();
@@ -63,20 +63,15 @@
             this.toolStripLabel2,
             this.tsbtnDelete,
             this.toolStripLabel3,
-            this.tsbtnSave,
-            this.toolStripLabel4,
-            this.toolStripButton5,
-            this.toolStripLabel5,
-            this.toolStripButton6,
+            this.tsbtnUpdate,
             this.toolStripLabel6,
-            this.toolStripButton7,
-            this.toolStripLabel7});
+            this.tsbtnBack,
+            this.toolStripLabel5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            
             // 
             // tsbtnAdd
             // 
@@ -117,6 +112,7 @@
             this.tsbtnDelete.Name = "tsbtnDelete";
             this.tsbtnDelete.Size = new System.Drawing.Size(29, 24);
             this.tsbtnDelete.Text = "Xóa";
+            this.tsbtnDelete.Click += new System.EventHandler(this.tsbtnDelete_Click);
             // 
             // toolStripLabel3
             // 
@@ -124,44 +120,15 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(35, 24);
             this.toolStripLabel3.Text = "Xóa";
             // 
-            // tsbtnSave
+            // tsbtnUpdate
             // 
-            this.tsbtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnSave.Image = global::DoAn.Properties.Resources.toolStripButton4_Image;
-            this.tsbtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnSave.Name = "tsbtnSave";
-            this.tsbtnSave.Size = new System.Drawing.Size(29, 24);
-            this.tsbtnSave.Text = "Lưu";
-            // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(33, 24);
-            this.toolStripLabel4.Text = "Lưu";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::DoAn.Properties.Resources.toolStripButton5_Image;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton5.Text = "Hủy";
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(35, 24);
-            this.toolStripLabel5.Text = "Hủy";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = global::DoAn.Properties.Resources.toolStripButton6_Image;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton6.Text = "Cập Nhật";
+            this.tsbtnUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnUpdate.Image = global::DoAn.Properties.Resources.toolStripButton6_Image;
+            this.tsbtnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnUpdate.Name = "tsbtnUpdate";
+            this.tsbtnUpdate.Size = new System.Drawing.Size(29, 24);
+            this.tsbtnUpdate.Text = "Cập Nhật";
+            this.tsbtnUpdate.Click += new System.EventHandler(this.tsbtnUpdate_Click);
             // 
             // toolStripLabel6
             // 
@@ -169,27 +136,27 @@
             this.toolStripLabel6.Size = new System.Drawing.Size(71, 24);
             this.toolStripLabel6.Text = "Cập Nhật";
             // 
-            // toolStripButton7
+            // tsbtnBack
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = global::DoAn.Properties.Resources.toolStripButton7_Image;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton7.Text = "In";
+            this.tsbtnBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnBack.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnBack.Image")));
+            this.tsbtnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnBack.Name = "tsbtnBack";
+            this.tsbtnBack.Size = new System.Drawing.Size(29, 24);
+            this.tsbtnBack.Text = "Hủy";
+            this.tsbtnBack.Click += new System.EventHandler(this.tsbtnBack_Click);
             // 
-            // toolStripLabel7
+            // toolStripLabel5
             // 
-            this.toolStripLabel7.Name = "toolStripLabel7";
-            this.toolStripLabel7.RightToLeftAutoMirrorImage = true;
-            this.toolStripLabel7.Size = new System.Drawing.Size(21, 24);
-            this.toolStripLabel7.Text = "In";
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(63, 24);
+            this.toolStripLabel5.Text = "Quay lại";
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lbTitle.Location = new System.Drawing.Point(288, 84);
+            this.lbTitle.Location = new System.Drawing.Point(286, 48);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(176, 29);
             this.lbTitle.TabIndex = 2;
@@ -199,31 +166,56 @@
             // 
             this.gvChucVu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvChucVu.Location = new System.Drawing.Point(0, 130);
+            this.gvChucVu.Location = new System.Drawing.Point(0, 93);
             this.gvChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gvChucVu.Name = "gvChucVu";
             this.gvChucVu.RowHeadersWidth = 51;
             this.gvChucVu.RowTemplate.Height = 24;
-            this.gvChucVu.Size = new System.Drawing.Size(800, 322);
+            this.gvChucVu.Size = new System.Drawing.Size(800, 214);
             this.gvChucVu.TabIndex = 4;
+            this.gvChucVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvChucVu_CellContentClick);
             // 
-            // btnBack
+            // label1
             // 
-            this.btnBack.Location = new System.Drawing.Point(668, 89);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
-            this.btnBack.TabIndex = 5;
-            this.btnBack.Text = "Quay lại";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 326);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Mã chức vụ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(399, 326);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Tên chức vụ";
+            // 
+            // tbxIDChucVu
+            // 
+            this.tbxIDChucVu.Location = new System.Drawing.Point(138, 326);
+            this.tbxIDChucVu.Name = "tbxIDChucVu";
+            this.tbxIDChucVu.Size = new System.Drawing.Size(100, 22);
+            this.tbxIDChucVu.TabIndex = 8;
+            // 
+            // tbxNameChucVu
+            // 
+            this.tbxNameChucVu.Location = new System.Drawing.Point(496, 325);
+            this.tbxNameChucVu.Name = "tbxNameChucVu";
+            this.tbxNameChucVu.Size = new System.Drawing.Size(100, 22);
+            this.tbxNameChucVu.TabIndex = 9;
             // 
             // ChucVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.tbxNameChucVu);
+            this.Controls.Add(this.tbxIDChucVu);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.gvChucVu);
@@ -248,16 +240,15 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton tsbtnDelete;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripButton tsbtnSave;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton tsbtnBack;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton tsbtnUpdate;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel7;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.DataGridView gvChucVu;
-        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbxIDChucVu;
+        private System.Windows.Forms.TextBox tbxNameChucVu;
     }
 }
