@@ -40,7 +40,7 @@ namespace DoAn
         {
             connect.Open();
             cmd = connect.CreateCommand();
-            cmd.CommandText = "INSERT INTO CHUCVU VALUES ('"+tbxIDChucVu+"', '"+tbxNameChucVu+"')";
+            cmd.CommandText = "insert into CHUCVU values ('"+tbxIDChucVu.Text+"','"+tbxNameChucVu.Text+"')";
             cmd.ExecuteNonQuery();
             loadData();
             connect.Close();
