@@ -48,18 +48,48 @@ namespace DoAn
             gvChucVu.DataSource = table;
         }
 
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
+        
 
         private void tsbtnAdd_Click(object sender, EventArgs e)
         {
-            FormThemChucVu f = new FormThemChucVu();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            
+            cmd = connect.CreateCommand();
+            cmd.CommandText = "insert into CHUCVU (Machucvu,Tenchucvu) values ('" + tbxIDChucVu.Text + "', '" + tbxNameChucVu.Text + "')";
+            if(tbxIDChucVu.Text != "" || tbxNameChucVu.Text != "") cmd.ExecuteNonQuery();
+            else  MessageBox.Show("Vui long nhap ma chuc vu ");
+
+            loadData();                    
+        }
+
+        private void gvChucVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {           
+            int i = gvChucVu.CurrentRow.Index;
+            tbxIDChucVu.Text = gvChucVu.Rows[i].Cells[0].Value.ToString();
+            tbxNameChucVu.Text = gvChucVu.Rows[i].Cells[1].Value.ToString();         
+        }
+
+        private void tsbtnUpdate_Click(object sender, EventArgs e)
+        {
+            loadData();
+            MessageBox.Show("Update Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void tsbtnDelete_Click(object sender, EventArgs e)
+        {
+            int i = gvChucVu.CurrentRow.Index;
+
+            cmd = connect.CreateCommand();
+            cmd.CommandText = "delete from CHUCVU WHERE Machucvu='"+gvChucVu.Rows[i].Cells[0].Value.ToString()+"'";
+            cmd.ExecuteNonQuery();  
+            loadData();          
+            MessageBox.Show("Delete Completed", "Notification!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+        }
+
+        private void tsbtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
