@@ -13,9 +13,19 @@ namespace DoAn
 {
     public partial class DanhSach : Form
     {
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlConnection connect;
+        SqlCommand cmd;
+        DataTable table = new DataTable();
         public DanhSach()
         {
             InitializeComponent();
+        }
+        public DanhSach(TextBox t)
+        {
+            int i = gvDSNV.CurrentRow.Index;
+            txbMaNV.Text = gvDSNV.Rows[i].Cells[0].Value.ToString();
+            t.Text = txbMaNV.Text;
         }
         
 
@@ -26,23 +36,20 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = GetAllNhanVien().Tables[0];
-          
+            connect = new SqlConnection(ConnectSQL.connectString);
+            connect.Open();
+            loadData();
         }
-        DataSet GetAllNhanVien()
+        void loadData()
         {
-            DataSet data = new DataSet();
-            string query = "select * from NHANVIEN";
-            using (SqlConnection connect = new SqlConnection(ConnectSQL.connectString))
-            {
-                connect.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
-                adapter.Fill(data);
-                connect.Close();
-            }
-            return data;
+            cmd = connect.CreateCommand();
+            cmd.CommandText = "Select * from NHANVIEN ";
+            adapter.SelectCommand = cmd;
+            table.Clear();
+            adapter.Fill(table);
+            gvDSNV.DataSource = table;
         }
-           
+
         private void chứcVụToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChucVu f = new ChucVu();    
@@ -67,6 +74,27 @@ namespace DoAn
         private void tsbtnAdd_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gvDSNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = gvDSNV.CurrentRow.Index;
+            txbMaNV.Text = gvDSNV.Rows[i].Cells[0].Value.ToString();
+
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            ChiTietNhanVien f = new ChiTietNhanVien();
+            /*cmd = connect.CreateCommand();
+            cmd.CommandText = "Select * from CTNHANVIEN WHERE MaNV = '" + txbMaNV.Text + "'";
+            adapter.SelectCommand = cmd;
+            table.Clear();
+            adapter.Fill(table);
+            ChiTietNhanVien.gvCTNV.DataSource = table;*/
+            this.Close();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

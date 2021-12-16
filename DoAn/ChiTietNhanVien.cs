@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,13 @@ using System.Windows.Forms;
 
 namespace DoAn
 {
+
     public partial class ChiTietNhanVien : Form
     {
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlConnection connect;
+        SqlCommand cmd;
+        DataTable table = new DataTable();
         public ChiTietNhanVien()
         {
             InitializeComponent();
@@ -28,9 +34,21 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            connect = new SqlConnection(ConnectSQL.connectString);
+            connect.Open();
+            loadData();
         }
-
+        void loadData()
+        {
+            
+            DanhSach danhSach = new DanhSach(txbMaNV);          
+            cmd = connect.CreateCommand();
+            cmd.CommandText = "Select * from CTNHANVIEN WHERE MaNV = '"+txbMaNV.Text+"'";
+            adapter.SelectCommand = cmd;
+            table.Clear();
+            adapter.Fill(table);
+            gvCTNV.DataSource = table;
+        }
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
 
@@ -69,6 +87,11 @@ namespace DoAn
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tsbtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

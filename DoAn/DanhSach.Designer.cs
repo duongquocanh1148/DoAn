@@ -35,11 +35,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDetails = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBoxIDRoom = new System.Windows.Forms.TextBox();
-            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.txbMaPhong = new System.Windows.Forms.TextBox();
+            this.txbMaNV = new System.Windows.Forms.TextBox();
             this.lbIDRoom = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gvDSNV = new System.Windows.Forms.DataGridView();
             this.tsbtnAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tsbtnFix = new System.Windows.Forms.ToolStripButton();
@@ -57,7 +57,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDSNV)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,8 +75,8 @@
             // 
             this.groupBox1.Controls.Add(this.btnDetails);
             this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.textBoxIDRoom);
-            this.groupBox1.Controls.Add(this.textBoxID);
+            this.groupBox1.Controls.Add(this.txbMaPhong);
+            this.groupBox1.Controls.Add(this.txbMaNV);
             this.groupBox1.Controls.Add(this.lbIDRoom);
             this.groupBox1.Controls.Add(this.lbID);
             this.groupBox1.Location = new System.Drawing.Point(0, 58);
@@ -96,6 +96,7 @@
             this.btnDetails.TabIndex = 5;
             this.btnDetails.Text = "Xem Chi Tiết";
             this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnSearch
             // 
@@ -107,21 +108,21 @@
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // textBoxIDRoom
+            // txbMaPhong
             // 
-            this.textBoxIDRoom.Location = new System.Drawing.Point(107, 80);
-            this.textBoxIDRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxIDRoom.Name = "textBoxIDRoom";
-            this.textBoxIDRoom.Size = new System.Drawing.Size(483, 22);
-            this.textBoxIDRoom.TabIndex = 3;
+            this.txbMaPhong.Location = new System.Drawing.Point(107, 80);
+            this.txbMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbMaPhong.Name = "txbMaPhong";
+            this.txbMaPhong.Size = new System.Drawing.Size(483, 22);
+            this.txbMaPhong.TabIndex = 3;
             // 
-            // textBoxID
+            // txbMaNV
             // 
-            this.textBoxID.Location = new System.Drawing.Point(107, 30);
-            this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(483, 22);
-            this.textBoxID.TabIndex = 2;
+            this.txbMaNV.Location = new System.Drawing.Point(107, 30);
+            this.txbMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbMaNV.Name = "txbMaNV";
+            this.txbMaNV.Size = new System.Drawing.Size(483, 22);
+            this.txbMaNV.TabIndex = 2;
             // 
             // lbIDRoom
             // 
@@ -141,17 +142,18 @@
             this.lbID.TabIndex = 0;
             this.lbID.Text = "Mã Số";
             // 
-            // dataGridView1
+            // gvDSNV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 236);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 217);
-            this.dataGridView1.TabIndex = 4;
+            this.gvDSNV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gvDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvDSNV.Location = new System.Drawing.Point(0, 236);
+            this.gvDSNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gvDSNV.Name = "gvDSNV";
+            this.gvDSNV.RowHeadersWidth = 51;
+            this.gvDSNV.RowTemplate.Height = 24;
+            this.gvDSNV.Size = new System.Drawing.Size(800, 217);
+            this.gvDSNV.TabIndex = 4;
+            this.gvDSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDSNV_CellContentClick);
             // 
             // tsbtnAdd
             // 
@@ -287,7 +289,7 @@
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(667, 201);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 28);
             this.btnBack.TabIndex = 5;
@@ -304,14 +306,14 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gvDSNV);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DanhSach";
             this.Text = "Danh Sách Nhân Viên";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDSNV)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -325,11 +327,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBoxIDRoom;
-        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.TextBox txbMaPhong;
+        private System.Windows.Forms.TextBox txbMaNV;
         private System.Windows.Forms.Label lbIDRoom;
         private System.Windows.Forms.Button btnDetails;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gvDSNV;
         private System.Windows.Forms.ToolStripButton tsbtnAdd;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton tsbtnFix;
