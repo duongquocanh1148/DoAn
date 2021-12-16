@@ -14,19 +14,13 @@ namespace DoAn
     public partial class DanhSach : Form
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
-        SqlConnection connect;
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
         SqlCommand cmd;
         DataTable table = new DataTable();
         public DanhSach()
         {
             InitializeComponent();
-        }
-        public DanhSach(TextBox t)
-        {
-            int i = gvDSNV.CurrentRow.Index;
-            txbMaNV.Text = gvDSNV.Rows[i].Cells[0].Value.ToString();
-            t.Text = txbMaNV.Text;
-        }
+        }      
         
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,29 +29,28 @@ namespace DoAn
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            connect = new SqlConnection(ConnectSQL.connectString);
-            connect.Open();
+        {                      
             loadData();
         }
         void loadData()
         {
+            connect.Open();
             cmd = connect.CreateCommand();
             cmd.CommandText = "Select * from NHANVIEN ";
             adapter.SelectCommand = cmd;
             table.Clear();
             adapter.Fill(table);
             gvDSNV.DataSource = table;
+            int i = gvDSNV.CurrentRow.Index;
+            txbMaNV.Text = gvDSNV.Rows[i].Cells[0].Value.ToString();
+            txbMaPhong.Text = gvDSNV.Rows[i].Cells[3].Value.ToString();
         }
 
         private void chứcVụToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChucVu f = new ChucVu();    
             f.ShowDialog();
-        }
-
-       
-
+        }     
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Main f = new Main();
@@ -80,18 +73,23 @@ namespace DoAn
         {
             int i = gvDSNV.CurrentRow.Index;
             txbMaNV.Text = gvDSNV.Rows[i].Cells[0].Value.ToString();
-
+            txbMaPhong.Text = gvDSNV.Rows[i].Cells[3].Value.ToString();
         }
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
             ChiTietNhanVien f = new ChiTietNhanVien();
-            /*cmd = connect.CreateCommand();
-            cmd.CommandText = "Select * from CTNHANVIEN WHERE MaNV = '" + txbMaNV.Text + "'";
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"select Distinct NHANVIEN.MaNV, NgaySinh, HotenNV, GioiTinh, NoiSinh, SoBHXH,Tenchucvu,Tenphong,NguyenQuan, HKThuongTru,HKTamTru,NgayCap,NoiCap,Quoctich,NgayvaoDoan,NgayvaoDang,HocVan,ChuyenMon
+                                from CTNHANVIEN
+                                join NHANVIEN on CTNHANVIEN.MaNV = NHANVIEN.MaNV
+                                join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
+                                join PHONG on PHONG.Maphong = NHANVIEN.Maphong
+                                WHERE CTNHANVIEN.MaNV = '" + txbMaNV.Text + "'";
             adapter.SelectCommand = cmd;
             table.Clear();
             adapter.Fill(table);
-            ChiTietNhanVien.gvCTNV.DataSource = table;*/
+            f.gvCTNV.DataSource = table;
             this.Close();
             f.ShowDialog();
             this.Show();

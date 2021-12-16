@@ -786,7 +786,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.DataGridView gvCTNV;
+        public System.Windows.Forms.DataGridView gvCTNV;
         private System.Windows.Forms.TextBox txbMaNV;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;

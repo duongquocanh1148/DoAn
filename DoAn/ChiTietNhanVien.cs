@@ -34,21 +34,9 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            connect = new SqlConnection(ConnectSQL.connectString);
-            connect.Open();
-            loadData();
+          
         }
-        void loadData()
-        {
-            
-            DanhSach danhSach = new DanhSach(txbMaNV);          
-            cmd = connect.CreateCommand();
-            cmd.CommandText = "Select * from CTNHANVIEN WHERE MaNV = '"+txbMaNV.Text+"'";
-            adapter.SelectCommand = cmd;
-            table.Clear();
-            adapter.Fill(table);
-            gvCTNV.DataSource = table;
-        }
+        
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
 
