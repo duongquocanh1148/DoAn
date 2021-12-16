@@ -67,7 +67,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.tbxID = new System.Windows.Forms.TextBox();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.tbxHoTen = new System.Windows.Forms.TextBox();
             this.tbxNoiSinh = new System.Windows.Forms.TextBox();
             this.tbxChucVu = new System.Windows.Forms.TextBox();
             this.tbxNoiCT = new System.Windows.Forms.TextBox();
@@ -112,7 +112,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1063, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripButton1
             // 
@@ -240,7 +239,6 @@
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Mã Số";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -458,12 +456,12 @@
             this.tbxID.Size = new System.Drawing.Size(319, 22);
             this.tbxID.TabIndex = 26;
             // 
-            // txtHoTen
+            // tbxHoTen
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(99, 181);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(296, 22);
-            this.txtHoTen.TabIndex = 27;
+            this.tbxHoTen.Location = new System.Drawing.Point(99, 181);
+            this.tbxHoTen.Name = "tbxHoTen";
+            this.tbxHoTen.Size = new System.Drawing.Size(296, 22);
+            this.tbxHoTen.TabIndex = 27;
             // 
             // tbxNoiSinh
             // 
@@ -614,7 +612,7 @@
             this.Controls.Add(this.tbxNoiCT);
             this.Controls.Add(this.tbxChucVu);
             this.Controls.Add(this.tbxNoiSinh);
-            this.Controls.Add(this.txtHoTen);
+            this.Controls.Add(this.tbxHoTen);
             this.Controls.Add(this.tbxID);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -688,7 +686,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox tbxID;
-        private System.Windows.Forms.TextBox txtHoTen;
+        private System.Windows.Forms.TextBox tbxHoTen;
         private System.Windows.Forms.TextBox tbxNoiSinh;
         private System.Windows.Forms.TextBox tbxChucVu;
         private System.Windows.Forms.TextBox tbxNoiCT;
