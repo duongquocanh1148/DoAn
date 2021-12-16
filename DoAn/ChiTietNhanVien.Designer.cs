@@ -67,25 +67,25 @@
             this.label22 = new System.Windows.Forms.Label();
             this.gvCTNV = new System.Windows.Forms.DataGridView();
             this.txbMaNV = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txbHoTen = new System.Windows.Forms.TextBox();
+            this.txbNoiSinh = new System.Windows.Forms.TextBox();
+            this.txbChucVu = new System.Windows.Forms.TextBox();
+            this.txbNoiCT = new System.Windows.Forms.TextBox();
+            this.txbNguyenQuan = new System.Windows.Forms.TextBox();
+            this.txbHoKhauThuongTru = new System.Windows.Forms.TextBox();
+            this.txbHoKhauTamTru = new System.Windows.Forms.TextBox();
+            this.txbCCCD = new System.Windows.Forms.TextBox();
+            this.txbQuocTich = new System.Windows.Forms.TextBox();
+            this.txbNgayVaoDoan = new System.Windows.Forms.TextBox();
+            this.txbTrinhDoHocVan = new System.Windows.Forms.TextBox();
+            this.txbBHXH = new System.Windows.Forms.TextBox();
+            this.txbGioiTinh = new System.Windows.Forms.TextBox();
+            this.txbNgaySinh = new System.Windows.Forms.TextBox();
+            this.txbNgayCap = new System.Windows.Forms.TextBox();
+            this.txbNoiOTapThe = new System.Windows.Forms.TextBox();
+            this.txbNgayVaoDang = new System.Windows.Forms.TextBox();
+            this.txbTrinhDoChuyenMon = new System.Windows.Forms.TextBox();
+            this.txbNoiCap = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -114,7 +114,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1353, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1353, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,7 +123,7 @@
             this.trangChủToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thoátToolStripMenuItem});
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
-            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
             this.trangChủToolStripMenuItem.Text = "Trang Chủ";
             // 
             // thoátToolStripMenuItem
@@ -139,7 +139,7 @@
             this.bảngHệSốLươngToolStripMenuItem,
             this.chứcVụToolStripMenuItem});
             this.danhMụcToolStripMenuItem.Name = "danhMụcToolStripMenuItem";
-            this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
+            this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(90, 26);
             this.danhMụcToolStripMenuItem.Text = "Danh Mục";
             // 
             // bảngHệSốLươngToolStripMenuItem
@@ -161,7 +161,7 @@
             this.nhàTậpThểToolStripMenuItem,
             this.tínhTiềnNhàTậpThểToolStripMenuItem});
             this.nhânSựToolStripMenuItem.Name = "nhânSựToolStripMenuItem";
-            this.nhânSựToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.nhânSựToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
             this.nhânSựToolStripMenuItem.Text = "Nhân Sự";
             // 
             // danhSáchToolStripMenuItem
@@ -185,14 +185,14 @@
             // tiềnLươngToolStripMenuItem
             // 
             this.tiềnLươngToolStripMenuItem.Name = "tiềnLươngToolStripMenuItem";
-            this.tiềnLươngToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
+            this.tiềnLươngToolStripMenuItem.Size = new System.Drawing.Size(94, 26);
             this.tiềnLươngToolStripMenuItem.Text = "Phòng Ban";
             this.tiềnLươngToolStripMenuItem.Click += new System.EventHandler(this.tiềnLươngToolStripMenuItem_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
             this.trợGiúpToolStripMenuItem.Text = "Trợ Giúp";
             // 
             // label1
@@ -413,7 +413,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(125, 20);
             this.label20.TabIndex = 22;
-            this.label20.Text = "Ngày Vào Đoàn";
+            this.label20.Text = "Ngày Vào Đảng";
             // 
             // label21
             // 
@@ -455,138 +455,138 @@
             this.txbMaNV.Size = new System.Drawing.Size(289, 22);
             this.txbMaNV.TabIndex = 26;
             // 
-            // textBox2
+            // txbHoTen
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 148);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(266, 22);
-            this.textBox2.TabIndex = 27;
+            this.txbHoTen.Location = new System.Drawing.Point(99, 148);
+            this.txbHoTen.Name = "txbHoTen";
+            this.txbHoTen.Size = new System.Drawing.Size(266, 22);
+            this.txbHoTen.TabIndex = 27;
             // 
-            // textBox3
+            // txbNoiSinh
             // 
-            this.textBox3.Location = new System.Drawing.Point(99, 180);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(266, 22);
-            this.textBox3.TabIndex = 28;
+            this.txbNoiSinh.Location = new System.Drawing.Point(99, 180);
+            this.txbNoiSinh.Name = "txbNoiSinh";
+            this.txbNoiSinh.Size = new System.Drawing.Size(266, 22);
+            this.txbNoiSinh.TabIndex = 28;
             // 
-            // textBox4
+            // txbChucVu
             // 
-            this.textBox4.Location = new System.Drawing.Point(99, 212);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(266, 22);
-            this.textBox4.TabIndex = 29;
+            this.txbChucVu.Location = new System.Drawing.Point(99, 212);
+            this.txbChucVu.Name = "txbChucVu";
+            this.txbChucVu.Size = new System.Drawing.Size(266, 22);
+            this.txbChucVu.TabIndex = 29;
             // 
-            // textBox5
+            // txbNoiCT
             // 
-            this.textBox5.Location = new System.Drawing.Point(129, 242);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(266, 22);
-            this.textBox5.TabIndex = 30;
+            this.txbNoiCT.Location = new System.Drawing.Point(129, 242);
+            this.txbNoiCT.Name = "txbNoiCT";
+            this.txbNoiCT.Size = new System.Drawing.Size(266, 22);
+            this.txbNoiCT.TabIndex = 30;
             // 
-            // textBox6
+            // txbNguyenQuan
             // 
-            this.textBox6.Location = new System.Drawing.Point(129, 270);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(266, 22);
-            this.textBox6.TabIndex = 31;
+            this.txbNguyenQuan.Location = new System.Drawing.Point(129, 270);
+            this.txbNguyenQuan.Name = "txbNguyenQuan";
+            this.txbNguyenQuan.Size = new System.Drawing.Size(266, 22);
+            this.txbNguyenQuan.TabIndex = 31;
             // 
-            // textBox7
+            // txbHoKhauThuongTru
             // 
-            this.textBox7.Location = new System.Drawing.Point(187, 298);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(266, 22);
-            this.textBox7.TabIndex = 32;
+            this.txbHoKhauThuongTru.Location = new System.Drawing.Point(187, 298);
+            this.txbHoKhauThuongTru.Name = "txbHoKhauThuongTru";
+            this.txbHoKhauThuongTru.Size = new System.Drawing.Size(266, 22);
+            this.txbHoKhauThuongTru.TabIndex = 32;
             // 
-            // textBox8
+            // txbHoKhauTamTru
             // 
-            this.textBox8.Location = new System.Drawing.Point(163, 330);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(293, 22);
-            this.textBox8.TabIndex = 33;
+            this.txbHoKhauTamTru.Location = new System.Drawing.Point(163, 330);
+            this.txbHoKhauTamTru.Name = "txbHoKhauTamTru";
+            this.txbHoKhauTamTru.Size = new System.Drawing.Size(293, 22);
+            this.txbHoKhauTamTru.TabIndex = 33;
             // 
-            // textBox9
+            // txbCCCD
             // 
-            this.textBox9.Location = new System.Drawing.Point(129, 360);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(236, 22);
-            this.textBox9.TabIndex = 34;
+            this.txbCCCD.Location = new System.Drawing.Point(129, 360);
+            this.txbCCCD.Name = "txbCCCD";
+            this.txbCCCD.Size = new System.Drawing.Size(236, 22);
+            this.txbCCCD.TabIndex = 34;
             // 
-            // textBox10
+            // txbQuocTich
             // 
-            this.textBox10.Location = new System.Drawing.Point(104, 390);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(261, 22);
-            this.textBox10.TabIndex = 35;
+            this.txbQuocTich.Location = new System.Drawing.Point(104, 390);
+            this.txbQuocTich.Name = "txbQuocTich";
+            this.txbQuocTich.Size = new System.Drawing.Size(261, 22);
+            this.txbQuocTich.TabIndex = 35;
             // 
-            // textBox11
+            // txbNgayVaoDoan
             // 
-            this.textBox11.Location = new System.Drawing.Point(143, 418);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(218, 22);
-            this.textBox11.TabIndex = 36;
+            this.txbNgayVaoDoan.Location = new System.Drawing.Point(143, 418);
+            this.txbNgayVaoDoan.Name = "txbNgayVaoDoan";
+            this.txbNgayVaoDoan.Size = new System.Drawing.Size(218, 22);
+            this.txbNgayVaoDoan.TabIndex = 36;
             // 
-            // textBox12
+            // txbTrinhDoHocVan
             // 
-            this.textBox12.Location = new System.Drawing.Point(161, 450);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(204, 22);
-            this.textBox12.TabIndex = 37;
+            this.txbTrinhDoHocVan.Location = new System.Drawing.Point(161, 450);
+            this.txbTrinhDoHocVan.Name = "txbTrinhDoHocVan";
+            this.txbTrinhDoHocVan.Size = new System.Drawing.Size(204, 22);
+            this.txbTrinhDoHocVan.TabIndex = 37;
             // 
-            // textBox13
+            // txbBHXH
             // 
-            this.textBox13.Location = new System.Drawing.Point(435, 180);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(204, 22);
-            this.textBox13.TabIndex = 38;
+            this.txbBHXH.Location = new System.Drawing.Point(435, 180);
+            this.txbBHXH.Name = "txbBHXH";
+            this.txbBHXH.Size = new System.Drawing.Size(204, 22);
+            this.txbBHXH.TabIndex = 38;
             // 
-            // textBox14
+            // txbGioiTinh
             // 
-            this.textBox14.Location = new System.Drawing.Point(453, 148);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(204, 22);
-            this.textBox14.TabIndex = 39;
+            this.txbGioiTinh.Location = new System.Drawing.Point(453, 148);
+            this.txbGioiTinh.Name = "txbGioiTinh";
+            this.txbGioiTinh.Size = new System.Drawing.Size(204, 22);
+            this.txbGioiTinh.TabIndex = 39;
             // 
-            // textBox15
+            // txbNgaySinh
             // 
-            this.textBox15.Location = new System.Drawing.Point(462, 120);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(204, 22);
-            this.textBox15.TabIndex = 40;
+            this.txbNgaySinh.Location = new System.Drawing.Point(462, 120);
+            this.txbNgaySinh.Name = "txbNgaySinh";
+            this.txbNgaySinh.Size = new System.Drawing.Size(204, 22);
+            this.txbNgaySinh.TabIndex = 40;
             // 
-            // textBox16
+            // txbNgayCap
             // 
-            this.textBox16.Location = new System.Drawing.Point(453, 360);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(204, 22);
-            this.textBox16.TabIndex = 41;
+            this.txbNgayCap.Location = new System.Drawing.Point(453, 360);
+            this.txbNgayCap.Name = "txbNgayCap";
+            this.txbNgayCap.Size = new System.Drawing.Size(204, 22);
+            this.txbNgayCap.TabIndex = 41;
             // 
-            // textBox17
+            // txbNoiOTapThe
             // 
-            this.textBox17.Location = new System.Drawing.Point(530, 388);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(204, 22);
-            this.textBox17.TabIndex = 42;
+            this.txbNoiOTapThe.Location = new System.Drawing.Point(530, 388);
+            this.txbNoiOTapThe.Name = "txbNoiOTapThe";
+            this.txbNoiOTapThe.Size = new System.Drawing.Size(204, 22);
+            this.txbNoiOTapThe.TabIndex = 42;
             // 
-            // textBox18
+            // txbNgayVaoDang
             // 
-            this.textBox18.Location = new System.Drawing.Point(505, 418);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(204, 22);
-            this.textBox18.TabIndex = 43;
+            this.txbNgayVaoDang.Location = new System.Drawing.Point(505, 418);
+            this.txbNgayVaoDang.Name = "txbNgayVaoDang";
+            this.txbNgayVaoDang.Size = new System.Drawing.Size(204, 22);
+            this.txbNgayVaoDang.TabIndex = 43;
             // 
-            // textBox19
+            // txbTrinhDoChuyenMon
             // 
-            this.textBox19.Location = new System.Drawing.Point(551, 452);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(204, 22);
-            this.textBox19.TabIndex = 44;
+            this.txbTrinhDoChuyenMon.Location = new System.Drawing.Point(551, 452);
+            this.txbTrinhDoChuyenMon.Name = "txbTrinhDoChuyenMon";
+            this.txbTrinhDoChuyenMon.Size = new System.Drawing.Size(204, 22);
+            this.txbTrinhDoChuyenMon.TabIndex = 44;
             // 
-            // textBox20
+            // txbNoiCap
             // 
-            this.textBox20.Location = new System.Drawing.Point(733, 362);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(204, 22);
-            this.textBox20.TabIndex = 45;
+            this.txbNoiCap.Location = new System.Drawing.Point(733, 362);
+            this.txbNoiCap.Name = "txbNoiCap";
+            this.txbNoiCap.Size = new System.Drawing.Size(204, 22);
+            this.txbNoiCap.TabIndex = 45;
             // 
             // toolStrip1
             // 
@@ -602,9 +602,9 @@
             this.toolStripLabel6,
             this.tsbtnBack,
             this.toolStripLabel5});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 30);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1353, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1353, 31);
             this.toolStrip1.TabIndex = 46;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -614,13 +614,13 @@
             this.tsbtnAdd.Image = global::DoAn.Properties.Resources.toolStripButton1_Image;
             this.tsbtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnAdd.Name = "tsbtnAdd";
-            this.tsbtnAdd.Size = new System.Drawing.Size(29, 24);
+            this.tsbtnAdd.Size = new System.Drawing.Size(29, 28);
             this.tsbtnAdd.Text = "Thêm";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(46, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(46, 28);
             this.toolStripLabel1.Text = "Thêm";
             // 
             // tsbtnFix
@@ -629,13 +629,13 @@
             this.tsbtnFix.Image = global::DoAn.Properties.Resources.toolStripButton2_Image;
             this.tsbtnFix.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnFix.Name = "tsbtnFix";
-            this.tsbtnFix.Size = new System.Drawing.Size(29, 24);
+            this.tsbtnFix.Size = new System.Drawing.Size(29, 28);
             this.tsbtnFix.Text = "Sửa";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(34, 24);
+            this.toolStripLabel2.Size = new System.Drawing.Size(34, 28);
             this.toolStripLabel2.Text = "Sửa";
             // 
             // tsbtnDelete
@@ -644,13 +644,13 @@
             this.tsbtnDelete.Image = global::DoAn.Properties.Resources.toolStripButton3_Image;
             this.tsbtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnDelete.Name = "tsbtnDelete";
-            this.tsbtnDelete.Size = new System.Drawing.Size(29, 24);
+            this.tsbtnDelete.Size = new System.Drawing.Size(29, 28);
             this.tsbtnDelete.Text = "Xóa";
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(35, 24);
+            this.toolStripLabel3.Size = new System.Drawing.Size(35, 28);
             this.toolStripLabel3.Text = "Xóa";
             // 
             // tsbtnUpdate
@@ -659,13 +659,13 @@
             this.tsbtnUpdate.Image = global::DoAn.Properties.Resources.toolStripButton6_Image;
             this.tsbtnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnUpdate.Name = "tsbtnUpdate";
-            this.tsbtnUpdate.Size = new System.Drawing.Size(29, 24);
+            this.tsbtnUpdate.Size = new System.Drawing.Size(29, 28);
             this.tsbtnUpdate.Text = "Cập Nhật";
             // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(71, 24);
+            this.toolStripLabel6.Size = new System.Drawing.Size(71, 28);
             this.toolStripLabel6.Text = "Cập Nhật";
             // 
             // tsbtnBack
@@ -674,14 +674,14 @@
             this.tsbtnBack.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnBack.Image")));
             this.tsbtnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnBack.Name = "tsbtnBack";
-            this.tsbtnBack.Size = new System.Drawing.Size(29, 24);
+            this.tsbtnBack.Size = new System.Drawing.Size(29, 28);
             this.tsbtnBack.Text = "Hủy";
             this.tsbtnBack.Click += new System.EventHandler(this.tsbtnBack_Click);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(63, 24);
+            this.toolStripLabel5.Size = new System.Drawing.Size(63, 28);
             this.toolStripLabel5.Text = "Quay lại";
             // 
             // ChiTietNhanVien
@@ -690,25 +690,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 681);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.textBox20);
-            this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txbNoiCap);
+            this.Controls.Add(this.txbTrinhDoChuyenMon);
+            this.Controls.Add(this.txbNgayVaoDang);
+            this.Controls.Add(this.txbNoiOTapThe);
+            this.Controls.Add(this.txbNgayCap);
+            this.Controls.Add(this.txbNgaySinh);
+            this.Controls.Add(this.txbGioiTinh);
+            this.Controls.Add(this.txbBHXH);
+            this.Controls.Add(this.txbTrinhDoHocVan);
+            this.Controls.Add(this.txbNgayVaoDoan);
+            this.Controls.Add(this.txbQuocTich);
+            this.Controls.Add(this.txbCCCD);
+            this.Controls.Add(this.txbHoKhauTamTru);
+            this.Controls.Add(this.txbHoKhauThuongTru);
+            this.Controls.Add(this.txbNguyenQuan);
+            this.Controls.Add(this.txbNoiCT);
+            this.Controls.Add(this.txbChucVu);
+            this.Controls.Add(this.txbNoiSinh);
+            this.Controls.Add(this.txbHoTen);
             this.Controls.Add(this.txbMaNV);
             this.Controls.Add(this.gvCTNV);
             this.Controls.Add(this.label22);
@@ -788,25 +788,25 @@
         private System.Windows.Forms.Label label22;
         public System.Windows.Forms.DataGridView gvCTNV;
         private System.Windows.Forms.TextBox txbMaNV;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txbHoTen;
+        private System.Windows.Forms.TextBox txbNoiSinh;
+        private System.Windows.Forms.TextBox txbChucVu;
+        private System.Windows.Forms.TextBox txbNoiCT;
+        private System.Windows.Forms.TextBox txbNguyenQuan;
+        private System.Windows.Forms.TextBox txbHoKhauThuongTru;
+        private System.Windows.Forms.TextBox txbHoKhauTamTru;
+        private System.Windows.Forms.TextBox txbCCCD;
+        private System.Windows.Forms.TextBox txbQuocTich;
+        private System.Windows.Forms.TextBox txbNgayVaoDoan;
+        private System.Windows.Forms.TextBox txbTrinhDoHocVan;
+        private System.Windows.Forms.TextBox txbBHXH;
+        private System.Windows.Forms.TextBox txbGioiTinh;
+        private System.Windows.Forms.TextBox txbNgaySinh;
+        private System.Windows.Forms.TextBox txbNgayCap;
+        private System.Windows.Forms.TextBox txbNoiOTapThe;
+        private System.Windows.Forms.TextBox txbNgayVaoDang;
+        private System.Windows.Forms.TextBox txbTrinhDoChuyenMon;
+        private System.Windows.Forms.TextBox txbNoiCap;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbtnAdd;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
