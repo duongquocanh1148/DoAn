@@ -36,6 +36,8 @@ namespace DoAn
             txbMaNV.Text = gvCTNV.Rows[i].Cells[0].Value.ToString();
             txbHoTen.Text = gvCTNV.Rows[i].Cells[1].Value.ToString();
             txbGioiTinh.Text = gvCTNV.Rows[i].Cells[4].Value.ToString();
+            if (txbGioiTinh.Text == "False") txbGioiTinh.Text = "Nam";
+            else txbGioiTinh.Text = "Nu";
             txbNgaySinh.Text = gvCTNV.Rows[i].Cells[5].Value.ToString();
             txbBHXH.Text = gvCTNV.Rows[i].Cells[6].Value.ToString();           
             txbNoiSinh.Text = gvCTNV.Rows[i].Cells[8].Value.ToString();
@@ -45,11 +47,11 @@ namespace DoAn
             txbHoKhauThuongTru.Text = gvCTNV.Rows[i].Cells[12].Value.ToString();
             txbHoKhauTamTru.Text = gvCTNV.Rows[i].Cells[13].Value.ToString();
             txbCCCD.Text = gvCTNV.Rows[i].Cells[14].Value.ToString();
-            txbNgayCap.Text = gvCTNV.Rows[i].Cells[15].Value.ToString();
+            dtpNgayCap.Text = gvCTNV.Rows[i].Cells[15].Value.ToString();
             txbNoiCap.Text = gvCTNV.Rows[i].Cells[16].Value.ToString();
             txbQuocTich.Text = gvCTNV.Rows[i].Cells[17].Value.ToString();
-            txbNgayVaoDoan.Text = gvCTNV.Rows[i].Cells[18].Value.ToString();
-            txbNgayVaoDang.Text = gvCTNV.Rows[i].Cells[19].Value.ToString();
+            dtpNgayVaoDoan.Text = gvCTNV.Rows[i].Cells[18].Value.ToString();
+            dtpNgayVaoDang.Text = gvCTNV.Rows[i].Cells[19].Value.ToString();
             txbTrinhDoHocVan.Text = gvCTNV.Rows[i].Cells[20].Value.ToString();
             txbTrinhDoChuyenMon.Text = gvCTNV.Rows[i].Cells[21].Value.ToString();
             gvCTNV.Hide();
@@ -68,10 +70,15 @@ namespace DoAn
         {
             connect.Open();
             cmd = connect.CreateCommand();
-            cmd.CommandText = @"update CTNHANVIEN set HKTamTru ='" + txbHoKhauTamTru.Text + "'" +
-                "where MaNV = '"+ txbMaNV.Text +"'";
-                               
+            cmd.CommandText = @"update CTNHANVIEN set HKTamTru =N'" + txbHoKhauTamTru.Text + "'" 
+                + ", NgayCap = '" + DateTime.Parse(dtpNgayCap.Text)+"'" 
+                + ", NoiCap = N'"+ txbNoiCap.Text +"'"
+                + ", NgayvaoDoan = '" + DateTime.Parse(dtpNgayVaoDoan.Text) + "'"
+                + ", NgayvaoDang = '" + DateTime.Parse(dtpNgayVaoDang.Text) + "'"
+                + "where MaNV = '"+ txbMaNV.Text +"'";                          
             cmd.ExecuteNonQuery();
+            MessageBox.Show("Update Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            connect.Close();
         }
     }
 }
