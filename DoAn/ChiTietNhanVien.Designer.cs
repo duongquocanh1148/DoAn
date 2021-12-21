@@ -98,9 +98,11 @@
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.tsbtnBack = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.gvQTCT = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTNV)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvQTCT)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -440,11 +442,11 @@
             // 
             this.gvCTNV.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gvCTNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvCTNV.Location = new System.Drawing.Point(0, 534);
+            this.gvCTNV.Location = new System.Drawing.Point(728, 122);
             this.gvCTNV.Name = "gvCTNV";
             this.gvCTNV.RowHeadersWidth = 51;
             this.gvCTNV.RowTemplate.Height = 24;
-            this.gvCTNV.Size = new System.Drawing.Size(1353, 148);
+            this.gvCTNV.Size = new System.Drawing.Size(315, 92);
             this.gvCTNV.TabIndex = 25;
             // 
             // txbMaNV
@@ -660,6 +662,7 @@
             this.tsbtnUpdate.Name = "tsbtnUpdate";
             this.tsbtnUpdate.Size = new System.Drawing.Size(29, 24);
             this.tsbtnUpdate.Text = "Cập Nhật";
+            this.tsbtnUpdate.Click += new System.EventHandler(this.tsbtnUpdate_Click);
             // 
             // toolStripLabel6
             // 
@@ -683,11 +686,23 @@
             this.toolStripLabel5.Size = new System.Drawing.Size(63, 24);
             this.toolStripLabel5.Text = "Quay lại";
             // 
+            // gvQTCT
+            // 
+            this.gvQTCT.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gvQTCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvQTCT.Location = new System.Drawing.Point(16, 523);
+            this.gvQTCT.Name = "gvQTCT";
+            this.gvQTCT.RowHeadersWidth = 51;
+            this.gvQTCT.RowTemplate.Height = 24;
+            this.gvQTCT.Size = new System.Drawing.Size(569, 150);
+            this.gvQTCT.TabIndex = 47;
+            // 
             // ChiTietNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 681);
+            this.Controls.Add(this.gvQTCT);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txbNoiCap);
             this.Controls.Add(this.txbTrinhDoChuyenMon);
@@ -743,6 +758,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvCTNV)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvQTCT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -817,5 +833,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripButton tsbtnBack;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
+        public System.Windows.Forms.DataGridView gvQTCT;
     }
 }
