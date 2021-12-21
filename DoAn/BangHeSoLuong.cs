@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace DoAn
 {
     public partial class BangHeSoLuong : Form
     {
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
+        SqlCommand cmd;
+        DataTable table = new DataTable();
         public BangHeSoLuong()
         {
             InitializeComponent();
@@ -20,6 +25,22 @@ namespace DoAn
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BangHeSoLuong_Load(object sender, EventArgs e)
+        {
+            loadData();
+        }
+        void loadData()
+        {
+            connect.Open();
+            cmd = connect.CreateCommand();
+            cmd.CommandText = "Select * from HESOLUONG ";
+            adapter.SelectCommand = cmd;
+            table.Clear();
+            adapter.Fill(table);
+            gvBHSL.DataSource = table;
+            connect.Close();
         }
     }
 }

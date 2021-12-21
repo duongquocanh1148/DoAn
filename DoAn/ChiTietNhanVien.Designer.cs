@@ -77,14 +77,11 @@
             this.txbHoKhauTamTru = new System.Windows.Forms.TextBox();
             this.txbCCCD = new System.Windows.Forms.TextBox();
             this.txbQuocTich = new System.Windows.Forms.TextBox();
-            this.txbNgayVaoDoan = new System.Windows.Forms.TextBox();
             this.txbTrinhDoHocVan = new System.Windows.Forms.TextBox();
             this.txbBHXH = new System.Windows.Forms.TextBox();
             this.txbGioiTinh = new System.Windows.Forms.TextBox();
             this.txbNgaySinh = new System.Windows.Forms.TextBox();
-            this.txbNgayCap = new System.Windows.Forms.TextBox();
             this.txbNoiOTapThe = new System.Windows.Forms.TextBox();
-            this.txbNgayVaoDang = new System.Windows.Forms.TextBox();
             this.txbTrinhDoChuyenMon = new System.Windows.Forms.TextBox();
             this.txbNoiCap = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -99,6 +96,9 @@
             this.tsbtnBack = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.gvQTCT = new System.Windows.Forms.DataGridView();
+            this.dtpNgayCap = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayVaoDoan = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayVaoDang = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTNV)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -519,13 +519,6 @@
             this.txbQuocTich.Size = new System.Drawing.Size(204, 22);
             this.txbQuocTich.TabIndex = 35;
             // 
-            // txbNgayVaoDoan
-            // 
-            this.txbNgayVaoDoan.Location = new System.Drawing.Point(187, 418);
-            this.txbNgayVaoDoan.Name = "txbNgayVaoDoan";
-            this.txbNgayVaoDoan.Size = new System.Drawing.Size(200, 22);
-            this.txbNgayVaoDoan.TabIndex = 36;
-            // 
             // txbTrinhDoHocVan
             // 
             this.txbTrinhDoHocVan.Location = new System.Drawing.Point(187, 450);
@@ -554,26 +547,12 @@
             this.txbNgaySinh.Size = new System.Drawing.Size(204, 22);
             this.txbNgaySinh.TabIndex = 40;
             // 
-            // txbNgayCap
-            // 
-            this.txbNgayCap.Location = new System.Drawing.Point(482, 362);
-            this.txbNgayCap.Name = "txbNgayCap";
-            this.txbNgayCap.Size = new System.Drawing.Size(117, 22);
-            this.txbNgayCap.TabIndex = 41;
-            // 
             // txbNoiOTapThe
             // 
             this.txbNoiOTapThe.Location = new System.Drawing.Point(609, 388);
             this.txbNoiOTapThe.Name = "txbNoiOTapThe";
             this.txbNoiOTapThe.Size = new System.Drawing.Size(297, 22);
             this.txbNoiOTapThe.TabIndex = 42;
-            // 
-            // txbNgayVaoDang
-            // 
-            this.txbNgayVaoDang.Location = new System.Drawing.Point(609, 418);
-            this.txbNgayVaoDang.Name = "txbNgayVaoDang";
-            this.txbNgayVaoDang.Size = new System.Drawing.Size(297, 22);
-            this.txbNgayVaoDang.TabIndex = 43;
             // 
             // txbTrinhDoChuyenMon
             // 
@@ -697,23 +676,45 @@
             this.gvQTCT.Size = new System.Drawing.Size(569, 150);
             this.gvQTCT.TabIndex = 47;
             // 
+            // dtpNgayCap
+            // 
+            this.dtpNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayCap.Location = new System.Drawing.Point(473, 360);
+            this.dtpNgayCap.Name = "dtpNgayCap";
+            this.dtpNgayCap.Size = new System.Drawing.Size(112, 22);
+            this.dtpNgayCap.TabIndex = 48;
+            // 
+            // dtpNgayVaoDoan
+            // 
+            this.dtpNgayVaoDoan.Location = new System.Drawing.Point(170, 418);
+            this.dtpNgayVaoDoan.Name = "dtpNgayVaoDoan";
+            this.dtpNgayVaoDoan.Size = new System.Drawing.Size(221, 22);
+            this.dtpNgayVaoDoan.TabIndex = 49;
+            // 
+            // dtpNgayVaoDang
+            // 
+            this.dtpNgayVaoDang.Location = new System.Drawing.Point(609, 416);
+            this.dtpNgayVaoDang.Name = "dtpNgayVaoDang";
+            this.dtpNgayVaoDang.Size = new System.Drawing.Size(297, 22);
+            this.dtpNgayVaoDang.TabIndex = 50;
+            // 
             // ChiTietNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 681);
+            this.Controls.Add(this.dtpNgayVaoDang);
+            this.Controls.Add(this.dtpNgayVaoDoan);
+            this.Controls.Add(this.dtpNgayCap);
             this.Controls.Add(this.gvQTCT);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txbNoiCap);
             this.Controls.Add(this.txbTrinhDoChuyenMon);
-            this.Controls.Add(this.txbNgayVaoDang);
             this.Controls.Add(this.txbNoiOTapThe);
-            this.Controls.Add(this.txbNgayCap);
             this.Controls.Add(this.txbNgaySinh);
             this.Controls.Add(this.txbGioiTinh);
             this.Controls.Add(this.txbBHXH);
             this.Controls.Add(this.txbTrinhDoHocVan);
-            this.Controls.Add(this.txbNgayVaoDoan);
             this.Controls.Add(this.txbQuocTich);
             this.Controls.Add(this.txbCCCD);
             this.Controls.Add(this.txbHoKhauTamTru);
@@ -812,14 +813,11 @@
         private System.Windows.Forms.TextBox txbHoKhauTamTru;
         private System.Windows.Forms.TextBox txbCCCD;
         private System.Windows.Forms.TextBox txbQuocTich;
-        private System.Windows.Forms.TextBox txbNgayVaoDoan;
         private System.Windows.Forms.TextBox txbTrinhDoHocVan;
         private System.Windows.Forms.TextBox txbBHXH;
         private System.Windows.Forms.TextBox txbGioiTinh;
         private System.Windows.Forms.TextBox txbNgaySinh;
-        private System.Windows.Forms.TextBox txbNgayCap;
         private System.Windows.Forms.TextBox txbNoiOTapThe;
-        private System.Windows.Forms.TextBox txbNgayVaoDang;
         private System.Windows.Forms.TextBox txbTrinhDoChuyenMon;
         private System.Windows.Forms.TextBox txbNoiCap;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -834,5 +832,8 @@
         private System.Windows.Forms.ToolStripButton tsbtnBack;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         public System.Windows.Forms.DataGridView gvQTCT;
+        private System.Windows.Forms.DateTimePicker dtpNgayCap;
+        private System.Windows.Forms.DateTimePicker dtpNgayVaoDoan;
+        private System.Windows.Forms.DateTimePicker dtpNgayVaoDang;
     }
 }
