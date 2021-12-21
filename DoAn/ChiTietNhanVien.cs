@@ -15,11 +15,11 @@ namespace DoAn
     public partial class ChiTietNhanVien : Form
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
-        SqlConnection connect;
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
         SqlCommand cmd;
         DataTable table = new DataTable();
         public ChiTietNhanVien()
-        {
+        {           
             InitializeComponent();
         }
      
@@ -31,25 +31,29 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            txbMaNV.ReadOnly = true;
             int i = gvCTNV.CurrentRow.Index;
             txbMaNV.Text = gvCTNV.Rows[i].Cells[0].Value.ToString();
             txbHoTen.Text = gvCTNV.Rows[i].Cells[1].Value.ToString();
             txbGioiTinh.Text = gvCTNV.Rows[i].Cells[4].Value.ToString();
             txbNgaySinh.Text = gvCTNV.Rows[i].Cells[5].Value.ToString();
-            txbBHXH.Text = gvCTNV.Rows[i].Cells[6].Value.ToString();
+            txbBHXH.Text = gvCTNV.Rows[i].Cells[6].Value.ToString();           
             txbNoiSinh.Text = gvCTNV.Rows[i].Cells[8].Value.ToString();
             txbChucVu.Text = gvCTNV.Rows[i].Cells[9].Value.ToString();
             txbNoiCT.Text = gvCTNV.Rows[i].Cells[10].Value.ToString();
             txbNguyenQuan.Text = gvCTNV.Rows[i].Cells[11].Value.ToString();
             txbHoKhauThuongTru.Text = gvCTNV.Rows[i].Cells[12].Value.ToString();
             txbHoKhauTamTru.Text = gvCTNV.Rows[i].Cells[13].Value.ToString();
-            txbNgayCap.Text = gvCTNV.Rows[i].Cells[14].Value.ToString();
-            txbNoiCap.Text = gvCTNV.Rows[i].Cells[15].Value.ToString();
-            txbQuocTich.Text = gvCTNV.Rows[i].Cells[16].Value.ToString();
-            txbNgayVaoDoan.Text = gvCTNV.Rows[i].Cells[17].Value.ToString();
-            txbNgayVaoDang.Text = gvCTNV.Rows[i].Cells[18].Value.ToString();
-            txbTrinhDoHocVan.Text = gvCTNV.Rows[i].Cells[19].Value.ToString();
-            txbTrinhDoChuyenMon.Text = gvCTNV.Rows[i].Cells[20].Value.ToString();
+            txbCCCD.Text = gvCTNV.Rows[i].Cells[14].Value.ToString();
+            txbNgayCap.Text = gvCTNV.Rows[i].Cells[15].Value.ToString();
+            txbNoiCap.Text = gvCTNV.Rows[i].Cells[16].Value.ToString();
+            txbQuocTich.Text = gvCTNV.Rows[i].Cells[17].Value.ToString();
+            txbNgayVaoDoan.Text = gvCTNV.Rows[i].Cells[18].Value.ToString();
+            txbNgayVaoDang.Text = gvCTNV.Rows[i].Cells[19].Value.ToString();
+            txbTrinhDoHocVan.Text = gvCTNV.Rows[i].Cells[20].Value.ToString();
+            txbTrinhDoChuyenMon.Text = gvCTNV.Rows[i].Cells[21].Value.ToString();
+            gvCTNV.Hide();
+
 
         }
         
@@ -58,6 +62,16 @@ namespace DoAn
         private void tsbtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tsbtnUpdate_Click(object sender, EventArgs e)
+        {
+            connect.Open();
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"update CTNHANVIEN set HKTamTru ='" + txbHoKhauTamTru.Text + "'" +
+                "where MaNV = '"+ txbMaNV.Text +"'";
+                               
+            cmd.ExecuteNonQuery();
         }
     }
 }
