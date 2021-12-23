@@ -62,7 +62,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -81,7 +80,6 @@
             this.txbBHXH = new System.Windows.Forms.TextBox();
             this.txbGioiTinh = new System.Windows.Forms.TextBox();
             this.txbNgaySinh = new System.Windows.Forms.TextBox();
-            this.txbNoiOTapThe = new System.Windows.Forms.TextBox();
             this.txbTrinhDoChuyenMon = new System.Windows.Forms.TextBox();
             this.txbNoiCap = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -99,10 +97,13 @@
             this.dtpNgayCap = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayVaoDoan = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayVaoDang = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label23 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTNV)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvQTCT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -394,17 +395,6 @@
             this.label18.TabIndex = 20;
             this.label18.Text = "Nơi Cấp";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label19.Location = new System.Drawing.Point(414, 392);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(153, 20);
-            this.label19.TabIndex = 21;
-            this.label19.Text = "Nơi Ở Nhà Tập Thể";
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -547,13 +537,6 @@
             this.txbNgaySinh.Size = new System.Drawing.Size(204, 22);
             this.txbNgaySinh.TabIndex = 40;
             // 
-            // txbNoiOTapThe
-            // 
-            this.txbNoiOTapThe.Location = new System.Drawing.Point(609, 388);
-            this.txbNoiOTapThe.Name = "txbNoiOTapThe";
-            this.txbNoiOTapThe.Size = new System.Drawing.Size(297, 22);
-            this.txbNoiOTapThe.TabIndex = 42;
-            // 
             // txbTrinhDoChuyenMon
             // 
             this.txbTrinhDoChuyenMon.Location = new System.Drawing.Point(609, 452);
@@ -673,7 +656,7 @@
             this.gvQTCT.Name = "gvQTCT";
             this.gvQTCT.RowHeadersWidth = 51;
             this.gvQTCT.RowTemplate.Height = 24;
-            this.gvQTCT.Size = new System.Drawing.Size(569, 150);
+            this.gvQTCT.Size = new System.Drawing.Size(505, 150);
             this.gvQTCT.TabIndex = 47;
             // 
             // dtpNgayCap
@@ -698,11 +681,35 @@
             this.dtpNgayVaoDang.Size = new System.Drawing.Size(297, 22);
             this.dtpNgayVaoDang.TabIndex = 50;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 523);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(511, 150);
+            this.dataGridView1.TabIndex = 51;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label23.Location = new System.Drawing.Point(554, 500);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(109, 20);
+            this.label23.TabIndex = 52;
+            this.label23.Text = "Nhà ở tập thể";
+            // 
             // ChiTietNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 681);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dtpNgayVaoDang);
             this.Controls.Add(this.dtpNgayVaoDoan);
             this.Controls.Add(this.dtpNgayCap);
@@ -710,7 +717,6 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txbNoiCap);
             this.Controls.Add(this.txbTrinhDoChuyenMon);
-            this.Controls.Add(this.txbNoiOTapThe);
             this.Controls.Add(this.txbNgaySinh);
             this.Controls.Add(this.txbGioiTinh);
             this.Controls.Add(this.txbBHXH);
@@ -729,7 +735,6 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -760,6 +765,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvQTCT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -798,7 +804,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -817,7 +822,6 @@
         private System.Windows.Forms.TextBox txbBHXH;
         private System.Windows.Forms.TextBox txbGioiTinh;
         private System.Windows.Forms.TextBox txbNgaySinh;
-        private System.Windows.Forms.TextBox txbNoiOTapThe;
         private System.Windows.Forms.TextBox txbTrinhDoChuyenMon;
         private System.Windows.Forms.TextBox txbNoiCap;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -835,5 +839,7 @@
         private System.Windows.Forms.DateTimePicker dtpNgayCap;
         private System.Windows.Forms.DateTimePicker dtpNgayVaoDoan;
         private System.Windows.Forms.DateTimePicker dtpNgayVaoDang;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label23;
     }
 }
