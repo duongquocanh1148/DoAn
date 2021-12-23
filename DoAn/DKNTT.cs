@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,16 @@ namespace DoAn
 {
     public partial class DKNTT : Form
     {
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
+        SqlCommand cmd;
+        DataTable table = new DataTable();
+        DataTable table2 = new DataTable();
         public DKNTT()
         {
             InitializeComponent();
         }
-        private void tiềnLươngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -28,47 +31,112 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            gvTemp.Hide();
+            
 
         }
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        void loadData()
         {
-
+            //connect.Open();
+            if (txbID.Text == "") MessageBox.Show("Vui long nhap ma nhan vien", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"select distinct HotenNV, Tenphong,Tenchucvu
+                                from NHANVIEN
+                                join PHONG on  PHONG.Maphong= NHANVIEN.Maphong 
+                                join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
+                                where NHANVIEN.MaNV = '" + txbID.Text + "'";
+                adapter.SelectCommand = cmd;
+                table.Clear();
+                adapter.Fill(table);
+                gvTemp.DataSource = table;
+                int i = gvTemp.CurrentRow.Index;
+                txbFullName.Text = gvTemp.Rows[i].Cells[0].Value.ToString();
+                txbNoiCongTac.Text = gvTemp.Rows[i].Cells[1].Value.ToString();
+                txbChucVu.Text = gvTemp.Rows[i].Cells[2].Value.ToString();               
+                loadDataTN();
+            }
         }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        void DangKyNTT()
         {
 
+            connect.Open();        
+            int i = gvTN.RowCount;
+            int sdk = 5;            
+            lbSDK.Text = "QDDK\\000" + sdk.ToString();
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"insert into DANGKYNHATT values ('"+lbSDK.Text+"' , '"+txbID.Text+"' , '"+txbPhongNhaTT.Text+ "' , " + int.Parse(txbDienTich.Text) +" , " +i+ ")";          
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            sdk++;
+            connect.Close();
         }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        void ThanNhan()
         {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            connect.Open();
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"INSERT INTO THANNHAN VALUES (N'"+txbHoTenTN.Text+"', N'"+txbQuanHe.Text+"', '"+txbNamSinh.Text+"', N'"+txbNgheNghiep.Text+"',N'"+txbNCTTN.Text+"', '"+txbID.Text+"')";
+            cmd.ExecuteNonQuery();
+            loadDataTN();
+            MessageBox.Show("Add Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            connect.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+        void loadDataTN()
+        {
+            
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"select TenTN,QuanHe,NamSinh,NgheNghiep,NoiCongTacTN from THANNHAN
+                                where MaNV ='"+txbID.Text+"'";
+            adapter.SelectCommand = cmd;
+            table2.Clear();
+            adapter.Fill(table2);
+            gvTN.DataSource = table2;  
+        }       
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            DangKyNTT();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ThanNhan();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            connect.Open();
+            
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"delete from THANNHAN
+                                where TenTN like N'"+txbHoTenTN.Text+"'";
+            cmd.ExecuteNonQuery();
+            loadDataTN();
+            MessageBox.Show("Delete Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            connect.Close();
+        }
+
+        private void gvTN_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int j = gvTN.CurrentRow.Index;
+            txbHoTenTN.Text = gvTN.Rows[j].Cells[0].Value.ToString();
+            txbQuanHe.Text = gvTN.Rows[j].Cells[1].Value.ToString();
+            txbNamSinh.Text = gvTN.Rows[j].Cells[2].Value.ToString();
+            txbNgheNghiep.Text = gvTN.Rows[j].Cells[3].Value.ToString();
+            txbNCTTN.Text = gvTN.Rows[j].Cells[4].Value.ToString();
         }
     }
 }

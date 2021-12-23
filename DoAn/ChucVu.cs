@@ -78,16 +78,22 @@ namespace DoAn
 
         private void tsbtnDelete_Click(object sender, EventArgs e)
         {
-            int i = gvChucVu.CurrentRow.Index;
+            try
+            {
+                int i = gvChucVu.CurrentRow.Index;
 
-            cmd = connect.CreateCommand();
-            cmd.CommandText = "delete from CHUCVU WHERE Machucvu='"+gvChucVu.Rows[i].Cells[0].Value.ToString()+"'";
-            cmd.ExecuteNonQuery();  
-            loadData();          
-            MessageBox.Show("Delete Completed", "Notification!",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
+                cmd = connect.CreateCommand();
+                cmd.CommandText = "delete from CHUCVU WHERE Machucvu='" + gvChucVu.Rows[i].Cells[0].Value.ToString() + "'";
+                cmd.ExecuteNonQuery();
+                loadData();
+                MessageBox.Show("Delete Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Cannot Delete", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
+        
         private void tsbtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
