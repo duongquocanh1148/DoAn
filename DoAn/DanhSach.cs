@@ -94,5 +94,10 @@ namespace DoAn
             f.ShowDialog();
             this.Show();
         }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
