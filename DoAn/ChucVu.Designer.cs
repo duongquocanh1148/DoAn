@@ -156,7 +156,7 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lbTitle.Location = new System.Drawing.Point(286, 48);
+            this.lbTitle.Location = new System.Drawing.Point(304, 49);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(176, 29);
             this.lbTitle.TabIndex = 2;
@@ -166,7 +166,7 @@
             // 
             this.gvChucVu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvChucVu.Location = new System.Drawing.Point(0, 93);
+            this.gvChucVu.Location = new System.Drawing.Point(0, 168);
             this.gvChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gvChucVu.Name = "gvChucVu";
             this.gvChucVu.RowHeadersWidth = 51;
@@ -178,7 +178,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 326);
+            this.label1.Location = new System.Drawing.Point(73, 114);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 6;
@@ -187,7 +187,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(399, 326);
+            this.label2.Location = new System.Drawing.Point(469, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 16);
             this.label2.TabIndex = 7;
@@ -195,14 +195,14 @@
             // 
             // tbxIDChucVu
             // 
-            this.tbxIDChucVu.Location = new System.Drawing.Point(138, 326);
+            this.tbxIDChucVu.Location = new System.Drawing.Point(174, 111);
             this.tbxIDChucVu.Name = "tbxIDChucVu";
             this.tbxIDChucVu.Size = new System.Drawing.Size(100, 22);
             this.tbxIDChucVu.TabIndex = 8;
             // 
             // tbxNameChucVu
             // 
-            this.tbxNameChucVu.Location = new System.Drawing.Point(496, 325);
+            this.tbxNameChucVu.Location = new System.Drawing.Point(568, 111);
             this.tbxNameChucVu.Name = "tbxNameChucVu";
             this.tbxNameChucVu.Size = new System.Drawing.Size(100, 22);
             this.tbxNameChucVu.TabIndex = 9;
@@ -221,6 +221,7 @@
             this.Controls.Add(this.gvChucVu);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ChucVu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chức Vụ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
