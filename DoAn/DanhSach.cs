@@ -77,35 +77,53 @@ namespace DoAn
             txbMaPhong.Text = gvDSNV.Rows[i].Cells[3].Value.ToString();
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txbMaNV.Text == "") MessageBox.Show("Vui long nhap ma nhan vien!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                cmd = connect.CreateCommand();
+                cmd.CommandText = "Select * from NHANVIEN where MaNV = '" + txbMaNV.Text + "'";                
+                adapter.SelectCommand = cmd;
+                table.Clear();
+                adapter.Fill(table);
+                gvDSNV.DataSource = table;
+            }
+        }
+
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            ChiTietNhanVien f = new ChiTietNhanVien();
-            cmd = connect.CreateCommand();
-            cmd.CommandText = @"select Distinct NHANVIEN.MaNV, NgaySinh, HotenNV, GioiTinh, NoiSinh, SoBHXH,Tenchucvu,Tenphong,NguyenQuan, HKThuongTru,HKTamTru,CTNHANVIEN.CCCD,NgayCap,NoiCap,Quoctich,NgayvaoDoan,NgayvaoDang,HocVan,ChuyenMon
+            if(txbMaNV.Text == "") MessageBox.Show("Vui long nhap ma nhan vien!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                ChiTietNhanVien f = new ChiTietNhanVien();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"select Distinct NHANVIEN.MaNV, NgaySinh, HotenNV, GioiTinh, NoiSinh, SoBHXH,Tenchucvu,Tenphong,NguyenQuan, HKThuongTru,HKTamTru,CTNHANVIEN.CCCD,NgayCap,NoiCap,Quoctich,NgayvaoDoan,NgayvaoDang,HocVan,ChuyenMon
                                 from CTNHANVIEN
                                 join NHANVIEN on CTNHANVIEN.MaNV = NHANVIEN.MaNV
                                 join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
                                 join PHONG on PHONG.Maphong = NHANVIEN.Maphong
                                 WHERE CTNHANVIEN.MaNV = '" + txbMaNV.Text + "'";
-            adapter.SelectCommand = cmd;
-            table.Clear();
-            adapter.Fill(table);
-            f.gvCTNV.DataSource = table;
-            //gvQTCT
-            cmdQTCT = connect.CreateCommand();
-            cmdQTCT.CommandText = @"select distinct Thoigian,Tenchucvu,Tenphong
+                adapter.SelectCommand = cmd;
+                table.Clear();
+                adapter.Fill(table);
+                f.gvCTNV.DataSource = table;
+                //gvQTCT
+                cmdQTCT = connect.CreateCommand();
+                cmdQTCT.CommandText = @"select distinct Thoigian,Tenchucvu,Tenphong
                                     from QUATRINHCONGTAC,CTNHANVIEN
                                     join NHANVIEN on CTNHANVIEN.MaNV = NHANVIEN.MaNV
                                     join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
                                     join PHONG on PHONG.Maphong = NHANVIEN.Maphong
-                                    where CTNHANVIEN.MaNV = '"+ txbMaNV.Text + "' ";
-            adapter.SelectCommand = cmdQTCT;
-            tableQTCT.Clear();
-            adapter.Fill(tableQTCT);
-            f.gvQTCT.DataSource = tableQTCT;
-            this.Hide();          
-            f.ShowDialog();
-            this.Show();
+                                    where CTNHANVIEN.MaNV = '" + txbMaNV.Text + "' ";
+                adapter.SelectCommand = cmdQTCT;
+                tableQTCT.Clear();
+                adapter.Fill(tableQTCT);
+                f.gvQTCT.DataSource = tableQTCT;
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

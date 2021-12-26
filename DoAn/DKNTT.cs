@@ -18,6 +18,8 @@ namespace DoAn
         SqlCommand cmd;
         DataTable table = new DataTable();
         DataTable table2 = new DataTable();
+        int sdk = 6;
+        string s;
         public DKNTT()
         {
             InitializeComponent();
@@ -31,9 +33,11 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gvTemp.Hide();
-            
-
+            gvTemp.Hide();                 
+            if(sdk<9) s = "QDDK\\000" + sdk.ToString();
+            else if(sdk<99) s = "QDDK\\00" + sdk.ToString();
+            else if(sdk<999) s = "QDDK\\0" + sdk.ToString();
+            lbSDK.Text = s;
         }
 
         void loadData()
@@ -62,26 +66,39 @@ namespace DoAn
         void DangKyNTT()
         {
 
-            connect.Open();        
-            int i = gvTN.RowCount;
-            int sdk = 5;            
-            lbSDK.Text = "QDDK\\000" + sdk.ToString();
-            cmd = connect.CreateCommand();
-            cmd.CommandText = @"insert into DANGKYNHATT values ('"+lbSDK.Text+"' , '"+txbID.Text+"' , '"+txbPhongNhaTT.Text+ "' , " + int.Parse(txbDienTich.Text) +" , " +i+ ")";          
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            sdk++;
-            connect.Close();
+            
+            try
+            {
+                connect.Open();
+                int i = gvTN.RowCount;
+                cmd = connect.CreateCommand();
+
+                cmd.CommandText = @"insert into DANGKYNHATT values ('" + s + "' , '" + txbID.Text + "' , '" + txbPhongNhaTT.Text + "' , " + int.Parse(txbDienTich.Text) + " , " + i + ")";
+                if (txbDienTich.Text != null || txbPhongNhaTT.Text != null)
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    sdk++;
+                }
+                connect.Close();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         void ThanNhan()
         {
             connect.Open();
-            cmd = connect.CreateCommand();
-            cmd.CommandText = @"INSERT INTO THANNHAN VALUES (N'"+txbHoTenTN.Text+"', N'"+txbQuanHe.Text+"', '"+txbNamSinh.Text+"', N'"+txbNgheNghiep.Text+"',N'"+txbNCTTN.Text+"', '"+txbID.Text+"')";
-            cmd.ExecuteNonQuery();
-            loadDataTN();
-            MessageBox.Show("Add Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            connect.Close();
+            if (txbID.Text == "") MessageBox.Show("Vui long nhap ma nhan vien", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"INSERT INTO THANNHAN VALUES (N'" + txbHoTenTN.Text + "', N'" + txbQuanHe.Text + "', '" + txbNamSinh.Text + "', N'" + txbNgheNghiep.Text + "',N'" + txbNCTTN.Text + "', '" + txbID.Text + "')";
+                cmd.ExecuteNonQuery();
+                loadDataTN();
+                MessageBox.Show("Add Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                connect.Close();
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -118,15 +135,19 @@ namespace DoAn
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            connect.Open();
-            
-            cmd = connect.CreateCommand();
-            cmd.CommandText = @"delete from THANNHAN
-                                where TenTN like N'"+txbHoTenTN.Text+"'";
-            cmd.ExecuteNonQuery();
-            loadDataTN();
-            MessageBox.Show("Delete Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            connect.Close();
+            if(txbHoTenTN.Text == "") MessageBox.Show("Vui long chon than nhan can xoa!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"delete from THANNHAN
+                                where TenTN like N'" + txbHoTenTN.Text + "'";
+                cmd.ExecuteNonQuery();
+                loadDataTN();
+                MessageBox.Show("Delete Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                connect.Close();
+            } 
+                        
         }
 
         private void gvTN_CellContentClick(object sender, DataGridViewCellEventArgs e)
