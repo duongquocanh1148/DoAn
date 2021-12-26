@@ -62,7 +62,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -77,14 +76,10 @@
             this.txbHoKhauTamTru = new System.Windows.Forms.TextBox();
             this.txbCCCD = new System.Windows.Forms.TextBox();
             this.txbQuocTich = new System.Windows.Forms.TextBox();
-            this.txbNgayVaoDoan = new System.Windows.Forms.TextBox();
             this.txbTrinhDoHocVan = new System.Windows.Forms.TextBox();
             this.txbBHXH = new System.Windows.Forms.TextBox();
             this.txbGioiTinh = new System.Windows.Forms.TextBox();
             this.txbNgaySinh = new System.Windows.Forms.TextBox();
-            this.txbNgayCap = new System.Windows.Forms.TextBox();
-            this.txbNoiOTapThe = new System.Windows.Forms.TextBox();
-            this.txbNgayVaoDang = new System.Windows.Forms.TextBox();
             this.txbTrinhDoChuyenMon = new System.Windows.Forms.TextBox();
             this.txbNoiCap = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -98,9 +93,17 @@
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.tsbtnBack = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.gvQTCT = new System.Windows.Forms.DataGridView();
+            this.dtpNgayCap = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayVaoDoan = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayVaoDang = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label23 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTNV)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvQTCT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -115,7 +118,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1353, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1353, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -124,7 +127,7 @@
             this.trangChủToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thoátToolStripMenuItem});
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
-            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.trangChủToolStripMenuItem.Text = "Trang Chủ";
             // 
             // thoátToolStripMenuItem
@@ -140,7 +143,7 @@
             this.bảngHệSốLươngToolStripMenuItem,
             this.chứcVụToolStripMenuItem});
             this.danhMụcToolStripMenuItem.Name = "danhMụcToolStripMenuItem";
-            this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(90, 26);
+            this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.danhMụcToolStripMenuItem.Text = "Danh Mục";
             // 
             // bảngHệSốLươngToolStripMenuItem
@@ -162,7 +165,7 @@
             this.nhàTậpThểToolStripMenuItem,
             this.tínhTiềnNhàTậpThểToolStripMenuItem});
             this.nhânSựToolStripMenuItem.Name = "nhânSựToolStripMenuItem";
-            this.nhânSựToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
+            this.nhânSựToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.nhânSựToolStripMenuItem.Text = "Nhân Sự";
             // 
             // danhSáchToolStripMenuItem
@@ -186,14 +189,13 @@
             // tiềnLươngToolStripMenuItem
             // 
             this.tiềnLươngToolStripMenuItem.Name = "tiềnLươngToolStripMenuItem";
-            this.tiềnLươngToolStripMenuItem.Size = new System.Drawing.Size(94, 26);
+            this.tiềnLươngToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
             this.tiềnLươngToolStripMenuItem.Text = "Phòng Ban";
-            this.tiềnLươngToolStripMenuItem.Click += new System.EventHandler(this.tiềnLươngToolStripMenuItem_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.trợGiúpToolStripMenuItem.Text = "Trợ Giúp";
             // 
             // label1
@@ -216,7 +218,6 @@
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Mã Số";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -377,7 +378,7 @@
             this.label17.AutoSize = true;
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label17.Location = new System.Drawing.Point(371, 362);
+            this.label17.Location = new System.Drawing.Point(383, 362);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(82, 20);
             this.label17.TabIndex = 19;
@@ -388,29 +389,18 @@
             this.label18.AutoSize = true;
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label18.Location = new System.Drawing.Point(658, 362);
+            this.label18.Location = new System.Drawing.Point(605, 360);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 20);
             this.label18.TabIndex = 20;
             this.label18.Text = "Nơi Cấp";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label19.Location = new System.Drawing.Point(371, 392);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(153, 20);
-            this.label19.TabIndex = 21;
-            this.label19.Text = "Nơi Ở Nhà Tập Thể";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label20.Location = new System.Drawing.Point(374, 422);
+            this.label20.Location = new System.Drawing.Point(414, 418);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(125, 20);
             this.label20.TabIndex = 22;
@@ -421,7 +411,7 @@
             this.label21.AutoSize = true;
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label21.Location = new System.Drawing.Point(374, 452);
+            this.label21.Location = new System.Drawing.Point(414, 452);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(171, 20);
             this.label21.TabIndex = 23;
@@ -442,11 +432,11 @@
             // 
             this.gvCTNV.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gvCTNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvCTNV.Location = new System.Drawing.Point(0, 534);
+            this.gvCTNV.Location = new System.Drawing.Point(728, 122);
             this.gvCTNV.Name = "gvCTNV";
             this.gvCTNV.RowHeadersWidth = 51;
             this.gvCTNV.RowTemplate.Height = 24;
-            this.gvCTNV.Size = new System.Drawing.Size(1353, 148);
+            this.gvCTNV.Size = new System.Drawing.Size(315, 92);
             this.gvCTNV.TabIndex = 25;
             // 
             // txbMaNV
@@ -479,70 +469,63 @@
             // 
             // txbNoiCT
             // 
-            this.txbNoiCT.Location = new System.Drawing.Point(129, 242);
+            this.txbNoiCT.Location = new System.Drawing.Point(219, 242);
             this.txbNoiCT.Name = "txbNoiCT";
-            this.txbNoiCT.Size = new System.Drawing.Size(266, 22);
+            this.txbNoiCT.Size = new System.Drawing.Size(687, 22);
             this.txbNoiCT.TabIndex = 30;
             // 
             // txbNguyenQuan
             // 
-            this.txbNguyenQuan.Location = new System.Drawing.Point(129, 270);
+            this.txbNguyenQuan.Location = new System.Drawing.Point(219, 270);
             this.txbNguyenQuan.Name = "txbNguyenQuan";
-            this.txbNguyenQuan.Size = new System.Drawing.Size(266, 22);
+            this.txbNguyenQuan.Size = new System.Drawing.Size(687, 22);
             this.txbNguyenQuan.TabIndex = 31;
             // 
             // txbHoKhauThuongTru
             // 
-            this.txbHoKhauThuongTru.Location = new System.Drawing.Point(187, 298);
+            this.txbHoKhauThuongTru.Location = new System.Drawing.Point(219, 298);
             this.txbHoKhauThuongTru.Name = "txbHoKhauThuongTru";
-            this.txbHoKhauThuongTru.Size = new System.Drawing.Size(266, 22);
+            this.txbHoKhauThuongTru.Size = new System.Drawing.Size(687, 22);
             this.txbHoKhauThuongTru.TabIndex = 32;
             // 
             // txbHoKhauTamTru
             // 
-            this.txbHoKhauTamTru.Location = new System.Drawing.Point(163, 330);
+            this.txbHoKhauTamTru.Location = new System.Drawing.Point(219, 332);
             this.txbHoKhauTamTru.Name = "txbHoKhauTamTru";
-            this.txbHoKhauTamTru.Size = new System.Drawing.Size(293, 22);
+            this.txbHoKhauTamTru.Size = new System.Drawing.Size(687, 22);
             this.txbHoKhauTamTru.TabIndex = 33;
             // 
             // txbCCCD
             // 
-            this.txbCCCD.Location = new System.Drawing.Point(129, 360);
+            this.txbCCCD.Location = new System.Drawing.Point(161, 360);
             this.txbCCCD.Name = "txbCCCD";
-            this.txbCCCD.Size = new System.Drawing.Size(236, 22);
+            this.txbCCCD.Size = new System.Drawing.Size(204, 22);
             this.txbCCCD.TabIndex = 34;
             // 
             // txbQuocTich
             // 
-            this.txbQuocTich.Location = new System.Drawing.Point(104, 390);
+            this.txbQuocTich.Location = new System.Drawing.Point(187, 390);
             this.txbQuocTich.Name = "txbQuocTich";
-            this.txbQuocTich.Size = new System.Drawing.Size(261, 22);
+            this.txbQuocTich.Size = new System.Drawing.Size(204, 22);
             this.txbQuocTich.TabIndex = 35;
-            // 
-            // txbNgayVaoDoan
-            // 
-            this.txbNgayVaoDoan.Location = new System.Drawing.Point(143, 418);
-            this.txbNgayVaoDoan.Name = "txbNgayVaoDoan";
-            this.txbNgayVaoDoan.Size = new System.Drawing.Size(218, 22);
-            this.txbNgayVaoDoan.TabIndex = 36;
             // 
             // txbTrinhDoHocVan
             // 
-            this.txbTrinhDoHocVan.Location = new System.Drawing.Point(161, 450);
+            this.txbTrinhDoHocVan.Location = new System.Drawing.Point(187, 450);
             this.txbTrinhDoHocVan.Name = "txbTrinhDoHocVan";
             this.txbTrinhDoHocVan.Size = new System.Drawing.Size(204, 22);
             this.txbTrinhDoHocVan.TabIndex = 37;
             // 
             // txbBHXH
             // 
-            this.txbBHXH.Location = new System.Drawing.Point(435, 180);
+            this.txbBHXH.Location = new System.Drawing.Point(462, 180);
             this.txbBHXH.Name = "txbBHXH";
             this.txbBHXH.Size = new System.Drawing.Size(204, 22);
             this.txbBHXH.TabIndex = 38;
             // 
             // txbGioiTinh
             // 
-            this.txbGioiTinh.Location = new System.Drawing.Point(453, 148);
+            this.txbGioiTinh.Location = new System.Drawing.Point(462, 148);
             this.txbGioiTinh.Name = "txbGioiTinh";
             this.txbGioiTinh.Size = new System.Drawing.Size(204, 22);
             this.txbGioiTinh.TabIndex = 39;
@@ -554,37 +537,16 @@
             this.txbNgaySinh.Size = new System.Drawing.Size(204, 22);
             this.txbNgaySinh.TabIndex = 40;
             // 
-            // txbNgayCap
-            // 
-            this.txbNgayCap.Location = new System.Drawing.Point(453, 360);
-            this.txbNgayCap.Name = "txbNgayCap";
-            this.txbNgayCap.Size = new System.Drawing.Size(204, 22);
-            this.txbNgayCap.TabIndex = 41;
-            // 
-            // txbNoiOTapThe
-            // 
-            this.txbNoiOTapThe.Location = new System.Drawing.Point(530, 388);
-            this.txbNoiOTapThe.Name = "txbNoiOTapThe";
-            this.txbNoiOTapThe.Size = new System.Drawing.Size(204, 22);
-            this.txbNoiOTapThe.TabIndex = 42;
-            // 
-            // txbNgayVaoDang
-            // 
-            this.txbNgayVaoDang.Location = new System.Drawing.Point(505, 418);
-            this.txbNgayVaoDang.Name = "txbNgayVaoDang";
-            this.txbNgayVaoDang.Size = new System.Drawing.Size(204, 22);
-            this.txbNgayVaoDang.TabIndex = 43;
-            // 
             // txbTrinhDoChuyenMon
             // 
-            this.txbTrinhDoChuyenMon.Location = new System.Drawing.Point(551, 452);
+            this.txbTrinhDoChuyenMon.Location = new System.Drawing.Point(609, 452);
             this.txbTrinhDoChuyenMon.Name = "txbTrinhDoChuyenMon";
-            this.txbTrinhDoChuyenMon.Size = new System.Drawing.Size(204, 22);
+            this.txbTrinhDoChuyenMon.Size = new System.Drawing.Size(297, 22);
             this.txbTrinhDoChuyenMon.TabIndex = 44;
             // 
             // txbNoiCap
             // 
-            this.txbNoiCap.Location = new System.Drawing.Point(733, 362);
+            this.txbNoiCap.Location = new System.Drawing.Point(702, 362);
             this.txbNoiCap.Name = "txbNoiCap";
             this.txbNoiCap.Size = new System.Drawing.Size(204, 22);
             this.txbNoiCap.TabIndex = 45;
@@ -603,9 +565,9 @@
             this.toolStripLabel6,
             this.tsbtnBack,
             this.toolStripLabel5});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 30);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1353, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1353, 27);
             this.toolStrip1.TabIndex = 46;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -615,13 +577,13 @@
             this.tsbtnAdd.Image = global::DoAn.Properties.Resources.toolStripButton1_Image;
             this.tsbtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnAdd.Name = "tsbtnAdd";
-            this.tsbtnAdd.Size = new System.Drawing.Size(29, 28);
+            this.tsbtnAdd.Size = new System.Drawing.Size(29, 24);
             this.tsbtnAdd.Text = "Thêm";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(46, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(46, 24);
             this.toolStripLabel1.Text = "Thêm";
             // 
             // tsbtnFix
@@ -630,13 +592,13 @@
             this.tsbtnFix.Image = global::DoAn.Properties.Resources.toolStripButton2_Image;
             this.tsbtnFix.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnFix.Name = "tsbtnFix";
-            this.tsbtnFix.Size = new System.Drawing.Size(29, 28);
+            this.tsbtnFix.Size = new System.Drawing.Size(29, 24);
             this.tsbtnFix.Text = "Sửa";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(34, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(34, 24);
             this.toolStripLabel2.Text = "Sửa";
             // 
             // tsbtnDelete
@@ -645,13 +607,13 @@
             this.tsbtnDelete.Image = global::DoAn.Properties.Resources.toolStripButton3_Image;
             this.tsbtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnDelete.Name = "tsbtnDelete";
-            this.tsbtnDelete.Size = new System.Drawing.Size(29, 28);
+            this.tsbtnDelete.Size = new System.Drawing.Size(29, 24);
             this.tsbtnDelete.Text = "Xóa";
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(35, 28);
+            this.toolStripLabel3.Size = new System.Drawing.Size(35, 24);
             this.toolStripLabel3.Text = "Xóa";
             // 
             // tsbtnUpdate
@@ -660,13 +622,14 @@
             this.tsbtnUpdate.Image = global::DoAn.Properties.Resources.toolStripButton6_Image;
             this.tsbtnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnUpdate.Name = "tsbtnUpdate";
-            this.tsbtnUpdate.Size = new System.Drawing.Size(29, 28);
+            this.tsbtnUpdate.Size = new System.Drawing.Size(29, 24);
             this.tsbtnUpdate.Text = "Cập Nhật";
+            this.tsbtnUpdate.Click += new System.EventHandler(this.tsbtnUpdate_Click);
             // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(71, 28);
+            this.toolStripLabel6.Size = new System.Drawing.Size(71, 24);
             this.toolStripLabel6.Text = "Cập Nhật";
             // 
             // tsbtnBack
@@ -675,32 +638,89 @@
             this.tsbtnBack.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnBack.Image")));
             this.tsbtnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnBack.Name = "tsbtnBack";
-            this.tsbtnBack.Size = new System.Drawing.Size(29, 28);
+            this.tsbtnBack.Size = new System.Drawing.Size(29, 24);
             this.tsbtnBack.Text = "Hủy";
             this.tsbtnBack.Click += new System.EventHandler(this.tsbtnBack_Click);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(63, 28);
+            this.toolStripLabel5.Size = new System.Drawing.Size(63, 24);
             this.toolStripLabel5.Text = "Quay lại";
+            // 
+            // gvQTCT
+            // 
+            this.gvQTCT.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gvQTCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvQTCT.Location = new System.Drawing.Point(16, 523);
+            this.gvQTCT.Name = "gvQTCT";
+            this.gvQTCT.RowHeadersWidth = 51;
+            this.gvQTCT.RowTemplate.Height = 24;
+            this.gvQTCT.Size = new System.Drawing.Size(505, 150);
+            this.gvQTCT.TabIndex = 47;
+            // 
+            // dtpNgayCap
+            // 
+            this.dtpNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayCap.Location = new System.Drawing.Point(473, 360);
+            this.dtpNgayCap.Name = "dtpNgayCap";
+            this.dtpNgayCap.Size = new System.Drawing.Size(112, 22);
+            this.dtpNgayCap.TabIndex = 48;
+            // 
+            // dtpNgayVaoDoan
+            // 
+            this.dtpNgayVaoDoan.Location = new System.Drawing.Point(170, 418);
+            this.dtpNgayVaoDoan.Name = "dtpNgayVaoDoan";
+            this.dtpNgayVaoDoan.Size = new System.Drawing.Size(221, 22);
+            this.dtpNgayVaoDoan.TabIndex = 49;
+            // 
+            // dtpNgayVaoDang
+            // 
+            this.dtpNgayVaoDang.Location = new System.Drawing.Point(609, 416);
+            this.dtpNgayVaoDang.Name = "dtpNgayVaoDang";
+            this.dtpNgayVaoDang.Size = new System.Drawing.Size(297, 22);
+            this.dtpNgayVaoDang.TabIndex = 50;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 523);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(511, 150);
+            this.dataGridView1.TabIndex = 51;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label23.Location = new System.Drawing.Point(554, 500);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(109, 20);
+            this.label23.TabIndex = 52;
+            this.label23.Text = "Nhà ở tập thể";
             // 
             // ChiTietNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 681);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtpNgayVaoDang);
+            this.Controls.Add(this.dtpNgayVaoDoan);
+            this.Controls.Add(this.dtpNgayCap);
+            this.Controls.Add(this.gvQTCT);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txbNoiCap);
             this.Controls.Add(this.txbTrinhDoChuyenMon);
-            this.Controls.Add(this.txbNgayVaoDang);
-            this.Controls.Add(this.txbNoiOTapThe);
-            this.Controls.Add(this.txbNgayCap);
             this.Controls.Add(this.txbNgaySinh);
             this.Controls.Add(this.txbGioiTinh);
             this.Controls.Add(this.txbBHXH);
             this.Controls.Add(this.txbTrinhDoHocVan);
-            this.Controls.Add(this.txbNgayVaoDoan);
             this.Controls.Add(this.txbQuocTich);
             this.Controls.Add(this.txbCCCD);
             this.Controls.Add(this.txbHoKhauTamTru);
@@ -715,7 +735,6 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -745,6 +764,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvCTNV)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvQTCT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -783,7 +804,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -798,14 +818,10 @@
         private System.Windows.Forms.TextBox txbHoKhauTamTru;
         private System.Windows.Forms.TextBox txbCCCD;
         private System.Windows.Forms.TextBox txbQuocTich;
-        private System.Windows.Forms.TextBox txbNgayVaoDoan;
         private System.Windows.Forms.TextBox txbTrinhDoHocVan;
         private System.Windows.Forms.TextBox txbBHXH;
         private System.Windows.Forms.TextBox txbGioiTinh;
         private System.Windows.Forms.TextBox txbNgaySinh;
-        private System.Windows.Forms.TextBox txbNgayCap;
-        private System.Windows.Forms.TextBox txbNoiOTapThe;
-        private System.Windows.Forms.TextBox txbNgayVaoDang;
         private System.Windows.Forms.TextBox txbTrinhDoChuyenMon;
         private System.Windows.Forms.TextBox txbNoiCap;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -819,5 +835,11 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripButton tsbtnBack;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
+        public System.Windows.Forms.DataGridView gvQTCT;
+        private System.Windows.Forms.DateTimePicker dtpNgayCap;
+        private System.Windows.Forms.DateTimePicker dtpNgayVaoDoan;
+        private System.Windows.Forms.DateTimePicker dtpNgayVaoDang;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label23;
     }
 }

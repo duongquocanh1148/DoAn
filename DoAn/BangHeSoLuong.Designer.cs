@@ -1,4 +1,4 @@
-﻿namespace DoAn
+namespace DoAn
 {
     partial class BangHeSoLuong
     {
@@ -30,14 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BangHeSoLuong));
             this.btnBack = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbTitle = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+
+            this.gvBHSL = new System.Windows.Forms.DataGridView();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBHSL)).BeginInit();
+
             this.SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(623, 9);
+
+            this.btnBack.Location = new System.Drawing.Point(713, 44);
+
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 3;
@@ -45,37 +49,35 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // pictureBox1
+
+            // gvBHSL
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(30, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(702, 889);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbTitle
-            // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(247, 6);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(251, 29);
-            this.lbTitle.TabIndex = 5;
-            this.lbTitle.Text = "BẢNG HỆ SỐ LƯƠNG";
+            this.gvBHSL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvBHSL.Location = new System.Drawing.Point(12, 101);
+            this.gvBHSL.Name = "gvBHSL";
+            this.gvBHSL.RowHeadersWidth = 51;
+            this.gvBHSL.RowTemplate.Height = 24;
+            this.gvBHSL.Size = new System.Drawing.Size(776, 337);
+            this.gvBHSL.TabIndex = 4;
+
             // 
             // BangHeSoLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 939);
-            this.Controls.Add(this.lbTitle);
-            this.Controls.Add(this.pictureBox1);
+
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gvBHSL);
+
             this.Controls.Add(this.btnBack);
             this.Name = "BangHeSoLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảng Hệ Số Lương";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+
+            this.Load += new System.EventHandler(this.BangHeSoLuong_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBHSL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,7 +85,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.DataGridView gvBHSL;
+
     }
 }

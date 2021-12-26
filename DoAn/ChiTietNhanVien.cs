@@ -15,17 +15,14 @@ namespace DoAn
     public partial class ChiTietNhanVien : Form
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
-        SqlConnection connect;
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
         SqlCommand cmd;
         DataTable table = new DataTable();
         public ChiTietNhanVien()
-        {
+        {           
             InitializeComponent();
         }
-        private void tiềnLươngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -34,52 +31,54 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
+            txbMaNV.ReadOnly = true;
+            int i = gvCTNV.CurrentRow.Index;
+            txbMaNV.Text = gvCTNV.Rows[i].Cells[0].Value.ToString();
+            txbHoTen.Text = gvCTNV.Rows[i].Cells[1].Value.ToString();
+            txbGioiTinh.Text = gvCTNV.Rows[i].Cells[4].Value.ToString();
+            if (txbGioiTinh.Text == "False") txbGioiTinh.Text = "Nam";
+            else txbGioiTinh.Text = "Nu";
+            txbNgaySinh.Text = gvCTNV.Rows[i].Cells[5].Value.ToString();
+            txbBHXH.Text = gvCTNV.Rows[i].Cells[6].Value.ToString();           
+            txbNoiSinh.Text = gvCTNV.Rows[i].Cells[8].Value.ToString();
+            txbChucVu.Text = gvCTNV.Rows[i].Cells[9].Value.ToString();
+            txbNoiCT.Text = gvCTNV.Rows[i].Cells[10].Value.ToString();
+            txbNguyenQuan.Text = gvCTNV.Rows[i].Cells[11].Value.ToString();
+            txbHoKhauThuongTru.Text = gvCTNV.Rows[i].Cells[12].Value.ToString();
+            txbHoKhauTamTru.Text = gvCTNV.Rows[i].Cells[13].Value.ToString();
+            txbCCCD.Text = gvCTNV.Rows[i].Cells[14].Value.ToString();
+            dtpNgayCap.Text = gvCTNV.Rows[i].Cells[15].Value.ToString();
+            txbNoiCap.Text = gvCTNV.Rows[i].Cells[16].Value.ToString();
+            txbQuocTich.Text = gvCTNV.Rows[i].Cells[17].Value.ToString();
+            dtpNgayVaoDoan.Text = gvCTNV.Rows[i].Cells[18].Value.ToString();
+            dtpNgayVaoDang.Text = gvCTNV.Rows[i].Cells[19].Value.ToString();
+            txbTrinhDoHocVan.Text = gvCTNV.Rows[i].Cells[20].Value.ToString();
+            txbTrinhDoChuyenMon.Text = gvCTNV.Rows[i].Cells[21].Value.ToString();
+            gvCTNV.Hide();
+
+
         }
         
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void tsbtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tsbtnUpdate_Click(object sender, EventArgs e)
+        {
+            connect.Open();
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"update CTNHANVIEN set HKTamTru =N'" + txbHoKhauTamTru.Text + "'" 
+                + ", NgayCap = '" + DateTime.Parse(dtpNgayCap.Text)+"'" 
+                + ", NoiCap = N'"+ txbNoiCap.Text +"'"
+                + ", NgayvaoDoan = '" + DateTime.Parse(dtpNgayVaoDoan.Text) + "'"
+                + ", NgayvaoDang = '" + DateTime.Parse(dtpNgayVaoDang.Text) + "'"
+                + "where MaNV = '"+ txbMaNV.Text +"'";                          
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Update Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            connect.Close();
         }
     }
 }

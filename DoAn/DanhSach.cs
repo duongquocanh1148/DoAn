@@ -15,8 +15,9 @@ namespace DoAn
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
-        SqlCommand cmd;
+        SqlCommand cmd,cmdQTCT;
         DataTable table = new DataTable();
+        DataTable tableQTCT = new DataTable();
         public DanhSach()
         {
             InitializeComponent();
@@ -80,7 +81,7 @@ namespace DoAn
         {
             ChiTietNhanVien f = new ChiTietNhanVien();
             cmd = connect.CreateCommand();
-            cmd.CommandText = @"select Distinct NHANVIEN.MaNV, NgaySinh, HotenNV, GioiTinh, NoiSinh, SoBHXH,Tenchucvu,Tenphong,NguyenQuan, HKThuongTru,HKTamTru,NgayCap,NoiCap,Quoctich,NgayvaoDoan,NgayvaoDang,HocVan,ChuyenMon
+            cmd.CommandText = @"select Distinct NHANVIEN.MaNV, NgaySinh, HotenNV, GioiTinh, NoiSinh, SoBHXH,Tenchucvu,Tenphong,NguyenQuan, HKThuongTru,HKTamTru,CTNHANVIEN.CCCD,NgayCap,NoiCap,Quoctich,NgayvaoDoan,NgayvaoDang,HocVan,ChuyenMon
                                 from CTNHANVIEN
                                 join NHANVIEN on CTNHANVIEN.MaNV = NHANVIEN.MaNV
                                 join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
@@ -90,7 +91,19 @@ namespace DoAn
             table.Clear();
             adapter.Fill(table);
             f.gvCTNV.DataSource = table;
-            this.Close();
+            //gvQTCT
+            cmdQTCT = connect.CreateCommand();
+            cmdQTCT.CommandText = @"select distinct Thoigian,Tenchucvu,Tenphong
+                                    from QUATRINHCONGTAC,CTNHANVIEN
+                                    join NHANVIEN on CTNHANVIEN.MaNV = NHANVIEN.MaNV
+                                    join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
+                                    join PHONG on PHONG.Maphong = NHANVIEN.Maphong
+                                    where CTNHANVIEN.MaNV = '"+ txbMaNV.Text + "' ";
+            adapter.SelectCommand = cmdQTCT;
+            tableQTCT.Clear();
+            adapter.Fill(tableQTCT);
+            f.gvQTCT.DataSource = tableQTCT;
+            this.Hide();          
             f.ShowDialog();
             this.Show();
         }
