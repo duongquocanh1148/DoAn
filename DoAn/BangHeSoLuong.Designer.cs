@@ -32,7 +32,7 @@ namespace DoAn
             this.btnBack = new System.Windows.Forms.Button();
 
             this.gvBHSL = new System.Windows.Forms.DataGridView();
-            this.toolStrip1.SuspendLayout();
+         
             ((System.ComponentModel.ISupportInitialize)(this.gvBHSL)).BeginInit();
 
             this.SuspendLayout();
@@ -75,8 +75,7 @@ namespace DoAn
             this.Text = "Bảng Hệ Số Lương";
 
             this.Load += new System.EventHandler(this.BangHeSoLuong_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+           
             ((System.ComponentModel.ISupportInitialize)(this.gvBHSL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
