@@ -13,14 +13,14 @@ namespace DoAn
 {
     public partial class PhongBan : Form
     {
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
+        SqlCommand cmd;
+        DataTable table = new DataTable();
         public PhongBan()
         {
             InitializeComponent();
-        }
-        private void tiềnLươngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        }      
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -29,64 +29,46 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gvPhongBan.DataSource = GetAllPhongBan().Tables[0];
+            loadData();
         }
-        DataSet GetAllPhongBan()
+        void loadData()
         {
-            DataSet data = new DataSet();
-            string query = "select * from PHONG";
-            using (SqlConnection connect = new SqlConnection(ConnectSQL.connectString))
-            {
-                connect.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
-                adapter.Fill(data);
-                connect.Close();
-            }
-            return data;
-        }
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-
+            connect.Open();
+            cmd = connect.CreateCommand();
+            cmd.CommandText = "select * from PHONG";
+            adapter.SelectCommand = cmd;
+            table.Clear();
+            adapter.Fill(table);
+            gvPhongBan.DataSource = table;
+            connect.Close();
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void gvPhongBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int i = gvPhongBan.CurrentRow.Index;
+            txbIDRoom.Text = gvPhongBan.Rows[i].Cells[0].Value.ToString();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhap ma phong!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = "select * from PHONG where MaPhong = '" + txbIDRoom.Text + "'";
+                adapter.SelectCommand = cmd;
+                table.Clear();
+                adapter.Fill(table);
+                gvPhongBan.DataSource = table;
+                connect.Close();
+            }
         }
     }
 }
