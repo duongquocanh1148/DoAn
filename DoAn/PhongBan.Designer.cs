@@ -49,7 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDetails = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBoxIDRoom = new System.Windows.Forms.TextBox();
+            this.txbIDRoom = new System.Windows.Forms.TextBox();
             this.lbIDRoom = new System.Windows.Forms.Label();
             this.gvPhongBan = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
@@ -81,7 +81,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(800, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // tsbtnAdd
             // 
@@ -203,7 +202,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnDetails);
             this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.textBoxIDRoom);
+            this.groupBox1.Controls.Add(this.txbIDRoom);
             this.groupBox1.Controls.Add(this.lbIDRoom);
             this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
@@ -228,14 +227,14 @@
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBoxIDRoom
+            // txbIDRoom
             // 
-            this.textBoxIDRoom.Location = new System.Drawing.Point(106, 21);
-            this.textBoxIDRoom.Name = "textBoxIDRoom";
-            this.textBoxIDRoom.Size = new System.Drawing.Size(377, 22);
-            this.textBoxIDRoom.TabIndex = 3;
+            this.txbIDRoom.Location = new System.Drawing.Point(106, 21);
+            this.txbIDRoom.Name = "txbIDRoom";
+            this.txbIDRoom.Size = new System.Drawing.Size(377, 22);
+            this.txbIDRoom.TabIndex = 3;
             // 
             // lbIDRoom
             // 
@@ -312,7 +311,7 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBoxIDRoom;
+        private System.Windows.Forms.TextBox txbIDRoom;
         private System.Windows.Forms.Label lbIDRoom;
         private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.DataGridView gvPhongBan;
