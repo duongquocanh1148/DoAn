@@ -17,12 +17,12 @@ namespace DoAn
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
         SqlCommand cmd;
         DataTable table = new DataTable();
-        DataTable table2 = new DataTable();
-        int sdk = 6;
+        DataTable table2 = new DataTable();            
         string s;
         public DKNTT()
         {
             InitializeComponent();
+            
         }
         
 
@@ -33,19 +33,26 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gvTemp.Hide();                 
-            if(sdk<9) s = "QDDK\\000" + sdk.ToString();
-            else if(sdk<99) s = "QDDK\\00" + sdk.ToString();
-            else if(sdk<999) s = "QDDK\\0" + sdk.ToString();
+            
+        }        
+        void HienThi()
+        {
+            int sdk = 5;
+            gvTemp.Hide();
+            if (sdk < 9) s = @"QDDK\00" + sdk.ToString();
+            else if (sdk < 99) s = @"QDDK\0" + sdk.ToString();
+            else if (sdk < 999) s = @"QDDK\0" + sdk.ToString();
+            MessageBox.Show("" + sdk, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             lbSDK.Text = s;
+            sdk++;
         }
-
         void loadData()
         {
-            //connect.Open();
+            
             if (txbID.Text == "") MessageBox.Show("Vui long nhap ma nhan vien", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
+                connect.Open();
                 cmd = connect.CreateCommand();
                 cmd.CommandText = @"select distinct HotenNV, Tenphong,Tenchucvu
                                 from NHANVIEN
@@ -61,31 +68,9 @@ namespace DoAn
                 txbNoiCongTac.Text = gvTemp.Rows[i].Cells[1].Value.ToString();
                 txbChucVu.Text = gvTemp.Rows[i].Cells[2].Value.ToString();               
                 loadDataTN();
-            }
-        }
-        void DangKyNTT()
-        {
-
-            
-            try
-            {
-                connect.Open();
-                int i = gvTN.RowCount;
-                cmd = connect.CreateCommand();
-
-                cmd.CommandText = @"insert into DANGKYNHATT values ('" + s + "' , '" + txbID.Text + "' , '" + txbPhongNhaTT.Text + "' , " + int.Parse(txbDienTich.Text) + " , " + i + ")";
-                if (txbDienTich.Text != null || txbPhongNhaTT.Text != null)
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    sdk++;
-                }
                 connect.Close();
-            } catch (Exception ex)
-            {
-                MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }       
         void ThanNhan()
         {
             connect.Open();
@@ -125,8 +110,32 @@ namespace DoAn
         }       
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            DangKyNTT();
-        }
+            int sdk = 5;
+            //try
+            //{
+            connect.Open();
+            int i = gvTN.RowCount;
+            cmd = connect.CreateCommand();
+            if (txbDienTich.Text == "" || txbPhongNhaTT.Text == "") 
+                MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);                          
+            else
+            {
+                cmd.CommandText = @"insert into DANGKYNHATT values ('" + s + "' , '" + txbID.Text + "' , '" + txbPhongNhaTT.Text + "' , " + int.Parse(txbDienTich.Text) + " , " + i + ")";
+                if (i > 3) MessageBox.Show("Chi dang ky toi da 3 nguoi!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    sdk++;                  
+                    MessageBox.Show("" + sdk, "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            connect.Close();                       
+            //} catch (Exception ex)
+            //{
+            //    MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }               
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
