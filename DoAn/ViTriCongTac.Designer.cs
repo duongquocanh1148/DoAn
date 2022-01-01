@@ -46,10 +46,10 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxIDRoom = new System.Windows.Forms.TextBox();
+            this.txbSL = new System.Windows.Forms.TextBox();
+            this.lbSL = new System.Windows.Forms.Label();
+            this.txbIDRoom = new System.Windows.Forms.TextBox();
             this.lbIDRoom = new System.Windows.Forms.Label();
-            this.lbQuantily = new System.Windows.Forms.Label();
-            this.textBoxQuantily = new System.Windows.Forms.TextBox();
             this.gvViTriCongTac = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -208,9 +208,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBoxQuantily);
-            this.groupBox1.Controls.Add(this.lbQuantily);
-            this.groupBox1.Controls.Add(this.textBoxIDRoom);
+            this.groupBox1.Controls.Add(this.txbSL);
+            this.groupBox1.Controls.Add(this.lbSL);
+            this.groupBox1.Controls.Add(this.txbIDRoom);
             this.groupBox1.Controls.Add(this.lbIDRoom);
             this.groupBox1.Location = new System.Drawing.Point(0, 30);
             this.groupBox1.Name = "groupBox1";
@@ -218,12 +218,28 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
-            // textBoxIDRoom
+            // txbSL
             // 
-            this.textBoxIDRoom.Location = new System.Drawing.Point(106, 21);
-            this.textBoxIDRoom.Name = "textBoxIDRoom";
-            this.textBoxIDRoom.Size = new System.Drawing.Size(377, 22);
-            this.textBoxIDRoom.TabIndex = 3;
+            this.txbSL.Location = new System.Drawing.Point(149, 68);
+            this.txbSL.Name = "txbSL";
+            this.txbSL.Size = new System.Drawing.Size(334, 22);
+            this.txbSL.TabIndex = 5;
+            // 
+            // lbSL
+            // 
+            this.lbSL.AutoSize = true;
+            this.lbSL.Location = new System.Drawing.Point(12, 71);
+            this.lbSL.Name = "lbSL";
+            this.lbSL.Size = new System.Drawing.Size(120, 16);
+            this.lbSL.TabIndex = 4;
+            this.lbSL.Text = "Số lượng nhân viên";
+            // 
+            // txbIDRoom
+            // 
+            this.txbIDRoom.Location = new System.Drawing.Point(106, 21);
+            this.txbIDRoom.Name = "txbIDRoom";
+            this.txbIDRoom.Size = new System.Drawing.Size(377, 22);
+            this.txbIDRoom.TabIndex = 3;
             // 
             // lbIDRoom
             // 
@@ -234,22 +250,6 @@
             this.lbIDRoom.TabIndex = 1;
             this.lbIDRoom.Text = "Mã Phòng";
             // 
-            // lbQuantily
-            // 
-            this.lbQuantily.AutoSize = true;
-            this.lbQuantily.Location = new System.Drawing.Point(12, 71);
-            this.lbQuantily.Name = "lbQuantily";
-            this.lbQuantily.Size = new System.Drawing.Size(120, 16);
-            this.lbQuantily.TabIndex = 4;
-            this.lbQuantily.Text = "Số lượng nhân viên";
-            // 
-            // textBoxQuantily
-            // 
-            this.textBoxQuantily.Location = new System.Drawing.Point(149, 68);
-            this.textBoxQuantily.Name = "textBoxQuantily";
-            this.textBoxQuantily.Size = new System.Drawing.Size(334, 22);
-            this.textBoxQuantily.TabIndex = 5;
-            // 
             // gvViTriCongTac
             // 
             this.gvViTriCongTac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -259,6 +259,7 @@
             this.gvViTriCongTac.RowTemplate.Height = 24;
             this.gvViTriCongTac.Size = new System.Drawing.Size(800, 235);
             this.gvViTriCongTac.TabIndex = 7;
+            this.gvViTriCongTac.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvViTriCongTac_CellContentClick);
             // 
             // ViTriCongTac
             // 
@@ -302,10 +303,10 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxQuantily;
-        private System.Windows.Forms.Label lbQuantily;
-        private System.Windows.Forms.TextBox textBoxIDRoom;
+        private System.Windows.Forms.TextBox txbSL;
+        private System.Windows.Forms.Label lbSL;
+        private System.Windows.Forms.TextBox txbIDRoom;
         private System.Windows.Forms.Label lbIDRoom;
-        private System.Windows.Forms.DataGridView gvViTriCongTac;
+        public System.Windows.Forms.DataGridView gvViTriCongTac;
     }
 }

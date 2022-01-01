@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,13 +13,13 @@ namespace DoAn
 {
     public partial class BangTinhTienSH : Form
     {
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
+        SqlCommand cmd;
+        DataTable table = new DataTable();
         public BangTinhTienSH()
         {
             InitializeComponent();
-        }
-        private void tiềnLươngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,47 +29,32 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            loadData();
         }
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        void loadData()
         {
-
+            connect.Open();
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"select NHANVIEN.MaNV,NHANVIEN.HotenNV,Dientich*200000 as TienPhong, SoCTD*3500 as TienDien, SoDHN*10000 as TienNuoc,Chiphikhac, TongCPSH
+                                from TINHTIENSINHHOAT
+                                join NHANVIEN on TINHTIENSINHHOAT.MaNV=NHANVIEN.MaNV";
+            adapter.SelectCommand = cmd;
+            table.Clear();
+            adapter.Fill(table);
+            gvTTSH.DataSource = table;
+            connect.Close();
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gvTTSH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = gvTTSH.CurrentRow.Index;
         }
     }
 }

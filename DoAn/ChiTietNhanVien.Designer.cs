@@ -97,13 +97,11 @@
             this.dtpNgayCap = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayVaoDoan = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayVaoDang = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label23 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTNV)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvQTCT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -681,17 +679,6 @@
             this.dtpNgayVaoDang.Size = new System.Drawing.Size(297, 22);
             this.dtpNgayVaoDang.TabIndex = 50;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 523);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(511, 150);
-            this.dataGridView1.TabIndex = 51;
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -709,7 +696,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 681);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dtpNgayVaoDang);
             this.Controls.Add(this.dtpNgayVaoDoan);
             this.Controls.Add(this.dtpNgayCap);
@@ -765,7 +751,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvQTCT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -839,7 +824,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgayCap;
         private System.Windows.Forms.DateTimePicker dtpNgayVaoDoan;
         private System.Windows.Forms.DateTimePicker dtpNgayVaoDang;
-        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label23;
     }
 }

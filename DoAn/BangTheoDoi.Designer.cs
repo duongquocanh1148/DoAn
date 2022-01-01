@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.lbTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gvTDSNN = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTDSNN)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,22 +64,22 @@
             this.lbTitle.TabIndex = 2;
             this.lbTitle.Text = "BẢNG THEO DÕI SỐ NGÀY NGHỈ";
             // 
-            // dataGridView1
+            // gvTDSNN
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 139);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 256);
-            this.dataGridView1.TabIndex = 4;
+            this.gvTDSNN.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gvTDSNN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvTDSNN.Location = new System.Drawing.Point(0, 139);
+            this.gvTDSNN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gvTDSNN.Name = "gvTDSNN";
+            this.gvTDSNN.RowHeadersWidth = 51;
+            this.gvTDSNN.RowTemplate.Height = 24;
+            this.gvTDSNN.Size = new System.Drawing.Size(800, 256);
+            this.gvTDSNN.TabIndex = 4;
             // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(684, 76);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 28);
             this.btnBack.TabIndex = 5;
@@ -233,8 +233,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 27);
             this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            this.toolStrip1.Text = "toolStrip1";           
             // 
             // BangTheoDoi
             // 
@@ -248,13 +247,13 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gvTDSNN);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BangTheoDoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảng Theo Dõi";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTDSNN)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -265,7 +264,7 @@
         #endregion
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gvTDSNN;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;

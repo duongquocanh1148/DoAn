@@ -45,6 +45,7 @@ namespace DoAn
             int i = gvDSNV.CurrentRow.Index;
             txbMaNV.Text = gvDSNV.Rows[i].Cells[0].Value.ToString();
             txbMaPhong.Text = gvDSNV.Rows[i].Cells[3].Value.ToString();
+            connect.Close();
         }
 
         private void chứcVụToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,12 +83,14 @@ namespace DoAn
             if (txbMaNV.Text == "") MessageBox.Show("Vui long nhap ma nhan vien!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
+                connect.Open();
                 cmd = connect.CreateCommand();
                 cmd.CommandText = "Select * from NHANVIEN where MaNV = '" + txbMaNV.Text + "'";                
                 adapter.SelectCommand = cmd;
                 table.Clear();
                 adapter.Fill(table);
                 gvDSNV.DataSource = table;
+                connect.Close();
             }
         }
 
@@ -96,6 +99,7 @@ namespace DoAn
             if(txbMaNV.Text == "") MessageBox.Show("Vui long nhap ma nhan vien!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
+                connect.Open();
                 ChiTietNhanVien f = new ChiTietNhanVien();
                 cmd = connect.CreateCommand();
                 cmd.CommandText = @"select Distinct NHANVIEN.MaNV, NgaySinh, HotenNV, GioiTinh, NoiSinh, SoBHXH,Tenchucvu,Tenphong,NguyenQuan, HKThuongTru,HKTamTru,CTNHANVIEN.CCCD,NgayCap,NoiCap,Quoctich,NgayvaoDoan,NgayvaoDang,HocVan,ChuyenMon
@@ -123,6 +127,7 @@ namespace DoAn
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
+                connect.Close();
             }
         }
 
