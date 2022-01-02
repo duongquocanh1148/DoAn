@@ -64,6 +64,7 @@
             this.lblSDK = new System.Windows.Forms.Label();
             this.txbSDK = new System.Windows.Forms.TextBox();
             this.lbSDK = new System.Windows.Forms.Label();
+            this.txbSDK = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTemp)).BeginInit();
             this.SuspendLayout();
@@ -388,16 +389,28 @@
             this.lbSDK.AutoSize = true;
             this.lbSDK.Location = new System.Drawing.Point(716, 29);
             this.lbSDK.Name = "lbSDK";
-            this.lbSDK.Size = new System.Drawing.Size(70, 16);
-            this.lbSDK.TabIndex = 48;
-            this.lbSDK.Text = "QDDK\\000";
+
+            this.lbSDK.Size = new System.Drawing.Size(64, 20);
+            this.lbSDK.TabIndex = 4;
+            this.lbSDK.Text = "QDDK\\";
+            // 
+            // txbSDK
+            // 
+            this.txbSDK.Location = new System.Drawing.Point(770, 27);
+            this.txbSDK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbSDK.Name = "txbSDK";
+            this.txbSDK.Size = new System.Drawing.Size(60, 22);
+            this.txbSDK.TabIndex = 50;
+
             // 
             // DKNTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 579);
-            this.Controls.Add(this.lbSDK);
+
+            this.Controls.Add(this.txbSDK);
+
             this.Controls.Add(this.lblSDK);
             this.Controls.Add(this.txbNCTTN);
             this.Controls.Add(this.label8);
@@ -481,5 +494,6 @@
         private System.Windows.Forms.Label lblSDK;
         private System.Windows.Forms.TextBox txbSDK;
         private System.Windows.Forms.Label lbSDK;
+        private System.Windows.Forms.TextBox txbSDK;
     }
 }
