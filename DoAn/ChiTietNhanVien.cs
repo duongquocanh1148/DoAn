@@ -55,8 +55,6 @@ namespace DoAn
             txbTrinhDoHocVan.Text = gvCTNV.Rows[i].Cells[20].Value.ToString();
             txbTrinhDoChuyenMon.Text = gvCTNV.Rows[i].Cells[21].Value.ToString();
             gvCTNV.Hide();
-
-
         }
         
  

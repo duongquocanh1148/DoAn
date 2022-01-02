@@ -218,6 +218,7 @@
             this.btnDetails.TabIndex = 5;
             this.btnDetails.Text = "Xem Chi Tiết";
             this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnSearch
             // 

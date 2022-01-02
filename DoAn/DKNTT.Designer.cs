@@ -383,36 +383,21 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // lblSDK
-            // 
-            this.lblSDK.Location = new System.Drawing.Point(0, 0);
-            this.lblSDK.Name = "lblSDK";
-            this.lblSDK.Size = new System.Drawing.Size(100, 23);
-            this.lblSDK.TabIndex = 49;
-            // 
-            // txbSDK
-            // 
-            this.txbSDK.Location = new System.Drawing.Point(765, 27);
-            this.txbSDK.Name = "txbSDK";
-            this.txbSDK.Size = new System.Drawing.Size(65, 22);
-            this.txbSDK.TabIndex = 50;
-            // 
             // lbSDK
             // 
             this.lbSDK.AutoSize = true;
-            this.lbSDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbSDK.Location = new System.Drawing.Point(704, 27);
+            this.lbSDK.Location = new System.Drawing.Point(716, 29);
             this.lbSDK.Name = "lbSDK";
-            this.lbSDK.Size = new System.Drawing.Size(64, 20);
-            this.lbSDK.TabIndex = 4;
-            this.lbSDK.Text = "QDDK\\";
+            this.lbSDK.Size = new System.Drawing.Size(70, 16);
+            this.lbSDK.TabIndex = 48;
+            this.lbSDK.Text = "QDDK\\000";
             // 
             // DKNTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 579);
-            this.Controls.Add(this.txbSDK);
+            this.Controls.Add(this.lbSDK);
             this.Controls.Add(this.lblSDK);
             this.Controls.Add(this.txbNCTTN);
             this.Controls.Add(this.label8);

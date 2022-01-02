@@ -70,5 +70,26 @@ namespace DoAn
                 connect.Close();
             }
         }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhap ma phong!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                connect.Open();
+                ViTriCongTac f = new ViTriCongTac();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"select distinct MaNV,HotenNV,Machucvu,GioiTinh,NgaySinh,SoBHXH,SoNgayNghi from NHANVIEN
+                                    where MaPhong = '"+txbIDRoom.Text+"'";
+                adapter.SelectCommand = cmd;
+                table.Clear();
+                adapter.Fill(table);
+                f.gvViTriCongTac.DataSource = table;
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+                connect.Close();
+            }
+        }
     }
 }

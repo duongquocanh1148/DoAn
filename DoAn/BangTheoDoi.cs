@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,10 @@ namespace DoAn
 {
     public partial class BangTheoDoi : Form
     {
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
+        SqlCommand cmd;
+        DataTable table = new DataTable();
         public BangTheoDoi()
         {
             InitializeComponent();
@@ -28,43 +33,21 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            loadData();
         }
-
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        
+        void loadData()
         {
-
+            connect.Open();
+            cmd = connect.CreateCommand();
+            cmd.CommandText = "Select * from THEODOISONGAYNGHI ";
+            adapter.SelectCommand = cmd;
+            table.Clear();
+            adapter.Fill(table);
+            gvTDSNN.DataSource = table;
+            connect.Close();
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {

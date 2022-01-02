@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,13 +13,15 @@ namespace DoAn
 {
     public partial class BoTriCongTac : Form
     {
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
+        SqlCommand cmd;
+        DataTable table = new DataTable();
+        int sQD = 8;
+        string s;
         public BoTriCongTac()
         {
             InitializeComponent();
-        }
-        private void tiềnLươngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,52 +31,75 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            sQD++;
+            gvTemp.Hide();
+            if (sQD < 9) s = "SQD\\000" + sQD;
+            else if (sQD < 99) s = "SQD\\00" + sQD;
+            else if (sQD < 999) s = "SQD\\0" + sQD;
+            lbSQD.Text = s;
+                     
         }
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        void loadData()
         {
-
+            
+            if (txbMaNV.Text == "") MessageBox.Show("Vui long nhap ma nhan vien", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"select distinct HotenNV, NHANVIEN.Maphong,Tenphong,NHANVIEN.Machucvu,Tenchucvu
+                                from NHANVIEN
+                                join PHONG on  PHONG.Maphong= NHANVIEN.Maphong 
+                                join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
+                                where NHANVIEN.MaNV = '" + txbMaNV.Text + "'";
+                adapter.SelectCommand = cmd;
+                table.Clear();
+                adapter.Fill(table);
+                gvTemp.DataSource = table;
+                int i = gvTemp.CurrentRow.Index;
+                txbTenNV.Text = gvTemp.Rows[i].Cells[0].Value.ToString();
+                txbMaPhong.Text = gvTemp.Rows[i].Cells[1].Value.ToString();
+                txbPhongOld.Text = gvTemp.Rows[i].Cells[2].Value.ToString();
+                txbMaCV.Text = gvTemp.Rows[i].Cells[3].Value.ToString();
+                txbChucvuOld.Text = gvTemp.Rows[i].Cells[4].Value.ToString();
+                connect.Close();
+            }
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        
+
+        private void btnLoad_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            loadData();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txbMaPhongNew.Text == "" || txbMaCVNew.Text == "" || txbMaNV.Text == "")
+                    MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    connect.Open();
+                    cmd = connect.CreateCommand();
+                    cmd.CommandText = @"insert into CONGTAC values ('" + s + "','" + txbMaPhongNew.Text + "','" + txbMaCVNew.Text + "','" + txbMaNV.Text + "','" + DateTime.Parse(dtpNgayBD.Text) + "','" + null + "','" + txbLydo.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    sQD++;
+                    MessageBox.Show("Done!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    connect.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
