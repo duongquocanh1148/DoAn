@@ -16,9 +16,7 @@ namespace DoAn
         SqlDataAdapter adapter = new SqlDataAdapter();
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
         SqlCommand cmd;
-        DataTable table = new DataTable();
-        int sQD = 8;
-        string s;
+        DataTable table = new DataTable();        
         public BoTriCongTac()
         {
             InitializeComponent();
@@ -31,13 +29,8 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sQD++;
-            gvTemp.Hide();
-            if (sQD < 9) s = "SQD\\000" + sQD;
-            else if (sQD < 99) s = "SQD\\00" + sQD;
-            else if (sQD < 999) s = "SQD\\0" + sQD;
-            lbSQD.Text = s;
-                     
+           
+            gvTemp.Hide();                                            
         }
 
         void loadData()
@@ -81,6 +74,7 @@ namespace DoAn
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            string s = lbSQD.Text + txbSQD.Text;
             try
             {
                 if (txbMaPhongNew.Text == "" || txbMaCVNew.Text == "" || txbMaNV.Text == "")
@@ -91,7 +85,7 @@ namespace DoAn
                     cmd = connect.CreateCommand();
                     cmd.CommandText = @"insert into CONGTAC values ('" + s + "','" + txbMaPhongNew.Text + "','" + txbMaCVNew.Text + "','" + txbMaNV.Text + "','" + DateTime.Parse(dtpNgayBD.Text) + "','" + null + "','" + txbLydo.Text + "')";
                     cmd.ExecuteNonQuery();
-                    sQD++;
+                   
                     MessageBox.Show("Done!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     connect.Close();
                 }
