@@ -18,7 +18,7 @@ namespace DoAn
         SqlCommand cmd;
         DataTable table = new DataTable();
         DataTable table2 = new DataTable();            
-        string s;
+        
         public DKNTT()
         {
             InitializeComponent();
@@ -33,19 +33,9 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-        }        
-        void HienThi()
-        {
-            int sdk = 5;
             gvTemp.Hide();
-            if (sdk < 9) s = @"QDDK\00" + sdk.ToString();
-            else if (sdk < 99) s = @"QDDK\0" + sdk.ToString();
-            else if (sdk < 999) s = @"QDDK\0" + sdk.ToString();
-            MessageBox.Show("" + sdk, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            lbSDK.Text = s;
-            sdk++;
-        }
+        }        
+        
         void loadData()
         {
             
@@ -110,7 +100,7 @@ namespace DoAn
         }       
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            int sdk = 5;
+            string s = lbSDK.Text + txbSDK.Text;
             //try
             //{
             connect.Open();
@@ -125,9 +115,7 @@ namespace DoAn
                 else
                 {
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    sdk++;                  
-                    MessageBox.Show("" + sdk, "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);                                             
                 }
             }
             connect.Close();                       
