@@ -494,6 +494,6 @@
         private System.Windows.Forms.Label lblSDK;
         private System.Windows.Forms.TextBox txbSDK;
         private System.Windows.Forms.Label lbSDK;
-        private System.Windows.Forms.TextBox txbSDK;
+
     }
 }

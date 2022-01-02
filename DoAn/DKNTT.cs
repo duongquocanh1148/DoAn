@@ -62,31 +62,10 @@ namespace DoAn
                 txbNoiCongTac.Text = gvTemp.Rows[i].Cells[1].Value.ToString();
                 txbChucVu.Text = gvTemp.Rows[i].Cells[2].Value.ToString();               
                 loadDataTN();
-            }
-        }
-        void DangKyNTT()
-        {
-
-            
-            try
-            {
-                connect.Open();
-                int i = gvTN.RowCount;
-                cmd = connect.CreateCommand();
-
-                cmd.CommandText = @"insert into DANGKYNHATT values ('" + s + "' , '" + txbID.Text + "' , '" + txbPhongNhaTT.Text + "' , " + int.Parse(txbDienTich.Text) + " , " + i + ")";
-                if (txbDienTich.Text != null || txbPhongNhaTT.Text != null)
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    sdk++;
-                }
                 connect.Close();
-            } catch (Exception ex)
-            {
-                MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
         void ThanNhan()
         {
             connect.Open();
