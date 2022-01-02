@@ -19,7 +19,7 @@ namespace DoAn
         DataTable table = new DataTable();
         DataTable table2 = new DataTable();
         int sdk = 6;
-        string s;
+       
         public DKNTT()
         {
             InitializeComponent();
@@ -33,11 +33,8 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gvTemp.Hide();                 
-            if(sdk<9) s = "QDDK\\000" + sdk.ToString();
-            else if(sdk<99) s = "QDDK\\00" + sdk.ToString();
-            else if(sdk<999) s = "QDDK\\0" + sdk.ToString();
-            lbSDK.Text = s;
+            gvTemp.Hide();                             
+           
         }
 
         void loadData()
@@ -67,12 +64,12 @@ namespace DoAn
         {
 
             
-            try
-            {
+            //try
+            //{
                 connect.Open();
                 int i = gvTN.RowCount;
                 cmd = connect.CreateCommand();
-
+                string s = lbSDK.Text + txbSDK.Text;
                 cmd.CommandText = @"insert into DANGKYNHATT values ('" + s + "' , '" + txbID.Text + "' , '" + txbPhongNhaTT.Text + "' , " + int.Parse(txbDienTich.Text) + " , " + i + ")";
                 if (txbDienTich.Text != null || txbPhongNhaTT.Text != null)
                 {
@@ -81,10 +78,10 @@ namespace DoAn
                     sdk++;
                 }
                 connect.Close();
-            } catch (Exception ex)
-            {
-                MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //} catch (Exception ex)
+            //{
+            //    MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
         void ThanNhan()
         {
