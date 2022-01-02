@@ -76,6 +76,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbSQD = new System.Windows.Forms.Label();
+            this.txbSQD = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvTemp)).BeginInit();
             this.SuspendLayout();
@@ -496,15 +497,24 @@
             this.lbSQD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbSQD.Location = new System.Drawing.Point(658, 40);
             this.lbSQD.Name = "lbSQD";
-            this.lbSQD.Size = new System.Drawing.Size(78, 20);
+            this.lbSQD.Size = new System.Drawing.Size(51, 20);
             this.lbSQD.TabIndex = 5;
-            this.lbSQD.Text = "SQD\\000";
+            this.lbSQD.Text = "SQD\\";
+            // 
+            // txbSQD
+            // 
+            this.txbSQD.Location = new System.Drawing.Point(713, 40);
+            this.txbSQD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbSQD.Name = "txbSQD";
+            this.txbSQD.Size = new System.Drawing.Size(62, 22);
+            this.txbSQD.TabIndex = 47;
             // 
             // BoTriCongTac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txbSQD);
             this.Controls.Add(this.gvTemp);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dtpNgayBD);
@@ -597,5 +607,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbSQD;
+        private System.Windows.Forms.TextBox txbSQD;
     }
 }
