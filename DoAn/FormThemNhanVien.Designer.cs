@@ -29,22 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemNhanVien));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,148 +62,33 @@
             this.tbxHKTTru = new System.Windows.Forms.TextBox();
             this.tbxCCCD = new System.Windows.Forms.TextBox();
             this.tbxQuocTich = new System.Windows.Forms.TextBox();
-            this.tbxNgayVaoDoan = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txbHocVan = new System.Windows.Forms.TextBox();
             this.tbxBHXH = new System.Windows.Forms.TextBox();
-            this.tbxGioiTinh = new System.Windows.Forms.TextBox();
-            this.tbxNgaySinh = new System.Windows.Forms.TextBox();
-            this.tbxNgayCap = new System.Windows.Forms.TextBox();
             this.tbxNoiONhaTT = new System.Windows.Forms.TextBox();
-            this.tbxNgayVaoDang = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txbChuyenMon = new System.Windows.Forms.TextBox();
             this.tbxNoiCap = new System.Windows.Forms.TextBox();
+            this.dtpNgayCap = new System.Windows.Forms.DateTimePicker();
+            this.dtpDoan = new System.Windows.Forms.DateTimePicker();
+            this.dtpDang = new System.Windows.Forms.DateTimePicker();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.txbMaPhong = new System.Windows.Forms.TextBox();
+            this.txbMaCV = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.ckbNam = new System.Windows.Forms.CheckBox();
+            this.ckbNu = new System.Windows.Forms.CheckBox();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.txbTonGiao = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txbNgoaiNgu = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripLabel1,
-            this.toolStripButton2,
-            this.toolStripLabel2,
-            this.toolStripButton3,
-            this.toolStripLabel3,
-            this.toolStripButton4,
-            this.toolStripLabel4,
-            this.toolStripButton5,
-            this.toolStripLabel5,
-            this.toolStripButton6,
-            this.toolStripLabel6,
-            this.toolStripButton7,
-            this.toolStripLabel7});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1063, 27);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::DoAn.Properties.Resources.toolStripButton1_Image;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton1.Text = "Thêm";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(46, 24);
-            this.toolStripLabel1.Text = "Thêm";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::DoAn.Properties.Resources.toolStripButton2_Image;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton2.Text = "Sửa";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(34, 24);
-            this.toolStripLabel2.Text = "Sửa";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::DoAn.Properties.Resources.toolStripButton3_Image;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton3.Text = "Xóa";
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(35, 24);
-            this.toolStripLabel3.Text = "Xóa";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::DoAn.Properties.Resources.toolStripButton4_Image;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton4.Text = "Lưu";
-            // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(33, 24);
-            this.toolStripLabel4.Text = "Lưu";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::DoAn.Properties.Resources.toolStripButton5_Image;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton5.Text = "Hủy";
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(35, 24);
-            this.toolStripLabel5.Text = "Hủy";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = global::DoAn.Properties.Resources.toolStripButton6_Image;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton6.Text = "Cập Nhật";
-            // 
-            // toolStripLabel6
-            // 
-            this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(71, 24);
-            this.toolStripLabel6.Text = "Cập Nhật";
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = global::DoAn.Properties.Resources.toolStripButton7_Image;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton7.Text = "In";
-            // 
-            // toolStripLabel7
-            // 
-            this.toolStripLabel7.Name = "toolStripLabel7";
-            this.toolStripLabel7.RightToLeftAutoMirrorImage = true;
-            this.toolStripLabel7.Size = new System.Drawing.Size(21, 24);
-            this.toolStripLabel7.Text = "In";
             // 
             // lbTitle
             // 
@@ -519,19 +390,12 @@
             this.tbxQuocTich.Size = new System.Drawing.Size(291, 22);
             this.tbxQuocTich.TabIndex = 35;
             // 
-            // tbxNgayVaoDoan
+            // txbHocVan
             // 
-            this.tbxNgayVaoDoan.Location = new System.Drawing.Point(143, 451);
-            this.tbxNgayVaoDoan.Name = "tbxNgayVaoDoan";
-            this.tbxNgayVaoDoan.Size = new System.Drawing.Size(252, 22);
-            this.tbxNgayVaoDoan.TabIndex = 36;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(161, 483);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(233, 22);
-            this.textBox12.TabIndex = 37;
+            this.txbHocVan.Location = new System.Drawing.Point(161, 483);
+            this.txbHocVan.Name = "txbHocVan";
+            this.txbHocVan.Size = new System.Drawing.Size(233, 22);
+            this.txbHocVan.TabIndex = 37;
             // 
             // tbxBHXH
             // 
@@ -540,70 +404,233 @@
             this.tbxBHXH.Size = new System.Drawing.Size(204, 22);
             this.tbxBHXH.TabIndex = 38;
             // 
-            // tbxGioiTinh
-            // 
-            this.tbxGioiTinh.Location = new System.Drawing.Point(522, 181);
-            this.tbxGioiTinh.Name = "tbxGioiTinh";
-            this.tbxGioiTinh.Size = new System.Drawing.Size(204, 22);
-            this.tbxGioiTinh.TabIndex = 39;
-            // 
-            // tbxNgaySinh
-            // 
-            this.tbxNgaySinh.Location = new System.Drawing.Point(531, 153);
-            this.tbxNgaySinh.Name = "tbxNgaySinh";
-            this.tbxNgaySinh.Size = new System.Drawing.Size(204, 22);
-            this.tbxNgaySinh.TabIndex = 40;
-            // 
-            // tbxNgayCap
-            // 
-            this.tbxNgayCap.Location = new System.Drawing.Point(517, 393);
-            this.tbxNgayCap.Name = "tbxNgayCap";
-            this.tbxNgayCap.Size = new System.Drawing.Size(204, 22);
-            this.tbxNgayCap.TabIndex = 41;
-            // 
             // tbxNoiONhaTT
             // 
-            this.tbxNoiONhaTT.Location = new System.Drawing.Point(594, 421);
+            this.tbxNoiONhaTT.Location = new System.Drawing.Point(615, 423);
             this.tbxNoiONhaTT.Name = "tbxNoiONhaTT";
             this.tbxNoiONhaTT.Size = new System.Drawing.Size(204, 22);
             this.tbxNoiONhaTT.TabIndex = 42;
             // 
-            // tbxNgayVaoDang
+            // txbChuyenMon
             // 
-            this.tbxNgayVaoDang.Location = new System.Drawing.Point(569, 451);
-            this.tbxNgayVaoDang.Name = "tbxNgayVaoDang";
-            this.tbxNgayVaoDang.Size = new System.Drawing.Size(204, 22);
-            this.tbxNgayVaoDang.TabIndex = 43;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(615, 485);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(204, 22);
-            this.textBox19.TabIndex = 44;
+            this.txbChuyenMon.Location = new System.Drawing.Point(615, 485);
+            this.txbChuyenMon.Name = "txbChuyenMon";
+            this.txbChuyenMon.Size = new System.Drawing.Size(204, 22);
+            this.txbChuyenMon.TabIndex = 44;
             // 
             // tbxNoiCap
             // 
-            this.tbxNoiCap.Location = new System.Drawing.Point(797, 395);
+            this.tbxNoiCap.Location = new System.Drawing.Point(797, 393);
             this.tbxNoiCap.Name = "tbxNoiCap";
             this.tbxNoiCap.Size = new System.Drawing.Size(204, 22);
             this.tbxNoiCap.TabIndex = 45;
+            // 
+            // dtpNgayCap
+            // 
+            this.dtpNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayCap.Location = new System.Drawing.Point(516, 393);
+            this.dtpNgayCap.Name = "dtpNgayCap";
+            this.dtpNgayCap.Size = new System.Drawing.Size(200, 22);
+            this.dtpNgayCap.TabIndex = 46;
+            // 
+            // dtpDoan
+            // 
+            this.dtpDoan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDoan.Location = new System.Drawing.Point(194, 455);
+            this.dtpDoan.Name = "dtpDoan";
+            this.dtpDoan.Size = new System.Drawing.Size(200, 22);
+            this.dtpDoan.TabIndex = 47;
+            // 
+            // dtpDang
+            // 
+            this.dtpDang.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDang.Location = new System.Drawing.Point(619, 453);
+            this.dtpDang.Name = "dtpDang";
+            this.dtpDang.Size = new System.Drawing.Size(200, 22);
+            this.dtpDang.TabIndex = 48;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(852, 519);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(137, 33);
+            this.btnConfirm.TabIndex = 49;
+            this.btnConfirm.Text = "Xác Nhận";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // txbMaPhong
+            // 
+            this.txbMaPhong.Location = new System.Drawing.Point(561, 275);
+            this.txbMaPhong.Name = "txbMaPhong";
+            this.txbMaPhong.Size = new System.Drawing.Size(266, 22);
+            this.txbMaPhong.TabIndex = 53;
+            // 
+            // txbMaCV
+            // 
+            this.txbMaCV.Location = new System.Drawing.Point(561, 243);
+            this.txbMaCV.Name = "txbMaCV";
+            this.txbMaCV.Size = new System.Drawing.Size(266, 22);
+            this.txbMaCV.TabIndex = 52;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(444, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Mã Phòng";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label22.Location = new System.Drawing.Point(444, 245);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(98, 20);
+            this.label22.TabIndex = 50;
+            this.label22.Text = "Mã Chức vụ";
+            // 
+            // ckbNam
+            // 
+            this.ckbNam.AutoSize = true;
+            this.ckbNam.Location = new System.Drawing.Point(531, 185);
+            this.ckbNam.Name = "ckbNam";
+            this.ckbNam.Size = new System.Drawing.Size(58, 20);
+            this.ckbNam.TabIndex = 54;
+            this.ckbNam.Text = "Nam";
+            this.ckbNam.UseVisualStyleBackColor = true;
+            // 
+            // ckbNu
+            // 
+            this.ckbNu.AutoSize = true;
+            this.ckbNu.Location = new System.Drawing.Point(595, 185);
+            this.ckbNu.Name = "ckbNu";
+            this.ckbNu.Size = new System.Drawing.Size(46, 20);
+            this.ckbNu.TabIndex = 55;
+            this.ckbNu.Text = "Nữ";
+            this.ckbNu.UseVisualStyleBackColor = true;
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(531, 153);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 22);
+            this.dtpNgaySinh.TabIndex = 56;
+            // 
+            // txbTonGiao
+            // 
+            this.txbTonGiao.Location = new System.Drawing.Point(561, 303);
+            this.txbTonGiao.Name = "txbTonGiao";
+            this.txbTonGiao.Size = new System.Drawing.Size(204, 22);
+            this.txbTonGiao.TabIndex = 58;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label23.Location = new System.Drawing.Point(447, 305);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(73, 20);
+            this.label23.TabIndex = 57;
+            this.label23.Text = "Tôn giáo";
+            // 
+            // txbNgoaiNgu
+            // 
+            this.txbNgoaiNgu.Location = new System.Drawing.Point(561, 331);
+            this.txbNgoaiNgu.Name = "txbNgoaiNgu";
+            this.txbNgoaiNgu.Size = new System.Drawing.Size(204, 22);
+            this.txbNgoaiNgu.TabIndex = 60;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label24.Location = new System.Drawing.Point(447, 333);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(84, 20);
+            this.label24.TabIndex = 59;
+            this.label24.Text = "Ngoại ngữ";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton6,
+            this.toolStripLabel6,
+            this.toolStripButton7,
+            this.toolStripLabel7});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1091, 27);
+            this.toolStrip1.TabIndex = 61;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = global::DoAn.Properties.Resources.toolStripButton6_Image;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton6.Text = "Cập Nhật";
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(71, 24);
+            this.toolStripLabel6.Text = "Cập Nhật";
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton7.Text = "In";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
+            // toolStripLabel7
+            // 
+            this.toolStripLabel7.Name = "toolStripLabel7";
+            this.toolStripLabel7.RightToLeftAutoMirrorImage = true;
+            this.toolStripLabel7.Size = new System.Drawing.Size(66, 24);
+            this.toolStripLabel7.Text = "Quay Lại";
             // 
             // FormThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 548);
+            this.ClientSize = new System.Drawing.Size(1091, 564);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.txbNgoaiNgu);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.txbTonGiao);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.dtpNgaySinh);
+            this.Controls.Add(this.ckbNu);
+            this.Controls.Add(this.ckbNam);
+            this.Controls.Add(this.txbMaPhong);
+            this.Controls.Add(this.txbMaCV);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.dtpDang);
+            this.Controls.Add(this.dtpDoan);
+            this.Controls.Add(this.dtpNgayCap);
             this.Controls.Add(this.tbxNoiCap);
-            this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.tbxNgayVaoDang);
+            this.Controls.Add(this.txbChuyenMon);
             this.Controls.Add(this.tbxNoiONhaTT);
-            this.Controls.Add(this.tbxNgayCap);
-            this.Controls.Add(this.tbxNgaySinh);
-            this.Controls.Add(this.tbxGioiTinh);
             this.Controls.Add(this.tbxBHXH);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.tbxNgayVaoDoan);
+            this.Controls.Add(this.txbHocVan);
             this.Controls.Add(this.tbxQuocTich);
             this.Controls.Add(this.tbxCCCD);
             this.Controls.Add(this.tbxHKTTru);
@@ -635,7 +662,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbTitle);
-            this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormThemNhanVien";
             this.Text = "Form Thêm Nhân Viên";
@@ -649,21 +675,6 @@
 
         #endregion
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel7;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -695,15 +706,30 @@
         private System.Windows.Forms.TextBox tbxHKTTru;
         private System.Windows.Forms.TextBox tbxCCCD;
         private System.Windows.Forms.TextBox tbxQuocTich;
-        private System.Windows.Forms.TextBox tbxNgayVaoDoan;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txbHocVan;
         private System.Windows.Forms.TextBox tbxBHXH;
-        private System.Windows.Forms.TextBox tbxGioiTinh;
-        private System.Windows.Forms.TextBox tbxNgaySinh;
-        private System.Windows.Forms.TextBox tbxNgayCap;
         private System.Windows.Forms.TextBox tbxNoiONhaTT;
-        private System.Windows.Forms.TextBox tbxNgayVaoDang;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txbChuyenMon;
         private System.Windows.Forms.TextBox tbxNoiCap;
+        private System.Windows.Forms.DateTimePicker dtpNgayCap;
+        private System.Windows.Forms.DateTimePicker dtpDoan;
+        private System.Windows.Forms.DateTimePicker dtpDang;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.TextBox txbMaPhong;
+        private System.Windows.Forms.TextBox txbMaCV;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox ckbNam;
+        private System.Windows.Forms.CheckBox ckbNu;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        private System.Windows.Forms.TextBox txbTonGiao;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txbNgoaiNgu;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel7;
     }
 }

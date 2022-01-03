@@ -68,7 +68,10 @@ namespace DoAn
 
         private void tsbtnAdd_Click(object sender, EventArgs e)
         {
-
+            FormThemNhanVien f = new FormThemNhanVien();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void gvDSNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
