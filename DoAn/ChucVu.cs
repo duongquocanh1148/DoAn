@@ -54,13 +54,7 @@ namespace DoAn
         private void tsbtnAdd_Click(object sender, EventArgs e)
         {
             
-            cmd = connect.CreateCommand();
-            cmd.CommandText = "insert into CHUCVU (Machucvu,Tenchucvu) values ('" + tbxIDChucVu.Text + "', '" + tbxNameChucVu.Text + "')";
-            if(tbxIDChucVu.Text != "" || tbxNameChucVu.Text != "") cmd.ExecuteNonQuery();
-            //code kiem tra trung ID
-            else  MessageBox.Show("Vui long nhap ma chuc vu ");
-
-            loadData();                    
+                           
         }
 
         private void gvChucVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -70,13 +64,33 @@ namespace DoAn
             tbxNameChucVu.Text = gvChucVu.Rows[i].Cells[1].Value.ToString();         
         }
 
-        private void tsbtnUpdate_Click(object sender, EventArgs e)
+        
+        
+        private void tsbtnBack_Click(object sender, EventArgs e)
         {
-            loadData();
-            MessageBox.Show("Update Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
-        private void tsbtnDelete_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+            cmd = connect.CreateCommand();
+            cmd.CommandText = "insert into CHUCVU (Machucvu,Tenchucvu) values ('" + tbxIDChucVu.Text + "', '" + tbxNameChucVu.Text + "')";
+            if (tbxIDChucVu.Text != "" || tbxNameChucVu.Text != "") cmd.ExecuteNonQuery();
+            //code kiem tra trung ID
+            else MessageBox.Show("Vui long nhap ma chuc vu ");
+
+            loadData();
+        }
+
+        private void tsbtnFix_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
@@ -88,13 +102,19 @@ namespace DoAn
                 loadData();
                 MessageBox.Show("Delete Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Cannot Delete", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
-        private void tsbtnBack_Click(object sender, EventArgs e)
+
+        private void btnUpLoad_Click(object sender, EventArgs e)
+        {
+            loadData();
+            MessageBox.Show("Update Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
