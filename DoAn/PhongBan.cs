@@ -48,6 +48,8 @@ namespace DoAn
         {
             int i = gvPhongBan.CurrentRow.Index;
             txbIDRoom.Text = gvPhongBan.Rows[i].Cells[0].Value.ToString();
+            txbTenPhong.Text = gvPhongBan.Rows[i].Cells[1].Value.ToString();
+            txbMaQL.Text = gvPhongBan.Rows[i].Cells[2].Value.ToString();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -89,6 +91,53 @@ namespace DoAn
                 f.ShowDialog();
                 this.Show();
                 connect.Close();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhap ma phong!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"update PHONG set MaQL = '"+txbMaQL.Text+"' where Maphong = '"+txbIDRoom.Text+"'";
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                MessageBox.Show("Update Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadData();
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txbIDRoom.Text == "" || txbTenPhong.Text == "" || txbMaQL.Text == "") 
+                MessageBox.Show("Vui long nhap day du thong tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"insert into PHONG values ('"+txbIDRoom.Text+"',N'"+txbTenPhong.Text+"','"+txbMaQL.Text+"')";
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                MessageBox.Show("Add Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadData();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txbIDRoom.Text == "" || txbTenPhong.Text == "" || txbMaQL.Text == "")
+                MessageBox.Show("Vui long nhap ma phong!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"delete from PHONG where Maphong = '"+txbIDRoom.Text+"'";
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                MessageBox.Show("Delete Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadData();
             }
         }
     }
