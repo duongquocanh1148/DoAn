@@ -38,7 +38,7 @@ namespace DoAn
             txbGioiTinh.Text = gvCTNV.Rows[i].Cells[4].Value.ToString();
             if (txbGioiTinh.Text == "False") txbGioiTinh.Text = "Nam";
             else txbGioiTinh.Text = "Nu";
-            txbNgaySinh.Text = gvCTNV.Rows[i].Cells[5].Value.ToString();
+            dtpNgaySinh.Text = gvCTNV.Rows[i].Cells[5].Value.ToString();
             txbBHXH.Text = gvCTNV.Rows[i].Cells[6].Value.ToString();           
             txbNoiSinh.Text = gvCTNV.Rows[i].Cells[8].Value.ToString();
             txbChucVu.Text = gvCTNV.Rows[i].Cells[9].Value.ToString();
@@ -59,24 +59,28 @@ namespace DoAn
         
  
 
-        private void tsbtnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
 
-        private void tsbtnUpdate_Click(object sender, EventArgs e)
+        
+
+        private void btnUpLoad_Click(object sender, EventArgs e)
         {
             connect.Open();
             cmd = connect.CreateCommand();
-            cmd.CommandText = @"update CTNHANVIEN set HKTamTru =N'" + txbHoKhauTamTru.Text + "'" 
-                + ", NgayCap = '" + DateTime.Parse(dtpNgayCap.Text)+"'" 
-                + ", NoiCap = N'"+ txbNoiCap.Text +"'"
+            cmd.CommandText = @"update CTNHANVIEN set HKTamTru =N'" + txbHoKhauTamTru.Text + "'"
+                + ", NgayCap = '" + DateTime.Parse(dtpNgayCap.Text) + "'"
+                + ", NoiCap = N'" + txbNoiCap.Text + "'"
                 + ", NgayvaoDoan = '" + DateTime.Parse(dtpNgayVaoDoan.Text) + "'"
                 + ", NgayvaoDang = '" + DateTime.Parse(dtpNgayVaoDang.Text) + "'"
-                + "where MaNV = '"+ txbMaNV.Text +"'";                          
+                + "where MaNV = '" + txbMaNV.Text + "'";
             cmd.ExecuteNonQuery();
             MessageBox.Show("Update Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             connect.Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

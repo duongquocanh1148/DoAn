@@ -28,20 +28,15 @@ namespace DoAn
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BangHeSoLuong));
             this.btnBack = new System.Windows.Forms.Button();
-
             this.gvBHSL = new System.Windows.Forms.DataGridView();
-         
+            this.lbBangHeSoluong = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvBHSL)).BeginInit();
-
             this.SuspendLayout();
             // 
             // btnBack
             // 
-
-            this.btnBack.Location = new System.Drawing.Point(713, 44);
-
+            this.btnBack.Location = new System.Drawing.Point(1000, 60);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 3;
@@ -49,7 +44,6 @@ namespace DoAn
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-
             // gvBHSL
             // 
             this.gvBHSL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -57,25 +51,31 @@ namespace DoAn
             this.gvBHSL.Name = "gvBHSL";
             this.gvBHSL.RowHeadersWidth = 51;
             this.gvBHSL.RowTemplate.Height = 24;
-            this.gvBHSL.Size = new System.Drawing.Size(776, 337);
+            this.gvBHSL.Size = new System.Drawing.Size(1098, 337);
             this.gvBHSL.TabIndex = 4;
-
+            // 
+            // lbBangHeSoluong
+            // 
+            this.lbBangHeSoluong.AutoSize = true;
+            this.lbBangHeSoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBangHeSoluong.Location = new System.Drawing.Point(403, 44);
+            this.lbBangHeSoluong.Name = "lbBangHeSoluong";
+            this.lbBangHeSoluong.Size = new System.Drawing.Size(359, 39);
+            this.lbBangHeSoluong.TabIndex = 5;
+            this.lbBangHeSoluong.Text = "BẢNG HỆ SỐ LƯƠNG";
             // 
             // BangHeSoLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1122, 444);
+            this.Controls.Add(this.lbBangHeSoluong);
             this.Controls.Add(this.gvBHSL);
-
             this.Controls.Add(this.btnBack);
             this.Name = "BangHeSoLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảng Hệ Số Lương";
-
             this.Load += new System.EventHandler(this.BangHeSoLuong_Load);
-           
             ((System.ComponentModel.ISupportInitialize)(this.gvBHSL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -85,6 +85,6 @@ namespace DoAn
         #endregion
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridView gvBHSL;
-
+        private System.Windows.Forms.Label lbBangHeSoluong;
     }
 }

@@ -38,6 +38,21 @@ namespace DoAn
             this.Close();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             int gender = 0;

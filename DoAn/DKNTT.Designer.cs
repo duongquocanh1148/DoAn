@@ -64,7 +64,6 @@
             this.lblSDK = new System.Windows.Forms.Label();
             this.txbSDK = new System.Windows.Forms.TextBox();
             this.lbSDK = new System.Windows.Forms.Label();
-            this.txbSDK = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvTN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTemp)).BeginInit();
             this.SuspendLayout();
@@ -318,11 +317,12 @@
             // gvTN
             // 
             this.gvTN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvTN.Location = new System.Drawing.Point(88, 369);
+            this.gvTN.Location = new System.Drawing.Point(89, 369);
             this.gvTN.Name = "gvTN";
             this.gvTN.RowHeadersWidth = 51;
             this.gvTN.RowTemplate.Height = 24;
-            this.gvTN.Size = new System.Drawing.Size(711, 150);
+            this.gvTN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect;
+            this.gvTN.Size = new System.Drawing.Size(741, 150);
             this.gvTN.TabIndex = 40;
             this.gvTN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTN_CellContentClick);
             // 
@@ -384,15 +384,12 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // lbSDK
+            // lblSDK
             // 
-            this.lbSDK.AutoSize = true;
-            this.lbSDK.Location = new System.Drawing.Point(716, 29);
-            this.lbSDK.Name = "lbSDK";
-
-            this.lbSDK.Size = new System.Drawing.Size(64, 20);
-            this.lbSDK.TabIndex = 4;
-            this.lbSDK.Text = "QDDK\\";
+            this.lblSDK.Location = new System.Drawing.Point(0, 0);
+            this.lblSDK.Name = "lblSDK";
+            this.lblSDK.Size = new System.Drawing.Size(100, 23);
+            this.lblSDK.TabIndex = 51;
             // 
             // txbSDK
             // 
@@ -401,16 +398,22 @@
             this.txbSDK.Name = "txbSDK";
             this.txbSDK.Size = new System.Drawing.Size(60, 22);
             this.txbSDK.TabIndex = 50;
-
+            // 
+            // lbSDK
+            // 
+            this.lbSDK.AutoSize = true;
+            this.lbSDK.Location = new System.Drawing.Point(716, 29);
+            this.lbSDK.Name = "lbSDK";
+            this.lbSDK.Size = new System.Drawing.Size(49, 16);
+            this.lbSDK.TabIndex = 4;
+            this.lbSDK.Text = "QDDK\\";
             // 
             // DKNTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 579);
-
+            this.ClientSize = new System.Drawing.Size(920, 579);
             this.Controls.Add(this.txbSDK);
-
             this.Controls.Add(this.lblSDK);
             this.Controls.Add(this.txbNCTTN);
             this.Controls.Add(this.label8);
@@ -448,6 +451,7 @@
             this.Controls.Add(this.lbTitle);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DKNTT";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhà Tập Thể";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvTN)).EndInit();
