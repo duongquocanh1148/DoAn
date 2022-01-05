@@ -78,7 +78,7 @@ namespace DoAn
             try
             {
                 if (txbMaPhongNew.Text == "" || txbMaCVNew.Text == "" || txbMaNV.Text == "")
-                    MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     connect.Open();
@@ -92,7 +92,7 @@ namespace DoAn
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

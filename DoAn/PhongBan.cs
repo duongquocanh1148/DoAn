@@ -59,7 +59,7 @@ namespace DoAn
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhap ma phong!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhập mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
@@ -75,7 +75,7 @@ namespace DoAn
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhap ma phong!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhap mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
@@ -96,7 +96,7 @@ namespace DoAn
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhap ma phong!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhập ma phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
@@ -112,7 +112,7 @@ namespace DoAn
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txbIDRoom.Text == "" || txbTenPhong.Text == "" || txbMaQL.Text == "") 
-                MessageBox.Show("Vui long nhap day du thong tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui long nhập đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
@@ -128,7 +128,7 @@ namespace DoAn
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (txbIDRoom.Text == "" || txbTenPhong.Text == "" || txbMaQL.Text == "")
-                MessageBox.Show("Vui long nhap ma phong!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui long nhập mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
