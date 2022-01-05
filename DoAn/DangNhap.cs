@@ -13,7 +13,7 @@ namespace DoAn
 {
     public partial class DangNhap : Form
     {
-        
+        SqlConnection conn = new SqlConnection(ConnectSQL.connectString);
         public DangNhap()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace DoAn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-ICRUG9KG\SQLEXPRESS;Initial Catalog=CNPM;Integrated Security=True");
+            
             try
             {
                 conn.Open();

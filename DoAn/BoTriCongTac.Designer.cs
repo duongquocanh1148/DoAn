@@ -51,7 +51,7 @@
             this.txbLydo = new System.Windows.Forms.TextBox();
             this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
             this.btnLoad = new System.Windows.Forms.Button();
-            this.gvTemp = new System.Windows.Forms.DataGridView();
+            this.gvNhanVien = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txbMaCV = new System.Windows.Forms.TextBox();
@@ -62,7 +62,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lbSQD = new System.Windows.Forms.Label();
             this.txbSQD = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTemp)).BeginInit();
+
+            this.gvCongTac = new System.Windows.Forms.DataGridView();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCongTac)).BeginInit();
+
             this.SuspendLayout();
             // 
             // lbTitle
@@ -263,15 +268,15 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // gvTemp
+            // gvNhanVien
             // 
-            this.gvTemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvTemp.Location = new System.Drawing.Point(16, 341);
-            this.gvTemp.Name = "gvTemp";
-            this.gvTemp.RowHeadersWidth = 51;
-            this.gvTemp.RowTemplate.Height = 24;
-            this.gvTemp.Size = new System.Drawing.Size(635, 97);
-            this.gvTemp.TabIndex = 46;
+            this.gvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvNhanVien.Location = new System.Drawing.Point(16, 341);
+            this.gvNhanVien.Name = "gvNhanVien";
+            this.gvNhanVien.RowHeadersWidth = 51;
+            this.gvNhanVien.RowTemplate.Height = 24;
+            this.gvNhanVien.Size = new System.Drawing.Size(635, 97);
+            this.gvNhanVien.TabIndex = 46;
             // 
             // label8
             // 
@@ -363,13 +368,24 @@
             this.txbSQD.Size = new System.Drawing.Size(62, 22);
             this.txbSQD.TabIndex = 47;
             // 
+            // gvCongTac
+            // 
+            this.gvCongTac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvCongTac.Location = new System.Drawing.Point(16, 341);
+            this.gvCongTac.Name = "gvCongTac";
+            this.gvCongTac.RowHeadersWidth = 51;
+            this.gvCongTac.RowTemplate.Height = 24;
+            this.gvCongTac.Size = new System.Drawing.Size(635, 97);
+            this.gvCongTac.TabIndex = 48;
+            // 
             // BoTriCongTac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gvCongTac);
             this.Controls.Add(this.txbSQD);
-            this.Controls.Add(this.gvTemp);
+            this.Controls.Add(this.gvNhanVien);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dtpNgayBD);
             this.Controls.Add(this.btnConfirm);
@@ -404,7 +420,12 @@
             this.Name = "BoTriCongTac";
             this.Text = "Bố Trí Công Tác";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gvTemp)).EndInit();
+
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCongTac)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,7 +454,7 @@
         private System.Windows.Forms.TextBox txbLydo;
         private System.Windows.Forms.DateTimePicker dtpNgayBD;
         private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.DataGridView gvTemp;
+        private System.Windows.Forms.DataGridView gvNhanVien;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txbMaCV;
@@ -444,5 +465,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbSQD;
         private System.Windows.Forms.TextBox txbSQD;
+        private System.Windows.Forms.DataGridView gvCongTac;
     }
 }

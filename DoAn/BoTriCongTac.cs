@@ -15,8 +15,10 @@ namespace DoAn
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
-        SqlCommand cmd;
-        DataTable table = new DataTable();        
+        SqlCommand cmd,cmd1;
+        DataTable table = new DataTable();
+        DataTable table1 = new DataTable();
+        string dateBD;
         public BoTriCongTac()
         {
             InitializeComponent();
@@ -29,8 +31,8 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
-            gvTemp.Hide();                                            
+            
+            gvNhanVien.Hide();                                            
         }
 
         void loadData()
@@ -49,18 +51,38 @@ namespace DoAn
                 adapter.SelectCommand = cmd;
                 table.Clear();
                 adapter.Fill(table);
-                gvTemp.DataSource = table;
-                int i = gvTemp.CurrentRow.Index;
-                txbTenNV.Text = gvTemp.Rows[i].Cells[0].Value.ToString();
-                txbMaPhong.Text = gvTemp.Rows[i].Cells[1].Value.ToString();
-                txbPhongOld.Text = gvTemp.Rows[i].Cells[2].Value.ToString();
-                txbMaCV.Text = gvTemp.Rows[i].Cells[3].Value.ToString();
-                txbChucvuOld.Text = gvTemp.Rows[i].Cells[4].Value.ToString();
+                gvNhanVien.DataSource = table;
+                
+                int i = gvNhanVien.CurrentRow.Index;
+                txbTenNV.Text = gvNhanVien.Rows[i].Cells[0].Value.ToString();
+                txbMaPhong.Text = gvNhanVien.Rows[i].Cells[1].Value.ToString();
+                txbPhongOld.Text = gvNhanVien.Rows[i].Cells[2].Value.ToString();
+                txbMaCV.Text = gvNhanVien.Rows[i].Cells[3].Value.ToString();
+                txbChucvuOld.Text = gvNhanVien.Rows[i].Cells[4].Value.ToString();
+                cmd1 = connect.CreateCommand();
+                cmd1.CommandText = @"select NgayBD from CONGTAC where MaNV = '" + txbMaNV.Text + "'";
+                adapter.SelectCommand = cmd1;
+                table1.Clear();
+                adapter.Fill(table1);
+                gvCongTac.DataSource = table1;
+                int j = gvCongTac.CurrentRow.Index;     
+                dateBD = gvCongTac.Rows[j].Cells[0].Value.ToString();
                 connect.Close();
             }
         }
 
-        
+        void Clear()
+        {
+            txbMaNV.Text = "";
+            txbMaCV.Text = "";
+            txbMaCVNew.Text = "";
+            txbMaPhong.Text = "";
+            txbMaPhongNew.Text = "";
+            txbPhongOld.Text = "";
+            txbPhongNew.Text = "";
+            txbSQD.Text = "";
+            txbTenNV.Text = "";
+        }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
@@ -83,10 +105,11 @@ namespace DoAn
                 {
                     connect.Open();
                     cmd = connect.CreateCommand();
-                    cmd.CommandText = @"insert into CONGTAC values ('" + s + "','" + txbMaPhongNew.Text + "','" + txbMaCVNew.Text + "','" + txbMaNV.Text + "','" + DateTime.Parse(dtpNgayBD.Text) + "','" + null + "','" + txbLydo.Text + "')";
+                    cmd.CommandText = @"insert into CONGTAC values ('" + s + "','" + txbMaPhongNew.Text + "','" + txbMaCVNew.Text + "','" + txbMaNV.Text + "','" + DateTime.Parse(dtpNgayBD.Text) + "','" + dateBD + "','" + txbLydo.Text + "')";
                     cmd.ExecuteNonQuery();
                    
                     MessageBox.Show("Done!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
                     connect.Close();
                 }
             }
