@@ -63,9 +63,9 @@ namespace DoAn
 
                 if (ckbNu.Checked) gender = 1;
                 else if (ckbNam.Checked) gender = 0;
-                else MessageBox.Show("Vui long chon gioi tinh!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("Vui long chọn giới tính!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (tbxID.Text == "" || tbxHoTen.Text == "" || txbMaCV.Text == "" || txbMaPhong.Text == "" || tbxBHXH.Text == "")
-                    MessageBox.Show("Vui long dien day du thong tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui long điền đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
 
@@ -76,7 +76,7 @@ namespace DoAn
 
                 cmd1 = connect.CreateCommand();
                 if (tbxID.Text == "" || tbxNguyenQuan.Text == "" || tbxHKTT.Text == "" || tbxHKTTru.Text == "" || tbxCCCD.Text == "")
-                    MessageBox.Show("Vui long dien day du thong tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui long điền đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     cmd1.CommandText = @"Insert into CTNHANVIEN values('" + tbxID.Text + "',N'" + tbxNguyenQuan.Text + "',N'" + tbxHKTT.Text + "','" + tbxHKTTru.Text + "','" + tbxCCCD.Text + "','" + DateTime.Parse(dtpNgayCap.Text) + "','" + tbxNoiCap.Text + "','" + tbxNoiSinh.Text + "','" + tbxQuocTich.Text + "','" + txbTonGiao.Text + "','" + DateTime.Parse(dtpDoan.Text) + "','" + DateTime.Parse(dtpDang.Text) + "',N'" + txbHocVan.Text + "',N'" + txbChuyenMon.Text + "','" + txbNgoaiNgu.Text + "',N'" + tbxChucVu.Text + "')";
@@ -86,7 +86,7 @@ namespace DoAn
                 MessageBox.Show("Add completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }catch (Exception ex)
             {
-                MessageBox.Show("Vui long kiem tra lại thong tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui long kiểm tra lại thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

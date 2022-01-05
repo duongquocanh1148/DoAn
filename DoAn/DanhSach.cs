@@ -83,7 +83,7 @@ namespace DoAn
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txbMaNV.Text == "") MessageBox.Show("Vui long nhap ma nhan vien!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txbMaNV.Text == "") MessageBox.Show("Vui lòng nhập mã nhân viên!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
@@ -99,7 +99,7 @@ namespace DoAn
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            if(txbMaNV.Text == "") MessageBox.Show("Vui long nhap ma nhan vien!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if(txbMaNV.Text == "") MessageBox.Show("Vui lòng nhập mã nhân viên!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();

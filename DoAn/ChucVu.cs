@@ -78,7 +78,7 @@ namespace DoAn
             cmd.CommandText = "insert into CHUCVU (Machucvu,Tenchucvu) values ('" + tbxIDChucVu.Text + "', '" + tbxNameChucVu.Text + "')";
             if (tbxIDChucVu.Text != "" || tbxNameChucVu.Text != "") cmd.ExecuteNonQuery();
             //code kiem tra trung ID
-            else MessageBox.Show("Vui long nhap ma chuc vu ");
+            else MessageBox.Show("Vui lòng nhập mã chức vụ ");
 
             loadData();
         }
