@@ -46,9 +46,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txbSL = new System.Windows.Forms.TextBox();
             this.lbSL = new System.Windows.Forms.Label();
-            this.txbIDRoom = new System.Windows.Forms.TextBox();
             this.lbIDRoom = new System.Windows.Forms.Label();
             this.gvViTriCongTac = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
@@ -200,30 +198,21 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(322, 164);
+            this.lbTitle.Location = new System.Drawing.Point(245, 162);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(161, 29);
+            this.lbTitle.Size = new System.Drawing.Size(118, 29);
             this.lbTitle.TabIndex = 5;
-            this.lbTitle.Text = "TÊN PHÒNG";
+            this.lbTitle.Text = "PHÒNG :";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txbSL);
             this.groupBox1.Controls.Add(this.lbSL);
-            this.groupBox1.Controls.Add(this.txbIDRoom);
             this.groupBox1.Controls.Add(this.lbIDRoom);
             this.groupBox1.Location = new System.Drawing.Point(0, 30);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(800, 113);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            // 
-            // txbSL
-            // 
-            this.txbSL.Location = new System.Drawing.Point(149, 68);
-            this.txbSL.Name = "txbSL";
-            this.txbSL.Size = new System.Drawing.Size(334, 22);
-            this.txbSL.TabIndex = 5;
             // 
             // lbSL
             // 
@@ -233,13 +222,6 @@
             this.lbSL.Size = new System.Drawing.Size(120, 16);
             this.lbSL.TabIndex = 4;
             this.lbSL.Text = "Số lượng nhân viên";
-            // 
-            // txbIDRoom
-            // 
-            this.txbIDRoom.Location = new System.Drawing.Point(106, 21);
-            this.txbIDRoom.Name = "txbIDRoom";
-            this.txbIDRoom.Size = new System.Drawing.Size(377, 22);
-            this.txbIDRoom.TabIndex = 3;
             // 
             // lbIDRoom
             // 
@@ -301,12 +283,10 @@
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label lbTitle;
+        public System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txbSL;
-        private System.Windows.Forms.Label lbSL;
-        private System.Windows.Forms.TextBox txbIDRoom;
-        private System.Windows.Forms.Label lbIDRoom;
+        public System.Windows.Forms.Label lbSL;
+        public System.Windows.Forms.Label lbIDRoom;
         public System.Windows.Forms.DataGridView gvViTriCongTac;
     }
 }

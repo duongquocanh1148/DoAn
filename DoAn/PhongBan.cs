@@ -87,6 +87,10 @@ namespace DoAn
                 table.Clear();
                 adapter.Fill(table);
                 f.gvViTriCongTac.DataSource = table;
+                f.lbTitle.Text = txbTenPhong.Text.ToUpper();
+                f.lbIDRoom.Text = "Mã phòng: "+txbIDRoom.Text;
+                int i = f.gvViTriCongTac.RowCount - 1;
+                f.lbSL.Text = "Số lượng nhân viên: " + i;
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

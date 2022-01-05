@@ -32,5 +32,7 @@ namespace DoAn
         {
             int i = gvViTriCongTac.CurrentRow.Index;
         }
+
+        
     }
 }
