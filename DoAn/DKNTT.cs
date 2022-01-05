@@ -43,7 +43,7 @@ namespace DoAn
         void loadData()
         {
             
-            if (txbID.Text == "") MessageBox.Show("Vui long nhap ma nhan vien", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txbID.Text == "") MessageBox.Show("Vui lòng nhập mã nhân viên!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
@@ -69,7 +69,7 @@ namespace DoAn
         void ThanNhan()
         {
             connect.Open();
-            if (txbID.Text == "") MessageBox.Show("Vui long nhap ma nhan vien", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txbID.Text == "") MessageBox.Show("Vui lòng nhập mã nhân viên!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 cmd = connect.CreateCommand();
@@ -112,11 +112,11 @@ namespace DoAn
             int i = gvTN.RowCount;
             cmd = connect.CreateCommand();
             if (txbDienTich.Text == "" || txbPhongNhaTT.Text == "") 
-                MessageBox.Show("Vui long dien day du thong tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);                          
+                MessageBox.Show("Vui long điền đầy đủ thông tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);                          
             else
             {
                 cmd.CommandText = @"insert into DANGKYNHATT values ('" + s + "' , '" + txbID.Text + "' , '" + txbPhongNhaTT.Text + "' , " + int.Parse(txbDienTich.Text) + " , " + i + ")";
-                if (i > 3) MessageBox.Show("Chi dang ky toi da 3 nguoi!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (i > 3) MessageBox.Show("Chỉ đăng ký tối đa 3 người!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                 {
                     cmd.ExecuteNonQuery();
@@ -137,7 +137,7 @@ namespace DoAn
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(txbHoTenTN.Text == "") MessageBox.Show("Vui long chon than nhan can xoa!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if(txbHoTenTN.Text == "") MessageBox.Show("Vui lòng chọn thân nhân cần xoá!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
