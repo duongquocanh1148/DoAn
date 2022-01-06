@@ -32,6 +32,8 @@ namespace DoAn
         private void Form1_Load(object sender, EventArgs e)
         {
             txbMaNV.ReadOnly = true;
+            txbCCCD.ReadOnly = true;
+            txbChucVu.ReadOnly = true;
             int i = gvCTNV.CurrentRow.Index;
             txbMaNV.Text = gvCTNV.Rows[i].Cells[0].Value.ToString();
             txbHoTen.Text = gvCTNV.Rows[i].Cells[1].Value.ToString();
@@ -39,7 +41,7 @@ namespace DoAn
             if (txbGioiTinh.Text == "False") txbGioiTinh.Text = "Nam";
             else txbGioiTinh.Text = "Nu";
             dtpNgaySinh.Text = gvCTNV.Rows[i].Cells[5].Value.ToString();
-            txbBHXH.Text = gvCTNV.Rows[i].Cells[6].Value.ToString();           
+            txbBHXH.Text = gvCTNV.Rows[i].Cells[6].Value.ToString();
             txbNoiSinh.Text = gvCTNV.Rows[i].Cells[8].Value.ToString();
             txbChucVu.Text = gvCTNV.Rows[i].Cells[9].Value.ToString();
             txbNoiCT.Text = gvCTNV.Rows[i].Cells[10].Value.ToString();
@@ -50,28 +52,38 @@ namespace DoAn
             dtpNgayCap.Text = gvCTNV.Rows[i].Cells[15].Value.ToString();
             txbNoiCap.Text = gvCTNV.Rows[i].Cells[16].Value.ToString();
             txbQuocTich.Text = gvCTNV.Rows[i].Cells[17].Value.ToString();
-            dtpNgayVaoDoan.Text = gvCTNV.Rows[i].Cells[18].Value.ToString();
-            dtpNgayVaoDang.Text = gvCTNV.Rows[i].Cells[19].Value.ToString();
-            txbTrinhDoHocVan.Text = gvCTNV.Rows[i].Cells[20].Value.ToString();
-            txbTrinhDoChuyenMon.Text = gvCTNV.Rows[i].Cells[21].Value.ToString();
+            txbTonGiao.Text = gvCTNV.Rows[i].Cells[18].Value.ToString();
+            dtpNgayVaoDoan.Text = gvCTNV.Rows[i].Cells[19].Value.ToString();
+            dtpNgayVaoDang.Text = gvCTNV.Rows[i].Cells[20].Value.ToString();
+            txbTrinhDoHocVan.Text = gvCTNV.Rows[i].Cells[21].Value.ToString();
+            txbTrinhDoChuyenMon.Text = gvCTNV.Rows[i].Cells[22].Value.ToString();
+            txbNgoaiNgu.Text = gvCTNV.Rows[i].Cells[23].Value.ToString();
             gvCTNV.Hide();
         }
-        
- 
 
-        
 
-        
+
+
+
+
 
         private void btnUpLoad_Click(object sender, EventArgs e)
         {
             connect.Open();
             cmd = connect.CreateCommand();
-            cmd.CommandText = @"update CTNHANVIEN set HKTamTru =N'" + txbHoKhauTamTru.Text + "'"
+            cmd.CommandText = @"update CTNHANVIEN set HKTamTru =N'" + txbHoKhauTamTru.Text + "'" +
+                ", NguyenQuan = N'"+txbNguyenQuan.Text+"'" +
+                ", HKThuongTru = N'"+txbHoKhauThuongTru.Text+"'" +
+                ", NoiSinh = '"+txbNoiSinh.Text+"'" +
+                ", Quoctich = '"+txbQuocTich.Text+"'" +
+                ", TonGiao = '"+txbTonGiao.Text+"'"
                 + ", NgayCap = '" + DateTime.Parse(dtpNgayCap.Text) + "'"
                 + ", NoiCap = N'" + txbNoiCap.Text + "'"
                 + ", NgayvaoDoan = '" + DateTime.Parse(dtpNgayVaoDoan.Text) + "'"
-                + ", NgayvaoDang = '" + DateTime.Parse(dtpNgayVaoDang.Text) + "'"
+                + ", NgayvaoDang = '" + DateTime.Parse(dtpNgayVaoDang.Text) + "'" +
+                ", HocVan = '"+txbTrinhDoHocVan.Text+"'" +
+                ", ChuyenMon = '"+txbTrinhDoChuyenMon.Text+"'" +
+                ", NgoaiNgu = '"+txbNgoaiNgu.Text+"'"
                 + "where MaNV = '" + txbMaNV.Text + "'";
             cmd.ExecuteNonQuery();
             MessageBox.Show("Update Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,9 +95,6 @@ namespace DoAn
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

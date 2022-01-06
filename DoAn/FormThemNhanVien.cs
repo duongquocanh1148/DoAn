@@ -16,7 +16,7 @@ namespace DoAn
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
-        SqlCommand cmd, cmd1;
+        SqlCommand cmdNV, cmdCTNV,cmdCT,cmdQTCT;
         DataTable table = new DataTable();
         public FormThemNhanVien()
         {
@@ -38,14 +38,20 @@ namespace DoAn
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        void Clear()
         {
+            Action<Control.ControlCollection> func = null;
 
-        }
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                    if (control is TextBox)
+                        (control as TextBox).Clear();
+                    else
+                        func(control.Controls);
+            };
 
-        private void toolStripButton6_Click(object sender, EventArgs e)
-        {
-
+            func(Controls);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -58,36 +64,43 @@ namespace DoAn
             int gender = 0;
             connect.Open();
             try
-            {
-                cmd = connect.CreateCommand();
-
+            {          
                 if (ckbNu.Checked) gender = 1;
                 else if (ckbNam.Checked) gender = 0;
-                else MessageBox.Show("Vui long chọn giới tính!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (tbxID.Text == "" || tbxHoTen.Text == "" || txbMaCV.Text == "" || txbMaPhong.Text == "" || tbxBHXH.Text == "")
-                    MessageBox.Show("Vui long điền đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (ckbNu.Checked || ckbNam.Checked) MessageBox.Show("Chỉ chọn 1 giới tính!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else                                  
+                    MessageBox.Show("Vui lòng chọn giới tính!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (tbxID.Text == "" || tbxHoTen.Text == "" || txbMaCV.Text == "" || txbMaPhong.Text == "" || tbxBHXH.Text == "" || txbSQD.Text == "")
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-
-                    cmd.CommandText = @"INSERT INTO NHANVIEN VALUES ('" + tbxID.Text + "', N'" + tbxHoTen.Text + "', '" + txbMaCV.Text + "', '" + txbMaPhong.Text + "','" + gender + "', '" + DateTime.Parse(dtpNgaySinh.Text) + "', '" + tbxBHXH.Text + "', '" + 0 + "')";
-                    cmd.ExecuteNonQuery();
-
+                    string s = lbSQD.Text + txbSQD.Text;
+                    cmdNV = connect.CreateCommand();
+                    cmdNV.CommandText = @"INSERT INTO NHANVIEN VALUES ('" + tbxID.Text + "', N'" + tbxHoTen.Text + "', '" + txbMaCV.Text + "', '" + txbMaPhong.Text + "','" + gender + "', '" + DateTime.Parse(dtpNgaySinh.Text) + "', '" + tbxBHXH.Text + "', '" + 0 + "')";
+                    cmdNV.ExecuteNonQuery();
+                    cmdCT = connect.CreateCommand();
+                    cmdCT.CommandText = @"INSERT INTO CONGTAC VALUES ('" + s + "','" + txbMaPhong.Text + "','" + txbMaCV.Text + "','" + tbxID.Text + "','" + DateTime.Parse(DateTime.Now.ToString()) + "','',N'NVM')";
+                    cmdCT.ExecuteNonQuery();
+                    cmdQTCT = connect.CreateCommand();
+                    cmdQTCT.CommandText = @"INSERT INTO QUATRINHCONGTAC VALUES ('" + tbxID.Text + "','" + DateTime.Parse(DateTime.Now.ToString()) + "','" + "" + "',N'" + tbxChucVu.Text + "',N'" + tbxNoiCT.Text + "')";
+                    cmdQTCT.ExecuteNonQuery();
+                    cmdCTNV = connect.CreateCommand();
+                    if (tbxID.Text == "" || tbxNguyenQuan.Text == "" || tbxHKTT.Text == "" || tbxHKTTru.Text == "" || tbxCCCD.Text == "")
+                        MessageBox.Show("Vui long điền đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        cmdCTNV.CommandText = @"Insert into CTNHANVIEN values('" + tbxID.Text + "',N'" + tbxNguyenQuan.Text + "',N'" + tbxHKTT.Text + "','" + tbxHKTTru.Text + "','" + tbxCCCD.Text + "','" + DateTime.Parse(dtpNgayCap.Text) + "','" + tbxNoiCap.Text + "','" + tbxNoiSinh.Text + "','" + tbxQuocTich.Text + "','" + txbTonGiao.Text + "','" + DateTime.Parse(dtpDoan.Text) + "','" + DateTime.Parse(dtpDang.Text) + "',N'" + txbHocVan.Text + "',N'" + txbChuyenMon.Text + "','" + txbNgoaiNgu.Text + "',N'" + tbxChucVu.Text + "')";
+                        cmdCTNV.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Add completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
                 }
-
-                cmd1 = connect.CreateCommand();
-                if (tbxID.Text == "" || tbxNguyenQuan.Text == "" || tbxHKTT.Text == "" || tbxHKTTru.Text == "" || tbxCCCD.Text == "")
-                    MessageBox.Show("Vui long điền đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                {
-                    cmd1.CommandText = @"Insert into CTNHANVIEN values('" + tbxID.Text + "',N'" + tbxNguyenQuan.Text + "',N'" + tbxHKTT.Text + "','" + tbxHKTTru.Text + "','" + tbxCCCD.Text + "','" + DateTime.Parse(dtpNgayCap.Text) + "','" + tbxNoiCap.Text + "','" + tbxNoiSinh.Text + "','" + tbxQuocTich.Text + "','" + txbTonGiao.Text + "','" + DateTime.Parse(dtpDoan.Text) + "','" + DateTime.Parse(dtpDang.Text) + "',N'" + txbHocVan.Text + "',N'" + txbChuyenMon.Text + "','" + txbNgoaiNgu.Text + "',N'" + tbxChucVu.Text + "')";
-                    cmd1.ExecuteNonQuery();
-                }
-                connect.Close();
-                MessageBox.Show("Add completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }catch (Exception ex)
-            {
+            {            
                 MessageBox.Show("Vui long kiểm tra lại thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            connect.Close();
         }
 
         

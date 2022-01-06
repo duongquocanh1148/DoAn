@@ -82,15 +82,18 @@
             this.txbNgoaiNgu = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.txbSQD = new System.Windows.Forms.TextBox();
+            this.lbSQD = new System.Windows.Forms.Label();
+            this.lbSoQuyetDinh = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(336, 70);
+            this.lbTitle.Location = new System.Drawing.Point(348, 21);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(273, 39);
+            this.lbTitle.Size = new System.Drawing.Size(261, 38);
             this.lbTitle.TabIndex = 2;
             this.lbTitle.Text = "Thêm Nhân Viên";
             // 
@@ -555,7 +558,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(958, 21);
+            this.btnBack.Location = new System.Drawing.Point(978, 85);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(112, 34);
             this.btnBack.TabIndex = 62;
@@ -563,11 +566,42 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // txbSQD
+            // 
+            this.txbSQD.Location = new System.Drawing.Point(887, 85);
+            this.txbSQD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbSQD.Name = "txbSQD";
+            this.txbSQD.Size = new System.Drawing.Size(62, 22);
+            this.txbSQD.TabIndex = 65;
+            // 
+            // lbSQD
+            // 
+            this.lbSQD.AutoSize = true;
+            this.lbSQD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbSQD.Location = new System.Drawing.Point(833, 85);
+            this.lbSQD.Name = "lbSQD";
+            this.lbSQD.Size = new System.Drawing.Size(51, 20);
+            this.lbSQD.TabIndex = 63;
+            this.lbSQD.Text = "SQD\\";
+            // 
+            // lbSoQuyetDinh
+            // 
+            this.lbSoQuyetDinh.AutoSize = true;
+            this.lbSoQuyetDinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbSoQuyetDinh.Location = new System.Drawing.Point(709, 85);
+            this.lbSoQuyetDinh.Name = "lbSoQuyetDinh";
+            this.lbSoQuyetDinh.Size = new System.Drawing.Size(117, 20);
+            this.lbSoQuyetDinh.TabIndex = 64;
+            this.lbSoQuyetDinh.Text = "Số Quyết Định";
+            // 
             // FormThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 566);
+            this.Controls.Add(this.txbSQD);
+            this.Controls.Add(this.lbSQD);
+            this.Controls.Add(this.lbSoQuyetDinh);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txbNgoaiNgu);
             this.Controls.Add(this.label24);
@@ -683,5 +717,8 @@
         private System.Windows.Forms.TextBox txbNgoaiNgu;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox txbSQD;
+        private System.Windows.Forms.Label lbSQD;
+        private System.Windows.Forms.Label lbSoQuyetDinh;
     }
 }
