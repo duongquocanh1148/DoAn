@@ -15,9 +15,11 @@ namespace DoAn
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
-        SqlCommand cmd,cmdQTCT;
+        SqlCommand cmd,cmdQTCT,cmdNTT,cmdTN;
         DataTable table = new DataTable();
         DataTable tableQTCT = new DataTable();
+        DataTable tableNTT = new DataTable();
+        DataTable tableTN = new DataTable();
         public DanhSach()
         {
             InitializeComponent();
@@ -105,7 +107,7 @@ namespace DoAn
                 connect.Open();
                 ChiTietNhanVien f = new ChiTietNhanVien();
                 cmd = connect.CreateCommand();
-                cmd.CommandText = @"select Distinct NHANVIEN.MaNV, NgaySinh, HotenNV, GioiTinh, NoiSinh, SoBHXH,Tenchucvu,Tenphong,NguyenQuan, HKThuongTru,HKTamTru,CTNHANVIEN.CCCD,NgayCap,NoiCap,Quoctich,NgayvaoDoan,NgayvaoDang,HocVan,ChuyenMon
+                cmd.CommandText = @"select Distinct NHANVIEN.MaNV, NgaySinh, HotenNV, GioiTinh, NoiSinh, SoBHXH,Tenchucvu,Tenphong,NguyenQuan, HKThuongTru,HKTamTru,CTNHANVIEN.CCCD,NgayCap,NoiCap,Quoctich,TonGiao,NgayvaoDoan,NgayvaoDang,HocVan,ChuyenMon,NgoaiNgu
                                 from CTNHANVIEN
                                 join NHANVIEN on CTNHANVIEN.MaNV = NHANVIEN.MaNV
                                 join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
@@ -117,16 +119,25 @@ namespace DoAn
                 f.gvCTNV.DataSource = table;
                 //gvQTCT
                 cmdQTCT = connect.CreateCommand();
-                cmdQTCT.CommandText = @"select distinct Thoigian,Tenchucvu,Tenphong
-                                    from QUATRINHCONGTAC,CTNHANVIEN
-                                    join NHANVIEN on CTNHANVIEN.MaNV = NHANVIEN.MaNV
-                                    join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
-                                    join PHONG on PHONG.Maphong = NHANVIEN.Maphong
-                                    where CTNHANVIEN.MaNV = '" + txbMaNV.Text + "' ";
+                cmdQTCT.CommandText = @"select ThoigianBD,ThoigianKT,Chucvu,NoiCongTac from QUATRINHCONGTAC where MaNV = '"+txbMaNV.Text+"'";                                  
                 adapter.SelectCommand = cmdQTCT;
                 tableQTCT.Clear();
                 adapter.Fill(tableQTCT);
                 f.gvQTCT.DataSource = tableQTCT;
+                //gvNTT
+                cmdNTT = connect.CreateCommand();
+                cmdNTT.CommandText = @"select TenPhongNTT,DienTichThue,SLNguoiDK from DANGKYNHATT where MaNV = '"+txbMaNV.Text+"'";
+                adapter.SelectCommand = cmdNTT;
+                tableNTT.Clear();
+                adapter.Fill(tableNTT);
+                f.gvNTT.DataSource = tableNTT;
+                //gvTN
+                cmdTN = connect.CreateCommand();
+                cmdTN.CommandText = @"select TenTN,QuanHe,NamSinh,NgheNghiep,NoiCongTacTN from THANNHAN where MaNV = '"+txbMaNV.Text+"'";
+                adapter.SelectCommand = cmdTN;
+                tableTN.Clear();
+                adapter.Fill(tableTN);
+                f.gvTN.DataSource = tableTN;
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

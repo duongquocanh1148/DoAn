@@ -15,7 +15,7 @@ namespace DoAn
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
-        SqlCommand cmd,cmd1;
+        SqlCommand cmdNV,cmdCT,cmdQTCT;
         DataTable table = new DataTable();
         DataTable table1 = new DataTable();
         string dateBD;
@@ -42,13 +42,13 @@ namespace DoAn
             else
             {
                 connect.Open();
-                cmd = connect.CreateCommand();
-                cmd.CommandText = @"select distinct HotenNV, NHANVIEN.Maphong,Tenphong,NHANVIEN.Machucvu,Tenchucvu
+                cmdNV = connect.CreateCommand();
+                cmdNV.CommandText = @"select distinct HotenNV, NHANVIEN.Maphong,Tenphong,NHANVIEN.Machucvu,Tenchucvu
                                 from NHANVIEN
                                 join PHONG on  PHONG.Maphong= NHANVIEN.Maphong 
                                 join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
                                 where NHANVIEN.MaNV = '" + txbMaNV.Text + "'";
-                adapter.SelectCommand = cmd;
+                adapter.SelectCommand = cmdNV;
                 table.Clear();
                 adapter.Fill(table);
                 gvNhanVien.DataSource = table;
@@ -59,9 +59,9 @@ namespace DoAn
                 txbPhongOld.Text = gvNhanVien.Rows[i].Cells[2].Value.ToString();
                 txbMaCV.Text = gvNhanVien.Rows[i].Cells[3].Value.ToString();
                 txbChucvuOld.Text = gvNhanVien.Rows[i].Cells[4].Value.ToString();
-                cmd1 = connect.CreateCommand();
-                cmd1.CommandText = @"select NgayBD from CONGTAC where MaNV = '" + txbMaNV.Text + "'";
-                adapter.SelectCommand = cmd1;
+                cmdCT = connect.CreateCommand();
+                cmdCT.CommandText = @"select ThoigianBD from QUATRINHCONGTAC where MaNV = '" + txbMaNV.Text + "'";
+                adapter.SelectCommand = cmdCT;
                 table1.Clear();
                 adapter.Fill(table1);
                 gvCongTac.DataSource = table1;
@@ -73,15 +73,19 @@ namespace DoAn
 
         void Clear()
         {
-            txbMaNV.Text = "";
-            txbMaCV.Text = "";
-            txbMaCVNew.Text = "";
-            txbMaPhong.Text = "";
-            txbMaPhongNew.Text = "";
-            txbPhongOld.Text = "";
-            txbPhongNew.Text = "";
-            txbSQD.Text = "";
-            txbTenNV.Text = "";
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                    if (control is TextBox)
+                        (control as TextBox).Clear();
+                    else
+                        func(control.Controls);
+            };
+
+            func(Controls);
+            
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -96,18 +100,24 @@ namespace DoAn
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string s = lbSQD.Text + txbSQD.Text;
+            
             try
             {
-                if (txbMaPhongNew.Text == "" || txbMaCVNew.Text == "" || txbMaNV.Text == "")
+                if (txbMaPhongNew.Text == "" || txbMaCVNew.Text == "" || txbMaNV.Text == "" || txbSQD.Text == "")
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     connect.Open();
-                    cmd = connect.CreateCommand();
-                    cmd.CommandText = @"insert into CONGTAC values ('" + s + "','" + txbMaPhongNew.Text + "','" + txbMaCVNew.Text + "','" + txbMaNV.Text + "','" + DateTime.Parse(dtpNgayBD.Text) + "','" + dateBD + "','" + txbLydo.Text + "')";
-                    cmd.ExecuteNonQuery();
-                   
+                    string s = lbSQD.Text + txbSQD.Text;
+                    cmdNV = connect.CreateCommand();
+                    cmdNV.CommandText = @"insert into CONGTAC values ('" + s + "','" + txbMaPhongNew.Text + "','" + txbMaCVNew.Text + "','" + txbMaNV.Text + "','" + dateBD + "','" + DateTime.Parse(dtpNgayBD.Text) + "',N'" + txbLydo.Text + "')";
+                    cmdNV.ExecuteNonQuery();
+                    cmdCT = connect.CreateCommand();
+                    cmdCT.CommandText = @"insert into QUATRINHCONGTAC values('"+txbMaNV.Text+"','"+DateTime.Parse(dtpNgayBD.Text)+"','"+null+"',N'"+txbChucvuNew.Text+"',N'"+txbPhongNew.Text+"')";
+                    cmdCT.ExecuteNonQuery();
+                    cmdQTCT = connect.CreateCommand();
+                    cmdQTCT.CommandText = @"update QUATRINHCONGTAC set ThoigianKT = CASE WHEN ThoigianBD = '"+dateBD+"' THEN '"+ DateTime.Parse(dtpNgayBD.Text) + "' END where MaNV = '"+txbMaNV.Text+"'";
+                    cmdQTCT.ExecuteNonQuery();
                     MessageBox.Show("Done!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                     connect.Close();

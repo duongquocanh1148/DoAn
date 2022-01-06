@@ -64,7 +64,7 @@
             this.txbSQD = new System.Windows.Forms.TextBox();
 
             this.gvCongTac = new System.Windows.Forms.DataGridView();
-            this.toolStrip1.SuspendLayout();
+            
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCongTac)).BeginInit();
 
@@ -421,8 +421,7 @@
             this.Text = "Bố Trí Công Tác";
             this.Load += new System.EventHandler(this.Form1_Load);
 
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCongTac)).EndInit();
 
