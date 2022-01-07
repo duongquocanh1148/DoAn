@@ -323,11 +323,11 @@
             // 
             this.gvCTNV.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gvCTNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvCTNV.Location = new System.Drawing.Point(814, 163);
+            this.gvCTNV.Location = new System.Drawing.Point(802, 100);
             this.gvCTNV.Name = "gvCTNV";
             this.gvCTNV.RowHeadersWidth = 51;
             this.gvCTNV.RowTemplate.Height = 24;
-            this.gvCTNV.Size = new System.Drawing.Size(135, 60);
+            this.gvCTNV.Size = new System.Drawing.Size(357, 114);
             this.gvCTNV.TabIndex = 25;
             // 
             // txbMaNV

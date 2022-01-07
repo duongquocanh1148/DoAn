@@ -85,6 +85,8 @@
             this.txbSQD = new System.Windows.Forms.TextBox();
             this.lbSQD = new System.Windows.Forms.Label();
             this.lbSoQuyetDinh = new System.Windows.Forms.Label();
+            this.gvTemp = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTemp)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -448,9 +450,9 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(933, 516);
+            this.btnConfirm.Location = new System.Drawing.Point(825, 516);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(137, 38);
+            this.btnConfirm.Size = new System.Drawing.Size(112, 38);
             this.btnConfirm.TabIndex = 49;
             this.btnConfirm.Text = "Xác Nhận";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -462,6 +464,7 @@
             this.txbMaPhong.Name = "txbMaPhong";
             this.txbMaPhong.Size = new System.Drawing.Size(266, 22);
             this.txbMaPhong.TabIndex = 53;
+            this.txbMaPhong.Leave += new System.EventHandler(this.txbMaPhong_Leave);
             // 
             // txbMaCV
             // 
@@ -469,6 +472,7 @@
             this.txbMaCV.Name = "txbMaCV";
             this.txbMaCV.Size = new System.Drawing.Size(266, 22);
             this.txbMaCV.TabIndex = 52;
+            this.txbMaCV.Leave += new System.EventHandler(this.txbMaCV_Leave);
             // 
             // label1
             // 
@@ -558,9 +562,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(991, 21);
+            this.btnBack.Location = new System.Drawing.Point(973, 516);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(112, 34);
+            this.btnBack.Size = new System.Drawing.Size(112, 38);
             this.btnBack.TabIndex = 62;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -588,17 +592,28 @@
             // 
             this.lbSoQuyetDinh.AutoSize = true;
             this.lbSoQuyetDinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbSoQuyetDinh.Location = new System.Drawing.Point(361, 85);
+            this.lbSoQuyetDinh.Location = new System.Drawing.Point(349, 85);
             this.lbSoQuyetDinh.Name = "lbSoQuyetDinh";
-            this.lbSoQuyetDinh.Size = new System.Drawing.Size(117, 20);
+            this.lbSoQuyetDinh.Size = new System.Drawing.Size(132, 20);
             this.lbSoQuyetDinh.TabIndex = 64;
-            this.lbSoQuyetDinh.Text = "Số Quyết Định";
+            this.lbSoQuyetDinh.Text = "Số Quyết Định : ";
+            // 
+            // gvTemp
+            // 
+            this.gvTemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvTemp.Location = new System.Drawing.Point(797, 55);
+            this.gvTemp.Name = "gvTemp";
+            this.gvTemp.RowHeadersWidth = 51;
+            this.gvTemp.RowTemplate.Height = 24;
+            this.gvTemp.Size = new System.Drawing.Size(240, 150);
+            this.gvTemp.TabIndex = 66;
             // 
             // FormThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 566);
+            this.Controls.Add(this.gvTemp);
             this.Controls.Add(this.txbSQD);
             this.Controls.Add(this.lbSQD);
             this.Controls.Add(this.lbSoQuyetDinh);
@@ -658,6 +673,7 @@
             this.Name = "FormThemNhanVien";
             this.Text = "Form Thêm Nhân Viên";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gvTemp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -720,5 +736,6 @@
         private System.Windows.Forms.TextBox txbSQD;
         private System.Windows.Forms.Label lbSQD;
         private System.Windows.Forms.Label lbSoQuyetDinh;
+        private System.Windows.Forms.DataGridView gvTemp;
     }
 }

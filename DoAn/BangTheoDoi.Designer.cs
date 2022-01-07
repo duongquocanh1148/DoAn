@@ -44,7 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txbLydo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvTDSNN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,22 +171,11 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Lý do";
             // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(336, 445);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(114, 41);
-            this.btnLoad.TabIndex = 46;
-            this.btnLoad.Text = "Cập nhật";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click_1);
-            // 
             // BangTheoDoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 498);
-            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.txbLydo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txbNghiCP);
@@ -229,6 +217,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbLydo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnLoad;
     }
 }

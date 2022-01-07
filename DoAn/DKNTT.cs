@@ -15,7 +15,7 @@ namespace DoAn
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
-        SqlCommand cmd;
+        SqlCommand cmd,cmdTTSH;
         DataTable table = new DataTable();
 
         DataTable table2 = new DataTable();            
@@ -69,14 +69,14 @@ namespace DoAn
         void ThanNhan()
         {
             connect.Open();
-            if (txbID.Text == "") MessageBox.Show("Vui lòng nhập mã nhân viên!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txbID.Text == "") MessageBox.Show("Vui lòng nhập mã nhân viên!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 cmd = connect.CreateCommand();
                 cmd.CommandText = @"INSERT INTO THANNHAN VALUES (N'" + txbHoTenTN.Text + "', N'" + txbQuanHe.Text + "', '" + txbNamSinh.Text + "', N'" + txbNgheNghiep.Text + "',N'" + txbNCTTN.Text + "', '" + txbID.Text + "')";
                 cmd.ExecuteNonQuery();
                 loadDataTN();
-                MessageBox.Show("Add Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 connect.Close();
                 Clear();
             }
@@ -126,15 +126,20 @@ namespace DoAn
             int i = gvTN.RowCount;
             cmd = connect.CreateCommand();
             if (txbDienTich.Text == "" || txbPhongNhaTT.Text == "") 
-                MessageBox.Show("Vui long điền đầy đủ thông tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);                          
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);                          
             else
             {
                 cmd.CommandText = @"insert into DANGKYNHATT values ('" + s + "' , '" + txbID.Text + "' , '" + txbPhongNhaTT.Text + "' , " + int.Parse(txbDienTich.Text) + " , " + i + ")";
-                if (i > 3) MessageBox.Show("Chỉ đăng ký tối đa 3 người!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (i > 3) MessageBox.Show("Chỉ đăng ký tối đa 3 người!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                 {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cmd.ExecuteNonQuery();  
+                    //cmdTTSH
+                    cmdTTSH = connect.CreateCommand();
+                    cmdTTSH.CommandText = @"update TINHTIENSINHHOAT set DienTich = '"+txbDienTich.Text+"'" +
+                        "where MaNV = '"+txbID.Text+"'";
+                    cmdTTSH.ExecuteNonQuery();
+                    MessageBox.Show("Đăng ký thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                 }
             }
@@ -153,7 +158,7 @@ namespace DoAn
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(txbHoTenTN.Text == "") MessageBox.Show("Vui lòng chọn thân nhân cần xoá!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if(txbHoTenTN.Text == "") MessageBox.Show("Vui lòng chọn thân nhân cần xoá!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
@@ -162,7 +167,7 @@ namespace DoAn
                                 where TenTN like N'" + txbHoTenTN.Text + "'";
                 cmd.ExecuteNonQuery();
                 loadDataTN();
-                MessageBox.Show("Delete Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 connect.Close();
                 Clear();
             } 

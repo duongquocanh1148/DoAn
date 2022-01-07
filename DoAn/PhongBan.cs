@@ -81,7 +81,7 @@ namespace DoAn
                 connect.Open();
                 ViTriCongTac f = new ViTriCongTac();
                 cmd = connect.CreateCommand();
-                cmd.CommandText = @"select distinct MaNV,HotenNV,Machucvu,GioiTinh,NgaySinh,SoBHXH,SoNgayNghi from NHANVIEN
+                cmd.CommandText = @"select distinct MaNV,HotenNV,Machucvu,GioiTinh,NgaySinh,SoBHXH from NHANVIEN
                                     where MaPhong = '"+txbIDRoom.Text+"'";
                 adapter.SelectCommand = cmd;
                 table.Clear();
@@ -110,28 +110,31 @@ namespace DoAn
                 connect.Close();
                 MessageBox.Show("Update Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadData();
+                Clear();
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txbIDRoom.Text == "" || txbTenPhong.Text == "" || txbMaQL.Text == "") 
+            if (txbIDRoom.Text == "" || txbTenPhong.Text == "")
                 MessageBox.Show("Vui long nhập đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 connect.Open();
                 cmd = connect.CreateCommand();
-                cmd.CommandText = @"insert into PHONG values ('"+txbIDRoom.Text+"',N'"+txbTenPhong.Text+"','"+txbMaQL.Text+"')";
+                cmd.CommandText = @"insert into PHONG values ('"+txbIDRoom.Text+"',N'"+txbTenPhong.Text+"','')";
                 cmd.ExecuteNonQuery();
+                ThemNV();
                 connect.Close();
                 MessageBox.Show("Add Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadData();
+                Clear();
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txbIDRoom.Text == "" || txbTenPhong.Text == "" || txbMaQL.Text == "")
+            if (txbIDRoom.Text == "" || txbTenPhong.Text == "")
                 MessageBox.Show("Vui long nhập mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -142,7 +145,30 @@ namespace DoAn
                 connect.Close();
                 MessageBox.Show("Delete Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadData();
+                Clear();
             }
+        }
+        void ThemNV()
+        {
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"update NHANVIEN set MaPhong = '" + txbIDRoom.Text + "'" +
+                "where MaNV = '"+txbMaQL.Text+"'";
+            cmd.ExecuteNonQuery();
+        }
+        void Clear()
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                    if (control is TextBox)
+                        (control as TextBox).Clear();
+                    else
+                        func(control.Controls);
+            };
+
+            func(Controls);
         }
     }
 }
