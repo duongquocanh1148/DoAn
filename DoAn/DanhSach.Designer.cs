@@ -49,7 +49,7 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lbTitle.Location = new System.Drawing.Point(508, 199);
+            this.lbTitle.Location = new System.Drawing.Point(507, 161);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(263, 29);
             this.lbTitle.TabIndex = 2;
@@ -73,10 +73,10 @@
             // 
             // btnDetails
             // 
-            this.btnDetails.Location = new System.Drawing.Point(667, 80);
+            this.btnDetails.Location = new System.Drawing.Point(667, 75);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(104, 23);
+            this.btnDetails.Size = new System.Drawing.Size(104, 33);
             this.btnDetails.TabIndex = 5;
             this.btnDetails.Text = "Xem Chi Tiết";
             this.btnDetails.UseVisualStyleBackColor = true;
@@ -84,10 +84,10 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(683, 30);
+            this.btnSearch.Location = new System.Drawing.Point(667, 25);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(103, 33);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -131,18 +131,18 @@
             // 
             this.gvDSNV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gvDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDSNV.Location = new System.Drawing.Point(0, 236);
+            this.gvDSNV.Location = new System.Drawing.Point(12, 192);
             this.gvDSNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gvDSNV.Name = "gvDSNV";
             this.gvDSNV.RowHeadersWidth = 51;
             this.gvDSNV.RowTemplate.Height = 24;
-            this.gvDSNV.Size = new System.Drawing.Size(1223, 217);
+            this.gvDSNV.Size = new System.Drawing.Size(1142, 217);
             this.gvDSNV.TabIndex = 4;
             this.gvDSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDSNV_CellContentClick);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(838, 91);
+            this.btnAdd.Location = new System.Drawing.Point(839, 36);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 33);
             this.btnAdd.TabIndex = 5;
@@ -152,9 +152,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1116, 24);
+            this.button1.Location = new System.Drawing.Point(839, 86);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 33);
+            this.button1.Size = new System.Drawing.Size(103, 33);
             this.button1.TabIndex = 6;
             this.button1.Text = "Quay lại";
             this.button1.UseVisualStyleBackColor = true;
@@ -164,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 450);
+            this.ClientSize = new System.Drawing.Size(1171, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);

@@ -86,7 +86,7 @@ namespace DoAn
                 ", NgoaiNgu = '"+txbNgoaiNgu.Text+"'"
                 + "where MaNV = '" + txbMaNV.Text + "'";
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Update Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Cập nhật thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             connect.Close();
         }
 
