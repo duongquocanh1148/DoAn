@@ -32,9 +32,7 @@ namespace DoAn
             this.gvBHSL = new System.Windows.Forms.DataGridView();
             this.lbBangHeSoluong = new System.Windows.Forms.Label();
             this.lbNam = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaNV = new System.Windows.Forms.TextBox();
             this.txbChucVu = new System.Windows.Forms.TextBox();
@@ -54,7 +52,7 @@ namespace DoAn
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(899, 626);
+            this.btnBack.Location = new System.Drawing.Point(923, 626);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(110, 34);
             this.btnBack.TabIndex = 3;
@@ -93,35 +91,15 @@ namespace DoAn
             this.lbNam.TabIndex = 6;
             this.lbNam.Text = "Năm áp dụng : ";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(67, 626);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(110, 34);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(363, 626);
+            this.btnUpdate.Location = new System.Drawing.Point(764, 626);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(110, 34);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(664, 626);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(110, 34);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label1
             // 
@@ -254,9 +232,7 @@ namespace DoAn
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txbMaNV);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lbNam);
             this.Controls.Add(this.lbBangHeSoluong);
             this.Controls.Add(this.gvBHSL);
@@ -276,9 +252,7 @@ namespace DoAn
         private System.Windows.Forms.DataGridView gvBHSL;
         private System.Windows.Forms.Label lbBangHeSoluong;
         private System.Windows.Forms.Label lbNam;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbMaNV;
         private System.Windows.Forms.TextBox txbChucVu;

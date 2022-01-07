@@ -42,22 +42,22 @@ namespace DoAn
             else txbGioiTinh.Text = "Nu";
             dtpNgaySinh.Text = gvCTNV.Rows[i].Cells[5].Value.ToString();
             txbBHXH.Text = gvCTNV.Rows[i].Cells[6].Value.ToString();
-            txbNoiSinh.Text = gvCTNV.Rows[i].Cells[8].Value.ToString();
-            txbChucVu.Text = gvCTNV.Rows[i].Cells[9].Value.ToString();
-            txbNoiCT.Text = gvCTNV.Rows[i].Cells[10].Value.ToString();
-            txbNguyenQuan.Text = gvCTNV.Rows[i].Cells[11].Value.ToString();
-            txbHoKhauThuongTru.Text = gvCTNV.Rows[i].Cells[12].Value.ToString();
-            txbHoKhauTamTru.Text = gvCTNV.Rows[i].Cells[13].Value.ToString();
-            txbCCCD.Text = gvCTNV.Rows[i].Cells[14].Value.ToString();
-            dtpNgayCap.Text = gvCTNV.Rows[i].Cells[15].Value.ToString();
-            txbNoiCap.Text = gvCTNV.Rows[i].Cells[16].Value.ToString();
-            txbQuocTich.Text = gvCTNV.Rows[i].Cells[17].Value.ToString();
-            txbTonGiao.Text = gvCTNV.Rows[i].Cells[18].Value.ToString();
-            dtpNgayVaoDoan.Text = gvCTNV.Rows[i].Cells[19].Value.ToString();
-            dtpNgayVaoDang.Text = gvCTNV.Rows[i].Cells[20].Value.ToString();
-            txbTrinhDoHocVan.Text = gvCTNV.Rows[i].Cells[21].Value.ToString();
-            txbTrinhDoChuyenMon.Text = gvCTNV.Rows[i].Cells[22].Value.ToString();
-            txbNgoaiNgu.Text = gvCTNV.Rows[i].Cells[23].Value.ToString();
+            txbNoiSinh.Text = gvCTNV.Rows[i].Cells[7].Value.ToString();
+            txbChucVu.Text = gvCTNV.Rows[i].Cells[8].Value.ToString();
+            txbNoiCT.Text = gvCTNV.Rows[i].Cells[9].Value.ToString();
+            txbNguyenQuan.Text = gvCTNV.Rows[i].Cells[10].Value.ToString();
+            txbHoKhauThuongTru.Text = gvCTNV.Rows[i].Cells[11].Value.ToString();
+            txbHoKhauTamTru.Text = gvCTNV.Rows[i].Cells[12].Value.ToString();
+            txbCCCD.Text = gvCTNV.Rows[i].Cells[13].Value.ToString();
+            dtpNgayCap.Text = gvCTNV.Rows[i].Cells[14].Value.ToString();
+            txbNoiCap.Text = gvCTNV.Rows[i].Cells[15].Value.ToString();
+            txbQuocTich.Text = gvCTNV.Rows[i].Cells[16].Value.ToString();
+            txbTonGiao.Text = gvCTNV.Rows[i].Cells[17].Value.ToString();
+            dtpNgayVaoDoan.Text = gvCTNV.Rows[i].Cells[18].Value.ToString();
+            dtpNgayVaoDang.Text = gvCTNV.Rows[i].Cells[19].Value.ToString();
+            txbTrinhDoHocVan.Text = gvCTNV.Rows[i].Cells[20].Value.ToString();
+            txbTrinhDoChuyenMon.Text = gvCTNV.Rows[i].Cells[21].Value.ToString();
+            txbNgoaiNgu.Text = gvCTNV.Rows[i].Cells[22].Value.ToString();
             gvCTNV.Hide();
         }
 
@@ -76,14 +76,14 @@ namespace DoAn
                 ", HKThuongTru = N'"+txbHoKhauThuongTru.Text+"'" +
                 ", NoiSinh = '"+txbNoiSinh.Text+"'" +
                 ", Quoctich = '"+txbQuocTich.Text+"'" +
-                ", TonGiao = '"+txbTonGiao.Text+"'"
+                ", TonGiao = N'"+txbTonGiao.Text+"'"
                 + ", NgayCap = '" + DateTime.Parse(dtpNgayCap.Text) + "'"
                 + ", NoiCap = N'" + txbNoiCap.Text + "'"
                 + ", NgayvaoDoan = '" + DateTime.Parse(dtpNgayVaoDoan.Text) + "'"
                 + ", NgayvaoDang = '" + DateTime.Parse(dtpNgayVaoDang.Text) + "'" +
-                ", HocVan = '"+txbTrinhDoHocVan.Text+"'" +
-                ", ChuyenMon = '"+txbTrinhDoChuyenMon.Text+"'" +
-                ", NgoaiNgu = '"+txbNgoaiNgu.Text+"'"
+                ", HocVan = N'"+txbTrinhDoHocVan.Text+"'" +
+                ", ChuyenMon = N'"+txbTrinhDoChuyenMon.Text+"'" +
+                ", NgoaiNgu = N'"+txbNgoaiNgu.Text+"'"
                 + "where MaNV = '" + txbMaNV.Text + "'";
             cmd.ExecuteNonQuery();
             MessageBox.Show("Cập nhật thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);

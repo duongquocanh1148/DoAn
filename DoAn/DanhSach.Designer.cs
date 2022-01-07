@@ -39,7 +39,6 @@
             this.lbIDRoom = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.gvDSNV = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDSNV)).BeginInit();
@@ -140,19 +139,9 @@
             this.gvDSNV.TabIndex = 4;
             this.gvDSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDSNV_CellContentClick);
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(830, 36);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(103, 33);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1056, 12);
+            this.button1.Location = new System.Drawing.Point(828, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 33);
             this.button1.TabIndex = 6;
@@ -166,7 +155,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 450);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.gvDSNV);
@@ -194,7 +182,6 @@
         private System.Windows.Forms.Label lbIDRoom;
         private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.DataGridView gvDSNV;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button1;
     }
 }

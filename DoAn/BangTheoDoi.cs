@@ -71,6 +71,7 @@ namespace DoAn
                 
                 MessageBox.Show("Chỉnh sửa thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 connect.Close();
+                loadData();
             }
         }
 

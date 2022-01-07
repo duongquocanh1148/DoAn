@@ -14,7 +14,7 @@ namespace DoAn
     public partial class ChucVu : Form
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
-        SqlConnection connect;
+        SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
         SqlCommand cmd;
         DataTable table = new DataTable();
         public ChucVu()
@@ -33,8 +33,7 @@ namespace DoAn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            connect = new SqlConnection(ConnectSQL.connectString);
-            connect.Open();
+            
             loadData();
         }
        
@@ -46,50 +45,37 @@ namespace DoAn
             table.Clear();
             adapter.Fill(table);
             gvChucVu.DataSource = table;
-        }
-
-        
-        
-
-        private void tsbtnAdd_Click(object sender, EventArgs e)
-        {
-            
-                           
-        }
-
+            connect.Close();
+        }                        
         private void gvChucVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {           
             int i = gvChucVu.CurrentRow.Index;
             tbxIDChucVu.Text = gvChucVu.Rows[i].Cells[0].Value.ToString();
             tbxNameChucVu.Text = gvChucVu.Rows[i].Cells[1].Value.ToString();         
-        }
-
-        
-        
+        }               
         private void tsbtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
-
-            cmd = connect.CreateCommand();
-            cmd.CommandText = "insert into CHUCVU (Machucvu,Tenchucvu) values ('" + tbxIDChucVu.Text + "', '" + tbxNameChucVu.Text + "')";
-            if (tbxIDChucVu.Text != "" || tbxNameChucVu.Text != "") cmd.ExecuteNonQuery();
-            //code kiem tra trung ID
-            else MessageBox.Show("Vui lòng nhập mã chức vụ ");
-
+            try
+            {
+                if (tbxIDChucVu.Text == "" || tbxNameChucVu.Text == "") 
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    cmd = connect.CreateCommand();
+                    cmd.CommandText = "insert into CHUCVU (Machucvu,Tenchucvu) values ('" + tbxIDChucVu.Text + "', '" + tbxNameChucVu.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Thêm thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Không được thêm trùng mã chức vụ!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }                       
             loadData();
-        }
-
-        private void tsbtnFix_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
+        }             
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -100,18 +86,17 @@ namespace DoAn
                 cmd.CommandText = "delete from CHUCVU WHERE Machucvu='" + gvChucVu.Rows[i].Cells[0].Value.ToString() + "'";
                 cmd.ExecuteNonQuery();
                 loadData();
-                MessageBox.Show("Delete Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cannot Delete", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không xóa được", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnUpLoad_Click(object sender, EventArgs e)
         {
-            loadData();
-            MessageBox.Show("Update Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            loadData();           
         }
 
         private void btnBack_Click(object sender, EventArgs e)

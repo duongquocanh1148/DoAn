@@ -29,25 +29,7 @@ namespace DoAn
 
         }
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-             
-        }
 
         private void bảngHệSốLươngToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -57,13 +39,7 @@ namespace DoAn
             this.Show();
         }
 
-        private void danhSáchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DanhSach f = new DanhSach();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
+        
 
         private void chứcVụToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -79,16 +55,7 @@ namespace DoAn
             this.Hide();
             f.ShowDialog();
             this.Show();
-        }
-
-        private void tínhTiềnNhàTậpThểToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            BangTinhTienSH f = new BangTinhTienSH();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
+        }      
         private void theoDõiSốNgàyNghỉToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BangTheoDoi f = new BangTheoDoi();
@@ -97,13 +64,7 @@ namespace DoAn
             this.Show();
         }
 
-        private void bảngLươngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            BangLuong f = new BangLuong();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
+       
 
         private void vịTríCôngTácToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -124,6 +85,45 @@ namespace DoAn
         private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PhongBan f = new PhongBan();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnTNTT_Click(object sender, EventArgs e)
+        {
+            BangTinhTienSH f = new BangTinhTienSH();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnTinhTienNhaTT_Click(object sender, EventArgs e)
+        {
+            TinhTienSH f = new TinhTienSH();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnDSNV_Click(object sender, EventArgs e)
+        {
+            DanhSach f = new DanhSach();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnThemNV_Click(object sender, EventArgs e)
+        {
+            FormThemNhanVien f = new FormThemNhanVien();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }      
+        private void bảngLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BangLuong f = new BangLuong();
             this.Hide();
             f.ShowDialog();
             this.Show();

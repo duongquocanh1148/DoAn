@@ -145,13 +145,7 @@ namespace DoAn
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            FormThemNhanVien f = new FormThemNhanVien();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {

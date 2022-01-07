@@ -15,7 +15,7 @@ namespace DoAn
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
-        SqlCommand cmdNV,cmdCT,cmdQTCT;
+        SqlCommand cmd,cmdNV,cmdCT;
         DataTable table = new DataTable();
         DataTable table1 = new DataTable();
         string dateBD;
@@ -36,8 +36,7 @@ namespace DoAn
         }
 
         void loadData()
-        {
-            
+        {           
             if (txbMaNV.Text == "") MessageBox.Show("Vui long nhap ma nhan vien", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -51,8 +50,7 @@ namespace DoAn
                 adapter.SelectCommand = cmdNV;
                 table.Clear();
                 adapter.Fill(table);
-                gvNhanVien.DataSource = table;
-                
+                gvNhanVien.DataSource = table;                
                 int i = gvNhanVien.CurrentRow.Index;
                 txbTenNV.Text = gvNhanVien.Rows[i].Cells[0].Value.ToString();
                 txbMaPhong.Text = gvNhanVien.Rows[i].Cells[1].Value.ToString();
@@ -97,6 +95,7 @@ namespace DoAn
         {
             this.Close();
         }
+        
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -104,28 +103,50 @@ namespace DoAn
             try
             {
                 if (txbMaPhongNew.Text == "" || txbMaCVNew.Text == "" || txbMaNV.Text == "" || txbSQD.Text == "")
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     connect.Open();
-                    string s = lbSQD.Text + txbSQD.Text;
-                    cmdNV = connect.CreateCommand();
-                    cmdNV.CommandText = @"insert into CONGTAC values ('" + s + "','" + txbMaPhongNew.Text + "','" + txbMaCVNew.Text + "','" + txbMaNV.Text + "','" + dateBD + "','" + DateTime.Parse(dtpNgayBD.Text) + "',N'" + txbLydo.Text + "')";
-                    cmdNV.ExecuteNonQuery();
-                    cmdCT = connect.CreateCommand();
-                    cmdCT.CommandText = @"insert into QUATRINHCONGTAC values('"+txbMaNV.Text+"','"+DateTime.Parse(dtpNgayBD.Text)+"','"+null+"',N'"+txbChucvuNew.Text+"',N'"+txbPhongNew.Text+"')";
-                    cmdCT.ExecuteNonQuery();
-                    cmdQTCT = connect.CreateCommand();
-                    cmdQTCT.CommandText = @"update QUATRINHCONGTAC set ThoigianKT = CASE WHEN ThoigianBD = '"+dateBD+"' THEN '"+ DateTime.Parse(dtpNgayBD.Text) + "' END where MaNV = '"+txbMaNV.Text+"'";
-                    cmdQTCT.ExecuteNonQuery();
-                    MessageBox.Show("Done!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ThemCT();
+                    ThemQTCT();
+                    UpdateQTCT();
+                    IsQuanLy();                                                     
+                    MessageBox.Show("Hoàn thành!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                     connect.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        void ThemCT()
+        {
+            string s = lbSQD.Text + txbSQD.Text;
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"insert into CONGTAC values ('" + s + "','" + txbMaPhongNew.Text + "','" + txbMaCVNew.Text + "','" + txbMaNV.Text + "','" + dateBD + "','" + DateTime.Parse(dtpNgayBD.Text) + "',N'" + txbLydo.Text + "')";
+            cmd.ExecuteNonQuery();
+        }
+        void ThemQTCT()
+        {
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"insert into QUATRINHCONGTAC values('" + txbMaNV.Text + "','" + DateTime.Parse(dtpNgayBD.Text) + "','" + null + "',N'" + txbChucvuNew.Text + "',N'" + txbPhongNew.Text + "')";
+            cmd.ExecuteNonQuery();
+        }
+        void UpdateQTCT()
+        {
+            cmd = connect.CreateCommand();
+            cmd.CommandText = @"update QUATRINHCONGTAC set ThoigianKT = CASE WHEN ThoigianBD = '" + dateBD + "' THEN '" + DateTime.Parse(dtpNgayBD.Text) + "' END where MaNV = '" + txbMaNV.Text + "'";
+            cmd.ExecuteNonQuery();
+        }
+        void IsQuanLy()
+        {
+            if (txbMaCVNew.Text == "TP")
+            {
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"update PHONG set MaQL = '" + txbMaCVNew.Text + "' where Maphong = '" + txbMaPhongNew.Text + "'";
+                cmd.ExecuteNonQuery();
             }
         }
     }
