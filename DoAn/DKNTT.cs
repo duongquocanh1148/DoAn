@@ -78,6 +78,7 @@ namespace DoAn
                 loadDataTN();
                 MessageBox.Show("Add Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 connect.Close();
+                Clear();
             }
         }
 
@@ -86,15 +87,28 @@ namespace DoAn
             this.Close();
         }
 
-        
+        void Clear()
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                    if (control is TextBox)
+                        (control as TextBox).Clear();
+                    else
+                        func(control.Controls);
+            };
+
+            func(Controls);
+        }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
             loadData();
         }
         void loadDataTN()
-        {
-            
+        {         
             cmd = connect.CreateCommand();
             cmd.CommandText = @"select TenTN,QuanHe,NamSinh,NgheNghiep,NoiCongTacTN from THANNHAN
                                 where MaNV ='"+txbID.Text+"'";
@@ -120,7 +134,8 @@ namespace DoAn
                 else
                 {
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);                                             
+                    MessageBox.Show("Register Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
                 }
             }
             connect.Close();                       
@@ -133,6 +148,7 @@ namespace DoAn
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ThanNhan();
+            Clear();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -148,6 +164,7 @@ namespace DoAn
                 loadDataTN();
                 MessageBox.Show("Delete Completed", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 connect.Close();
+                Clear();
             } 
                         
         }

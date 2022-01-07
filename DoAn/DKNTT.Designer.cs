@@ -321,7 +321,7 @@
             this.gvTN.Name = "gvTN";
             this.gvTN.RowHeadersWidth = 51;
             this.gvTN.RowTemplate.Height = 24;
-            this.gvTN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect;
+            this.gvTN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.gvTN.Size = new System.Drawing.Size(741, 150);
             this.gvTN.TabIndex = 40;
             this.gvTN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTN_CellContentClick);
