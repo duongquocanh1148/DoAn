@@ -40,7 +40,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(1265, 12);
+            this.btnBack.Location = new System.Drawing.Point(1216, 151);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(92, 33);
             this.btnBack.TabIndex = 4;
@@ -52,7 +52,7 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(645, 160);
+            this.lbTitle.Location = new System.Drawing.Point(551, 38);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(118, 29);
             this.lbTitle.TabIndex = 5;
@@ -62,7 +62,7 @@
             // 
             this.groupBox1.Controls.Add(this.lbSL);
             this.groupBox1.Controls.Add(this.lbIDRoom);
-            this.groupBox1.Location = new System.Drawing.Point(341, 24);
+            this.groupBox1.Location = new System.Drawing.Point(304, 88);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(800, 113);
             this.groupBox1.TabIndex = 6;

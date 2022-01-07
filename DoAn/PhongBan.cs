@@ -97,57 +97,8 @@ namespace DoAn
                 connect.Close();
             }
         }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (txbIDRoom.Text == "") MessageBox.Show("Vui long nhập ma phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-            {
-                connect.Open();
-                cmd = connect.CreateCommand();
-                cmd.CommandText = @"update PHONG set MaQL = '"+txbMaQL.Text+"' where Maphong = '"+txbIDRoom.Text+"'";
-                cmd.ExecuteNonQuery();
-                connect.Close();
-                MessageBox.Show("Update Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadData();
-                Clear();
-            }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (txbIDRoom.Text == "" || txbTenPhong.Text == "")
-                MessageBox.Show("Vui long nhập đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-            {
-                connect.Open();
-                cmd = connect.CreateCommand();
-                cmd.CommandText = @"insert into PHONG values ('"+txbIDRoom.Text+"',N'"+txbTenPhong.Text+"','')";
-                cmd.ExecuteNonQuery();
-                ThemNV();
-                connect.Close();
-                MessageBox.Show("Add Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadData();
-                Clear();
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (txbIDRoom.Text == "" || txbTenPhong.Text == "")
-                MessageBox.Show("Vui long nhập mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-            {
-                connect.Open();
-                cmd = connect.CreateCommand();
-                cmd.CommandText = @"delete from PHONG where Maphong = '"+txbIDRoom.Text+"'";
-                cmd.ExecuteNonQuery();
-                connect.Close();
-                MessageBox.Show("Delete Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadData();
-                Clear();
-            }
-        }
+        
+        
         void ThemNV()
         {
             cmd = connect.CreateCommand();
@@ -169,6 +120,41 @@ namespace DoAn
             };
 
             func(Controls);
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            if (txbIDRoom.Text == "" || txbTenPhong.Text == "")
+                MessageBox.Show("Vui long nhập đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"insert into PHONG values ('" + txbIDRoom.Text + "',N'" + txbTenPhong.Text + "','')";
+                cmd.ExecuteNonQuery();
+                ThemNV();
+                connect.Close();
+                MessageBox.Show("Add Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadData();
+                Clear();
+            }
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (txbIDRoom.Text == "" || txbTenPhong.Text == "")
+                MessageBox.Show("Vui long nhập mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"delete from PHONG where Maphong = '" + txbIDRoom.Text + "'";
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                MessageBox.Show("Delete Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadData();
+                Clear();
+            }
         }
     }
 }
