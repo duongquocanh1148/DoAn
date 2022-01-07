@@ -448,9 +448,9 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(933, 521);
+            this.btnConfirm.Location = new System.Drawing.Point(933, 516);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(137, 33);
+            this.btnConfirm.Size = new System.Drawing.Size(137, 38);
             this.btnConfirm.TabIndex = 49;
             this.btnConfirm.Text = "Xác Nhận";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -558,7 +558,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(978, 85);
+            this.btnBack.Location = new System.Drawing.Point(991, 21);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(112, 34);
             this.btnBack.TabIndex = 62;
@@ -568,7 +568,7 @@
             // 
             // txbSQD
             // 
-            this.txbSQD.Location = new System.Drawing.Point(887, 85);
+            this.txbSQD.Location = new System.Drawing.Point(539, 85);
             this.txbSQD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbSQD.Name = "txbSQD";
             this.txbSQD.Size = new System.Drawing.Size(62, 22);
@@ -578,7 +578,7 @@
             // 
             this.lbSQD.AutoSize = true;
             this.lbSQD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbSQD.Location = new System.Drawing.Point(833, 85);
+            this.lbSQD.Location = new System.Drawing.Point(485, 85);
             this.lbSQD.Name = "lbSQD";
             this.lbSQD.Size = new System.Drawing.Size(51, 20);
             this.lbSQD.TabIndex = 63;
@@ -588,7 +588,7 @@
             // 
             this.lbSoQuyetDinh.AutoSize = true;
             this.lbSoQuyetDinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbSoQuyetDinh.Location = new System.Drawing.Point(709, 85);
+            this.lbSoQuyetDinh.Location = new System.Drawing.Point(361, 85);
             this.lbSoQuyetDinh.Name = "lbSoQuyetDinh";
             this.lbSoQuyetDinh.Size = new System.Drawing.Size(117, 20);
             this.lbSoQuyetDinh.TabIndex = 64;

@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.btnDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btnUpdate = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.lbTitle = new System.Windows.Forms.Label();
@@ -45,10 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txbTenPhong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.ToolStripButton();
-            this.btnDelete = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvPhongBan)).BeginInit();
@@ -70,6 +70,38 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAdd.Image = global::DoAn.Properties.Resources.toolStripButton1_Image;
+            this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(29, 24);
+            this.btnAdd.Text = "toolStripButton1";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(46, 24);
+            this.toolStripLabel1.Text = "Thêm";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDelete.Image = global::DoAn.Properties.Resources.toolStripButton3_Image;
+            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(29, 24);
+            this.btnDelete.Text = "toolStripButton2";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(35, 24);
+            this.toolStripLabel2.Text = "Xóa";
+            // 
             // btnUpdate
             // 
             this.btnUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -90,7 +122,7 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lbTitle.Location = new System.Drawing.Point(316, 156);
+            this.lbTitle.Location = new System.Drawing.Point(375, 163);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(138, 29);
             this.lbTitle.TabIndex = 2;
@@ -98,7 +130,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnDetails);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txbIDRoom);
             this.groupBox1.Controls.Add(this.lbIDRoom);
@@ -110,9 +141,9 @@
             // 
             // btnDetails
             // 
-            this.btnDetails.Location = new System.Drawing.Point(622, 21);
+            this.btnDetails.Location = new System.Drawing.Point(753, 163);
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(104, 23);
+            this.btnDetails.Size = new System.Drawing.Size(122, 37);
             this.btnDetails.TabIndex = 5;
             this.btnDetails.Text = "Xem Chi Tiết";
             this.btnDetails.UseVisualStyleBackColor = true;
@@ -120,9 +151,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(517, 21);
+            this.btnSearch.Location = new System.Drawing.Point(549, 21);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(96, 40);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -152,15 +183,15 @@
             this.gvPhongBan.Name = "gvPhongBan";
             this.gvPhongBan.RowHeadersWidth = 51;
             this.gvPhongBan.RowTemplate.Height = 24;
-            this.gvPhongBan.Size = new System.Drawing.Size(800, 292);
+            this.gvPhongBan.Size = new System.Drawing.Size(860, 292);
             this.gvPhongBan.TabIndex = 4;
             this.gvPhongBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvPhongBan_CellContentClick);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(740, 164);
+            this.btnBack.Location = new System.Drawing.Point(789, 12);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(86, 30);
             this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -198,43 +229,12 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Tên Phòng";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAdd.Image = global::DoAn.Properties.Resources.toolStripButton1_Image;
-            this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(29, 24);
-            this.btnAdd.Text = "toolStripButton1";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDelete.Image = global::DoAn.Properties.Resources.toolStripButton3_Image;
-            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(29, 24);
-            this.btnDelete.Text = "toolStripButton2";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(46, 24);
-            this.toolStripLabel1.Text = "Thêm";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(35, 24);
-            this.toolStripLabel2.Text = "Xóa";
-            // 
             // PhongBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 510);
+            this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.txbTenPhong);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txbMaQL);

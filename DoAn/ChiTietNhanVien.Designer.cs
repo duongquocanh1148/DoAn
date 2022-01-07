@@ -476,9 +476,9 @@
             // 
             // btnUpLoad
             // 
-            this.btnUpLoad.Location = new System.Drawing.Point(916, 109);
+            this.btnUpLoad.Location = new System.Drawing.Point(1133, 282);
             this.btnUpLoad.Name = "btnUpLoad";
-            this.btnUpLoad.Size = new System.Drawing.Size(90, 29);
+            this.btnUpLoad.Size = new System.Drawing.Size(100, 38);
             this.btnUpLoad.TabIndex = 53;
             this.btnUpLoad.Text = "Cập nhật ";
             this.btnUpLoad.UseVisualStyleBackColor = true;
@@ -494,10 +494,10 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(802, 110);
+            this.btnBack.Location = new System.Drawing.Point(1133, 27);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
+            this.btnBack.Size = new System.Drawing.Size(100, 38);
             this.btnBack.TabIndex = 55;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;

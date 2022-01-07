@@ -43,7 +43,7 @@
             this.gvDSNhaTT.Name = "gvDSNhaTT";
             this.gvDSNhaTT.RowHeadersWidth = 51;
             this.gvDSNhaTT.RowTemplate.Height = 24;
-            this.gvDSNhaTT.Size = new System.Drawing.Size(776, 341);
+            this.gvDSNhaTT.Size = new System.Drawing.Size(844, 341);
             this.gvDSNhaTT.TabIndex = 0;
             this.gvDSNhaTT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDSNhaTT_CellContentClick);
             // 
@@ -51,7 +51,7 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(230, 40);
+            this.lbTitle.Location = new System.Drawing.Point(259, 55);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(334, 29);
             this.lbTitle.TabIndex = 6;
@@ -59,9 +59,9 @@
             // 
             // btnDK
             // 
-            this.btnDK.Location = new System.Drawing.Point(30, 469);
+            this.btnDK.Location = new System.Drawing.Point(366, 468);
             this.btnDK.Name = "btnDK";
-            this.btnDK.Size = new System.Drawing.Size(82, 25);
+            this.btnDK.Size = new System.Drawing.Size(98, 42);
             this.btnDK.TabIndex = 7;
             this.btnDK.Text = "Đăng ký";
             this.btnDK.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(695, 469);
+            this.btnBack.Location = new System.Drawing.Point(774, 12);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(82, 25);
+            this.btnBack.Size = new System.Drawing.Size(82, 30);
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -79,9 +79,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(140, 469);
+            this.btnDelete.Location = new System.Drawing.Point(681, 58);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 25);
+            this.btnDelete.Size = new System.Drawing.Size(82, 32);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 522);
+            this.ClientSize = new System.Drawing.Size(868, 522);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDK);
