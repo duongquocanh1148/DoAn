@@ -75,7 +75,7 @@ namespace DoAn
 
         private void nhàTậpThểToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DKNTT f = new DKNTT();
+            DanhSachNhaTT f = new DanhSachNhaTT();
             this.Hide();
             f.ShowDialog();
             this.Show();
