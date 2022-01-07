@@ -124,19 +124,25 @@ namespace DoAn
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            if (txbIDRoom.Text == "" || txbTenPhong.Text == "")
-                MessageBox.Show("Vui long nhập đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
+            try
             {
-                connect.Open();
-                cmd = connect.CreateCommand();
-                cmd.CommandText = @"insert into PHONG values ('" + txbIDRoom.Text + "',N'" + txbTenPhong.Text + "','')";
-                cmd.ExecuteNonQuery();
-                ThemNV();
-                connect.Close();
-                MessageBox.Show("Add Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadData();
-                Clear();
+                if (txbIDRoom.Text == "" || txbTenPhong.Text == "")
+                    MessageBox.Show("Vui long nhập đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    connect.Open();
+                    cmd = connect.CreateCommand();
+                    cmd.CommandText = @"insert into PHONG values ('" + txbIDRoom.Text + "',N'" + txbTenPhong.Text + "','')";
+                    cmd.ExecuteNonQuery();
+                    ThemNV();
+                    connect.Close();
+                    MessageBox.Show("Add Completed!", "Notification!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadData();
+                    Clear();
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Không được trùng mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
