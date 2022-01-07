@@ -62,19 +62,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lbSQD = new System.Windows.Forms.Label();
             this.txbSQD = new System.Windows.Forms.TextBox();
-
             this.gvCongTac = new System.Windows.Forms.DataGridView();
-            
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCongTac)).BeginInit();
-
             this.SuspendLayout();
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lbTitle.Location = new System.Drawing.Point(271, 33);
+            this.lbTitle.Location = new System.Drawing.Point(280, 16);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(233, 29);
             this.lbTitle.TabIndex = 2;
@@ -84,7 +81,7 @@
             // 
             this.lbSoQuyetDinh.AutoSize = true;
             this.lbSoQuyetDinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbSoQuyetDinh.Location = new System.Drawing.Point(534, 40);
+            this.lbSoQuyetDinh.Location = new System.Drawing.Point(272, 73);
             this.lbSoQuyetDinh.Name = "lbSoQuyetDinh";
             this.lbSoQuyetDinh.Size = new System.Drawing.Size(117, 20);
             this.lbSoQuyetDinh.TabIndex = 5;
@@ -102,10 +99,10 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(658, 81);
+            this.btnBack.Location = new System.Drawing.Point(675, 13);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
+            this.btnBack.Size = new System.Drawing.Size(100, 32);
             this.btnBack.TabIndex = 9;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -221,10 +218,10 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(675, 341);
+            this.btnConfirm.Location = new System.Drawing.Point(675, 370);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(100, 28);
+            this.btnConfirm.Size = new System.Drawing.Size(100, 35);
             this.btnConfirm.TabIndex = 9;
             this.btnConfirm.Text = "Xác nhận";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -354,7 +351,7 @@
             // 
             this.lbSQD.AutoSize = true;
             this.lbSQD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbSQD.Location = new System.Drawing.Point(658, 40);
+            this.lbSQD.Location = new System.Drawing.Point(395, 73);
             this.lbSQD.Name = "lbSQD";
             this.lbSQD.Size = new System.Drawing.Size(51, 20);
             this.lbSQD.TabIndex = 5;
@@ -362,7 +359,7 @@
             // 
             // txbSQD
             // 
-            this.txbSQD.Location = new System.Drawing.Point(713, 40);
+            this.txbSQD.Location = new System.Drawing.Point(450, 73);
             this.txbSQD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbSQD.Name = "txbSQD";
             this.txbSQD.Size = new System.Drawing.Size(62, 22);
@@ -420,11 +417,8 @@
             this.Name = "BoTriCongTac";
             this.Text = "Bố Trí Công Tác";
             this.Load += new System.EventHandler(this.Form1_Load);
-
-            
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCongTac)).EndInit();
-
             this.ResumeLayout(false);
             this.PerformLayout();
 

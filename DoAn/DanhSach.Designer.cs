@@ -142,7 +142,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(839, 36);
+            this.btnAdd.Location = new System.Drawing.Point(830, 36);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 33);
             this.btnAdd.TabIndex = 5;
@@ -152,7 +152,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(839, 86);
+            this.button1.Location = new System.Drawing.Point(1056, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 33);
             this.button1.TabIndex = 6;

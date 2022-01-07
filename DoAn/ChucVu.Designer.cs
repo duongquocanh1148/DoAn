@@ -79,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(263, 333);
+            this.label2.Location = new System.Drawing.Point(33, 373);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 16);
             this.label2.TabIndex = 7;
@@ -94,16 +94,16 @@
             // 
             // tbxNameChucVu
             // 
-            this.tbxNameChucVu.Location = new System.Drawing.Point(354, 330);
+            this.tbxNameChucVu.Location = new System.Drawing.Point(124, 370);
             this.tbxNameChucVu.Name = "tbxNameChucVu";
             this.tbxNameChucVu.Size = new System.Drawing.Size(156, 22);
             this.tbxNameChucVu.TabIndex = 9;
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(31, 382);
+            this.btnThem.Location = new System.Drawing.Point(309, 328);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(71, 34);
+            this.btnThem.Size = new System.Drawing.Size(79, 34);
             this.btnThem.TabIndex = 10;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -111,9 +111,9 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(266, 382);
+            this.btnXoa.Location = new System.Drawing.Point(309, 373);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(76, 33);
+            this.btnXoa.Size = new System.Drawing.Size(79, 33);
             this.btnXoa.TabIndex = 10;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -121,9 +121,9 @@
             // 
             // btnUpLoad
             // 
-            this.btnUpLoad.Location = new System.Drawing.Point(124, 382);
+            this.btnUpLoad.Location = new System.Drawing.Point(422, 398);
             this.btnUpLoad.Name = "btnUpLoad";
-            this.btnUpLoad.Size = new System.Drawing.Size(92, 33);
+            this.btnUpLoad.Size = new System.Drawing.Size(99, 40);
             this.btnUpLoad.TabIndex = 46;
             this.btnUpLoad.Text = "Cập nhật ";
             this.btnUpLoad.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(418, 382);
+            this.btnBack.Location = new System.Drawing.Point(429, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(92, 33);
             this.btnBack.TabIndex = 47;

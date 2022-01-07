@@ -73,10 +73,10 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(669, 29);
+            this.btnBack.Location = new System.Drawing.Point(669, 24);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
+            this.btnBack.Size = new System.Drawing.Size(100, 33);
             this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -84,9 +84,9 @@
             // 
             // btnFix
             // 
-            this.btnFix.Location = new System.Drawing.Point(513, 449);
+            this.btnFix.Location = new System.Drawing.Point(669, 378);
             this.btnFix.Name = "btnFix";
-            this.btnFix.Size = new System.Drawing.Size(100, 23);
+            this.btnFix.Size = new System.Drawing.Size(100, 37);
             this.btnFix.TabIndex = 8;
             this.btnFix.Text = "Chỉnh sửa";
             this.btnFix.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             // 
             this.txbNghiKP.Location = new System.Drawing.Point(153, 375);
             this.txbNghiKP.Name = "txbNghiKP";
-            this.txbNghiKP.Size = new System.Drawing.Size(142, 22);
+            this.txbNghiKP.Size = new System.Drawing.Size(180, 22);
             this.txbNghiKP.TabIndex = 13;
             // 
             // label1
@@ -128,7 +128,7 @@
             // 
             this.txbNghiBHXH.Location = new System.Drawing.Point(153, 406);
             this.txbNghiBHXH.Name = "txbNghiBHXH";
-            this.txbNghiBHXH.Size = new System.Drawing.Size(142, 22);
+            this.txbNghiBHXH.Size = new System.Drawing.Size(180, 22);
             this.txbNghiBHXH.TabIndex = 15;
             // 
             // label2
@@ -174,9 +174,9 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(630, 449);
+            this.btnLoad.Location = new System.Drawing.Point(336, 445);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(100, 23);
+            this.btnLoad.Size = new System.Drawing.Size(114, 41);
             this.btnLoad.TabIndex = 46;
             this.btnLoad.Text = "Cập nhật";
             this.btnLoad.UseVisualStyleBackColor = true;
