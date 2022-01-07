@@ -62,18 +62,7 @@ namespace DoAn
             this.Hide();
             f.ShowDialog();
             this.Show();
-        }
-
-       
-
-        private void vịTríCôngTácToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ViTriCongTac f = new ViTriCongTac();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
+        }               
         private void bốTríCôngTácToolStripMenuItem_Click(object sender, EventArgs e)
         { 
             BoTriCongTac f = new BoTriCongTac();
@@ -98,13 +87,7 @@ namespace DoAn
             this.Show();
         }
 
-        private void btnTinhTienNhaTT_Click(object sender, EventArgs e)
-        {
-            TinhTienSH f = new TinhTienSH();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
+       
 
         private void btnDSNV_Click(object sender, EventArgs e)
         {
