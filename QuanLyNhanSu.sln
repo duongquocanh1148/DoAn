@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoAn", "DoAn\DoAn.csproj", "{37887091-89D6-4CC5-8718-B42738ADC2C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyNhanSu", "DoAn\QuanLyNhanSu.csproj", "{37887091-89D6-4CC5-8718-B42738ADC2C9}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{7CF78B52-2F72-4E71-9CE6-11DAFCA8E801}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{37887091-89D6-4CC5-8718-B42738ADC2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37887091-89D6-4CC5-8718-B42738ADC2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37887091-89D6-4CC5-8718-B42738ADC2C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF78B52-2F72-4E71-9CE6-11DAFCA8E801}.Debug|Any CPU.ActiveCfg = Debug
+		{7CF78B52-2F72-4E71-9CE6-11DAFCA8E801}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
