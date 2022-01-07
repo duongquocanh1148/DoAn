@@ -17,7 +17,6 @@ namespace DoAn
         SqlConnection connect = new SqlConnection(ConnectSQL.connectString);
         SqlCommand cmd,cmdTTSH;
         DataTable table = new DataTable();
-
         DataTable table2 = new DataTable();            
         
 
@@ -42,44 +41,48 @@ namespace DoAn
 
         void loadData()
         {
-            
-            if (txbID.Text == "") MessageBox.Show("Vui lòng nhập mã nhân viên!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
+            try
             {
-                connect.Open();
-                cmd = connect.CreateCommand();
-                cmd.CommandText = @"select distinct HotenNV, Tenphong,Tenchucvu
+                if (txbID.Text == "") MessageBox.Show("Vui lòng nhập mã nhân viên!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    connect.Open();
+                    cmd = connect.CreateCommand();
+                    cmd.CommandText = @"select distinct HotenNV, Tenphong,Tenchucvu
                                 from NHANVIEN
                                 join PHONG on  PHONG.Maphong= NHANVIEN.Maphong 
                                 join CHUCVU on CHUCVU.Machucvu = NHANVIEN.Machucvu
                                 where NHANVIEN.MaNV = '" + txbID.Text + "'";
-                adapter.SelectCommand = cmd;
-                table.Clear();
-                adapter.Fill(table);
-                gvTemp.DataSource = table;
-                int i = gvTemp.CurrentRow.Index;
-                txbFullName.Text = gvTemp.Rows[i].Cells[0].Value.ToString();
-                txbNoiCongTac.Text = gvTemp.Rows[i].Cells[1].Value.ToString();
-                txbChucVu.Text = gvTemp.Rows[i].Cells[2].Value.ToString();               
-                loadDataTN();
-                connect.Close();
+                    adapter.SelectCommand = cmd;
+                    table.Clear();
+                    adapter.Fill(table);
+                    gvTemp.DataSource = table;
+                    int i = gvTemp.CurrentRow.Index;
+                    txbFullName.Text = gvTemp.Rows[i].Cells[0].Value.ToString();
+                    txbNoiCongTac.Text = gvTemp.Rows[i].Cells[1].Value.ToString();
+                    txbChucVu.Text = gvTemp.Rows[i].Cells[2].Value.ToString();
+                    loadDataTN();
+                    connect.Close();
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Mã nhân viên không đúng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
         void ThanNhan()
         {
             connect.Open();
-            if (txbID.Text == "") MessageBox.Show("Vui lòng nhập mã nhân viên!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txbID.Text == "" || txbHoTenTN.Text=="") MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 cmd = connect.CreateCommand();
                 cmd.CommandText = @"INSERT INTO THANNHAN VALUES (N'" + txbHoTenTN.Text + "', N'" + txbQuanHe.Text + "', '" + txbNamSinh.Text + "', N'" + txbNgheNghiep.Text + "',N'" + txbNCTTN.Text + "', '" + txbID.Text + "')";
                 cmd.ExecuteNonQuery();
                 loadDataTN();
-                MessageBox.Show("Thêm thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                connect.Close();
-                Clear();
+                MessageBox.Show("Thêm thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);                            
             }
+            connect.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -85,10 +85,7 @@ namespace DoAn
             this.Hide();
             f.ShowDialog();
             this.Show();
-        }
-
-       
-
+        }       
         private void btnDSNV_Click(object sender, EventArgs e)
         {
             DanhSach f = new DanhSach();
@@ -107,6 +104,14 @@ namespace DoAn
         private void bảngLươngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BangLuong f = new BangLuong();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnTinhTienNhaTT_Click(object sender, EventArgs e)
+        {
+            TinhTienNhaTT f = new TinhTienNhaTT();
             this.Hide();
             f.ShowDialog();
             this.Show();
