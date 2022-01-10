@@ -78,7 +78,7 @@
             // 
             // txbIDRoom
             // 
-            this.txbIDRoom.Location = new System.Drawing.Point(370, 125);
+            this.txbIDRoom.Location = new System.Drawing.Point(86, 122);
             this.txbIDRoom.Name = "txbIDRoom";
             this.txbIDRoom.Size = new System.Drawing.Size(177, 22);
             this.txbIDRoom.TabIndex = 3;
@@ -142,7 +142,7 @@
             // 
             // txbTenPhong
             // 
-            this.txbTenPhong.Location = new System.Drawing.Point(98, 125);
+            this.txbTenPhong.Location = new System.Drawing.Point(370, 122);
             this.txbTenPhong.Name = "txbTenPhong";
             this.txbTenPhong.Size = new System.Drawing.Size(177, 22);
             this.txbTenPhong.TabIndex = 9;

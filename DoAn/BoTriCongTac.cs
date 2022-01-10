@@ -99,9 +99,9 @@ namespace DoAn
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            
-            try
-            {
+
+            //try
+            //{
                 if (txbMaPhongNew.Text == "" || txbMaCVNew.Text == "" || txbMaNV.Text == "" || txbSQD.Text == "")
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
@@ -115,11 +115,11 @@ namespace DoAn
                     Clear();
                     connect.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Vui lòng kiểm tra lại thông tin", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
         void ThemCT()
         {

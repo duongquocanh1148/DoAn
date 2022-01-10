@@ -121,7 +121,7 @@ namespace DoAn
         void ThemHSL()
         {                    
                 cmd = connect.CreateCommand();
-                cmd.CommandText = @"insert into HESOLUONG values('" + tbxID.Text + "','" + 0 + "'," + 0 + "," + 0 + "," + 0 + "," + 0 + ",'" + txbMaCV.Text + "')";
+                cmd.CommandText = @"insert into HESOLUONG values('" + tbxID.Text + "',''," + 0 + "," + 0 + "," + 0 + "," + 0 + "," + 0 + ",'" + txbMaCV.Text + "')";
                 cmd.ExecuteNonQuery();                                                                   
         }
         void ThemTDSNN()
@@ -139,7 +139,7 @@ namespace DoAn
         void ThemBangLuong()
         {
             cmd = connect.CreateCommand();
-            cmd.CommandText = @"insert into LUONG values('','','" + tbxID.Text + "',"+0+ ",''," + 0 + ")";
+            cmd.CommandText = @"insert into LUONG values('','" + tbxID.Text + "'," + 0 + ",''," + 0 + ")";
             cmd.ExecuteNonQuery();
         }
 
@@ -149,32 +149,44 @@ namespace DoAn
 
         private void txbMaPhong_Leave(object sender, EventArgs e)
         {
-            connect.Open();
-            cmd = connect.CreateCommand();
-            cmd.CommandText = @"select Tenphong from PHONG where Maphong = '" + txbMaPhong.Text + "'";
-            adapter.SelectCommand = cmd;
-            table.Clear();
-            adapter.Fill(table);
-            gvTemp.DataSource = table;
-            int i = gvTemp.CurrentRow.Index;
-            tbxNoiCT.Text = gvTemp.Rows[i].Cells[0].Value.ToString();
-            table.Clear();
-            connect.Close();
+            try
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"select Tenphong from PHONG where Maphong = '" + txbMaPhong.Text + "'";
+                adapter.SelectCommand = cmd;
+                table.Clear();
+                adapter.Fill(table);
+                gvTemp.DataSource = table;
+                int i = gvTemp.CurrentRow.Index;
+                tbxNoiCT.Text = gvTemp.Rows[i].Cells[0].Value.ToString();
+                table.Clear();
+                connect.Close();
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Không tìm thấy mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txbMaCV_Leave(object sender, EventArgs e)
         {
-            connect.Open();
-            cmd = connect.CreateCommand();
-            cmd.CommandText = @"select Tenchucvu from CHUCVU where Machucvu = '" + txbMaCV.Text + "'";
-            adapter.SelectCommand = cmd;
-            table.Clear();
-            adapter.Fill(table2);
-            gvTemp.DataSource = table2;
-            int i = gvTemp.CurrentRow.Index;
-            tbxChucVu.Text = gvTemp.Rows[i].Cells[0].Value.ToString();
-            table2.Clear();
-            connect.Close();
+            try
+            {
+                connect.Open();
+                cmd = connect.CreateCommand();
+                cmd.CommandText = @"select Tenchucvu from CHUCVU where Machucvu = '" + txbMaCV.Text + "'";
+                adapter.SelectCommand = cmd;
+                table.Clear();
+                adapter.Fill(table2);
+                gvTemp.DataSource = table2;
+                int i = gvTemp.CurrentRow.Index;
+                tbxChucVu.Text = gvTemp.Rows[i].Cells[0].Value.ToString();
+                table2.Clear();
+                connect.Close();
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Không tìm thấy mã chức vụ!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         void ThemTSDNN()

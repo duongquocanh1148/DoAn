@@ -124,15 +124,17 @@ namespace DoAn
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 if (txbIDRoom.Text == "" || txbTenPhong.Text == "")
                     MessageBox.Show("Vui long nhập đầy đủ thông tin!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
+                    string s = "Chua";
+                    if (txbMaQL.Text !="") s = txbMaQL.Text;                   
                     connect.Open();
                     cmd = connect.CreateCommand();
-                    cmd.CommandText = @"insert into PHONG values ('" + txbIDRoom.Text + "',N'" + txbTenPhong.Text + "','')";
+                    cmd.CommandText = @"insert into PHONG values ('" + txbIDRoom.Text + "',N'" + txbTenPhong.Text + "','"+s+"')";
                     cmd.ExecuteNonQuery();
                     ThemNV();
                     connect.Close();
@@ -140,10 +142,10 @@ namespace DoAn
                     loadData();
                     Clear();
                 }
-            }catch (Exception ex)
-            {
-                MessageBox.Show("Không được trùng mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}catch (Exception ex)
+            //{
+            //    MessageBox.Show("Không được trùng mã phòng!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnDelete_Click_1(object sender, EventArgs e)

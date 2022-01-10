@@ -34,6 +34,7 @@ namespace DoAn
             loadData();
             lbNam.Text = "Năm áp dụng : " + year[2];
             txbMaNV.ReadOnly = true;
+            txbChucVu.ReadOnly = true;
 
         }
         void loadData()

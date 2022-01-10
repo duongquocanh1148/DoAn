@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data;
 namespace DoAn
 {
     public partial class DangNhap : Form
@@ -28,8 +27,8 @@ namespace DoAn
         private void button1_Click(object sender, EventArgs e)
         {
             
-            try
-            {
+            //try
+            //{
                 conn.Open();
                 string tk = txtTaiKhoan.Text;
                 string mk = txtMatKhau.Text;
@@ -48,12 +47,12 @@ namespace DoAn
                 {
                     MessageBox.Show("Sai tài khoản hoặc mật khẩu ? ","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
+            //}
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi kết nối ");
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi kết nối ");
+            //}
             
             
         }

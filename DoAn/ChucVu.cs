@@ -39,6 +39,7 @@ namespace DoAn
        
         void loadData()
         {
+            connect.Open();
             cmd = connect.CreateCommand();
             cmd.CommandText = "Select * from CHUCVU ";
             adapter.SelectCommand = cmd;
@@ -61,6 +62,7 @@ namespace DoAn
         {
             try
             {
+                connect.Open();
                 if (tbxIDChucVu.Text == "" || tbxNameChucVu.Text == "") 
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
@@ -69,22 +71,26 @@ namespace DoAn
                     cmd.CommandText = "insert into CHUCVU (Machucvu,Tenchucvu) values ('" + tbxIDChucVu.Text + "', '" + tbxNameChucVu.Text + "')";
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Thêm thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                connect.Close();
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Không được thêm trùng mã chức vụ!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }                       
+            }
             loadData();
         }             
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
+                connect.Open();
                 int i = gvChucVu.CurrentRow.Index;
 
                 cmd = connect.CreateCommand();
                 cmd.CommandText = "delete from CHUCVU WHERE Machucvu='" + gvChucVu.Rows[i].Cells[0].Value.ToString() + "'";
                 cmd.ExecuteNonQuery();
+                connect.Close();
                 loadData();
                 MessageBox.Show("Xóa thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
